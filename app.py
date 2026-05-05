@@ -3,135 +3,164 @@ import anthropic
 from datetime import datetime
 import json
 
-# ============================================================
+# ============================================
 # PAGE CONFIG
-# ============================================================
+# ============================================
 st.set_page_config(
-    page_title="LifeOS — AI Health, Work & Study Companion",
-    page_icon="🌅",
+    page_title="LifeOS - AI Health & Study Companion",
+    page_icon="🌟",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# ============================================================
+# ============================================
 # CUSTOM CSS
-# ============================================================
+# ============================================
 st.markdown("""
 <style>
-    .main-header {
-        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-        padding: 1.5rem;
-        border-radius: 15px;
-        color: white;
-        margin-bottom: 1rem;
-    }
+    .main { background-color: #0e1117; }
+    .stApp { background: linear-gradient(135deg, #0e1117 0%, #1a1f2e 100%); }
+    
     .metric-card {
-        background: #f0f2f6;
-        padding: 1rem;
-        border-radius: 10px;
-        border-left: 4px solid #667eea;
+        background: linear-gradient(135deg, #1e2330 0%, #2a3142 100%);
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid #2a3142;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
-    .stChatMessage {
-        border-radius: 12px;
+    
+    .metric-title {
+        color: #8b92a8;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
     }
-    .pillar-box {
-        background: #ffffff;
-        padding: 1rem;
+    
+    .metric-value {
+        color: #ffffff;
+        font-size: 32px;
+        font-weight: 700;
+    }
+    
+    .metric-status-good { color: #10b981; }
+    .metric-status-warn { color: #f59e0b; }
+    .metric-status-bad { color: #ef4444; }
+    
+    .header-gradient {
+        background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 42px;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    
+    .subtitle {
+        text-align: center;
+        color: #8b92a8;
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    
+    .stButton>button {
+        background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+        color: white;
+        border: none;
         border-radius: 10px;
-        border: 1px solid #e0e0e0;
-        margin-bottom: 0.5rem;
+        padding: 10px 24px;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+    
+    .stButton>button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+    }
+    
+    .chat-message-user {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        padding: 12px 18px;
+        border-radius: 18px 18px 4px 18px;
+        margin: 8px 0;
+        color: white;
+        max-width: 80%;
+        margin-left: auto;
+    }
+    
+    .chat-message-ai {
+        background: #1e2330;
+        padding: 12px 18px;
+        border-radius: 18px 18px 18px 4px;
+        margin: 8px 0;
+        color: #e5e7eb;
+        max-width: 80%;
+        border-left: 3px solid #8b5cf6;
     }
 </style>
 """, unsafe_allow_html=True)
 
-# ============================================================
-# SYSTEM PROMPT BUILDER
-# ============================================================
-def build_system_prompt(profile: dict) -> str:
-    return f"""# LifeOS — AI-Powered Health, Work & Study Companion
+# ============================================
+# SYSTEM PROMPT
+# ============================================
+SYSTEM_PROMPT = """You are **LifeOS**, a proactive personal AI companion that acts as the user's health coach, productivity partner, nutrition advisor, and study strategist — all in one. You speak in a warm, direct, and motivating tone. You are data-driven but human. You celebrate wins, flag risks, and always give the user actionable next steps.
 
-## ROLE & IDENTITY
-You are **LifeOS**, a proactive personal AI companion that acts as the user's health coach, productivity partner, nutrition advisor, and study strategist — all in one. You speak in a warm, direct, and motivating tone. You are data-driven but human. You celebrate wins, flag risks, and always give the user actionable next steps.
+You synthesize data across health (Whoop/Garmin), nutrition, study goals, and calendar to deliver integrated, personalized insights. You never treat these domains in isolation — sleep affects study, stress affects nutrition, exercise affects recovery.
 
-You synthesize data from Whoop (HRV, recovery, sleep), Garmin (steps, workouts, Body Battery, stress), nutrition logs, study goals, and calendar to give integrated, personalized insights. You think holistically — sleep affects study performance, stress affects nutrition, exercise affects recovery.
+CORE CAPABILITIES:
+1. **Daily Briefing** - Morning summary with recovery, readiness, plan, priorities
+2. **Nutrition Tracking** - Parse meals, calculate macros, give meal feedback
+3. **Study Management** - Track sessions, recommend windows based on energy/HRV
+4. **Workout Intelligence** - Interpret training load vs recovery, flag overtraining
+5. **Cross-Domain Insights** - Connect dots across health/nutrition/study
+6. **Goal Management** - Health, study, nutrition goals with weekly reviews
 
-## USER PROFILE
-- Name: {profile.get('name', 'User')}
-- Age: {profile.get('age', 'N/A')}
-- Weight: {profile.get('weight', 'N/A')} kg
-- Height: {profile.get('height', 'N/A')} cm
-- Primary fitness goal: {profile.get('goal', 'fat loss')}
-- Daily calorie target: {profile.get('calories', 'calculate based on profile')}
-- Protein target: {profile.get('protein', 'calculate based on profile')} g
-- Active subjects: {profile.get('subjects', 'N/A')}
-- Weekly study hours goal: {profile.get('study_hours', 'N/A')}
-- Next exam/deadline: {profile.get('exam', 'N/A')}
-- Preferred wake time: {profile.get('wake', 'N/A')}
-- Preferred sleep time: {profile.get('sleep', 'N/A')}
-- Rest days: {profile.get('rest_days', 'N/A')}
+TONE: Encouraging not preachy. Specific not vague. Brief by default, detailed when asked. Celebrate effort. Honest about bad days without catastrophizing.
 
-## CORE CAPABILITIES
-1. **Daily Briefing (Morning Mode)** — structured morning briefing with recovery, readiness, plan, priorities
-2. **Nutrition Tracking** — parse meal entries, calculate macros, track vs. targets
-3. **Study Session Management** — start/end sessions, track hours, recommend study windows
-4. **Workout Intelligence** — interpret training load, flag overtraining
-5. **Cross-Domain Insights** — connect health, nutrition, study patterns
-6. **Goal Management** — health, study, nutrition pillars
-7. **Weekly Review** — full summary on demand
+USER PROFILE:
+- Name: Andrea
+- Age: 19
+- Weight: 82.5 kg
+- Height: 178 cm
+- Primary goal: Fat loss
+- Daily calorie target: ~2100 kcal (calculated: BMR ~1850 × 1.4 activity − 500 deficit)
+- Protein target: 165g (2g/kg bodyweight for fat loss + muscle preservation)
+- Active subjects: Accounting, Law, Stats, Macroeconomics
+- Weekly study goal: 20 hours
+- Next exam: May 18
+- Wake time: 07:00
+- Sleep time: 22:30
+- Rest day: Monday
 
-## TONE
-- Encouraging, not preachy
-- Specific, not vague
-- Brief by default, detailed when asked
-- Celebrate consistency and effort
-- Honest about bad days without catastrophizing
+Format responses with emojis, clear sections, and actionable next steps."""
 
-## DATA HONESTY
-If real-time Whoop/Garmin data isn't available in this conversation, work with what the user shares verbally and be transparent. Never fabricate metrics.
-
-Always format briefings with clear sections and emojis (🌅 🫀 🏃 🥗 📚) for readability.
-"""
-
-# ============================================================
+# ============================================
 # SESSION STATE INIT
-# ============================================================
+# ============================================
 if "messages" not in st.session_state:
     st.session_state.messages = []
-if "profile" not in st.session_state:
-    st.session_state.profile = {
-        "name": "Andrea",
-        "age": 19,
-        "weight": 82.5,
-        "height": 178,
-        "goal": "fat loss",
-        "calories": "calculate for me",
-        "protein": "calculate for me",
-        "subjects": "Accounting, Law, Stats, Macro",
-        "study_hours": 20,
-        "exam": "18 May",
-        "wake": "07:00",
-        "sleep": "22:30",
-        "rest_days": "1 (Sunday)"
-    }
+
 if "api_key" not in st.session_state:
     st.session_state.api_key = ""
+
 if "nutrition_log" not in st.session_state:
     st.session_state.nutrition_log = []
+
 if "study_log" not in st.session_state:
     st.session_state.study_log = []
 
-# ============================================================
-# SIDEBAR — API KEY + PROFILE
-# ============================================================
+# ============================================
+# SIDEBAR - API KEY & SETTINGS
+# ============================================
 with st.sidebar:
     st.markdown("### 🔑 API Configuration")
     
-    # Try to load from secrets first
-    default_key = ""
+    # Try to get API key from secrets, then user input
     try:
-        default_key = st.secrets.get("ANTHROPIC_API_KEY", "")
-    except Exception:
-        pass
+        default_key = st.secrets["ANTHROPIC_API_KEY"]
+    except:
+        default_key = ""
     
     api_key_input = st.text_input(
         "Anthropic API Key",
@@ -139,271 +168,182 @@ with st.sidebar:
         type="password",
         help="Get your key at console.anthropic.com"
     )
+    
     if api_key_input:
         st.session_state.api_key = api_key_input
         st.success("✅ API Key set")
     else:
-        st.warning("⚠️ Enter your Anthropic API Key to start")
-
-    st.markdown("---")
-    st.markdown("### 🤖 Model Settings")
-    model_choice = st.selectbox(
-        "Model",
-        [
-            "claude-sonnet-4-5",
-            "claude-opus-4-5",
-            "claude-3-5-sonnet-latest",
-            "claude-3-5-haiku-latest"
-        ],
-        index=0
-    )
-    max_tokens = st.slider("Max Tokens", 1000, 16000, 4000, 500)
-    use_thinking = st.toggle("Extended Thinking", value=False)
-
+        st.warning("⚠️ Enter your API key to start")
+    
     st.markdown("---")
     st.markdown("### 👤 Profile")
-    with st.expander("Edit Profile", expanded=False):
-        st.session_state.profile["name"] = st.text_input("Name", st.session_state.profile["name"])
-        st.session_state.profile["age"] = st.number_input("Age", 10, 100, st.session_state.profile["age"])
-        st.session_state.profile["weight"] = st.number_input("Weight (kg)", 30.0, 200.0, float(st.session_state.profile["weight"]))
-        st.session_state.profile["height"] = st.number_input("Height (cm)", 100, 250, int(st.session_state.profile["height"]))
-        st.session_state.profile["goal"] = st.selectbox(
-            "Goal",
-            ["fat loss", "muscle gain", "endurance", "maintenance"],
-            index=["fat loss", "muscle gain", "endurance", "maintenance"].index(st.session_state.profile["goal"])
-        )
-        st.session_state.profile["subjects"] = st.text_input("Subjects", st.session_state.profile["subjects"])
-        st.session_state.profile["study_hours"] = st.number_input("Weekly Study Goal (h)", 1, 100, st.session_state.profile["study_hours"])
-        st.session_state.profile["exam"] = st.text_input("Next Exam", st.session_state.profile["exam"])
-        st.session_state.profile["wake"] = st.text_input("Wake Time", st.session_state.profile["wake"])
-        st.session_state.profile["sleep"] = st.text_input("Sleep Time", st.session_state.profile["sleep"])
-
+    st.markdown("""
+    **Andrea** • 19 yo  
+    📏 178 cm • ⚖️ 82.5 kg  
+    🎯 Goal: Fat Loss  
+    📚 Exam: May 18  
+    """)
+    
     st.markdown("---")
-    if st.button("🗑️ Clear Conversation", use_container_width=True):
+    st.markdown("### ⚡ Quick Actions")
+    
+    if st.button("🌅 Morning Briefing", use_container_width=True):
+        st.session_state.quick_prompt = "Good morning! Give me my full daily briefing."
+    
+    if st.button("📊 Weekly Review", use_container_width=True):
+        st.session_state.quick_prompt = "Generate my weekly review."
+    
+    if st.button("🍳 Log Meal", use_container_width=True):
+        st.session_state.quick_prompt = "I want to log a meal."
+    
+    if st.button("📚 Start Study Session", use_container_width=True):
+        st.session_state.quick_prompt = "Starting a study session now. Recommend the best subject and approach."
+    
+    if st.button("🏃 Workout Advice", use_container_width=True):
+        st.session_state.quick_prompt = "Should I work out today? What kind?"
+    
+    st.markdown("---")
+    if st.button("🗑️ Clear Chat", use_container_width=True):
         st.session_state.messages = []
         st.rerun()
 
-# ============================================================
-# HEADER
-# ============================================================
-st.markdown(f"""
-<div class="main-header">
-    <h1 style="margin:0;">🌅 LifeOS</h1>
-    <p style="margin:0; opacity:0.9;">AI Health, Work & Study Companion — Hi {st.session_state.profile['name']} 👋</p>
-</div>
-""", unsafe_allow_html=True)
+# ============================================
+# MAIN HEADER
+# ============================================
+st.markdown('<h1 class="header-gradient">🌟 LifeOS</h1>', unsafe_allow_html=True)
+st.markdown('<p class="subtitle">Your AI-Powered Health, Work & Study Companion</p>', unsafe_allow_html=True)
 
-# ============================================================
-# QUICK STATS DASHBOARD
-# ============================================================
+# ============================================
+# DASHBOARD METRICS
+# ============================================
 col1, col2, col3, col4 = st.columns(4)
+
 with col1:
-    st.metric("🎯 Goal", st.session_state.profile["goal"].title())
+    st.markdown("""
+    <div class="metric-card">
+        <div class="metric-title">🫀 Recovery</div>
+        <div class="metric-value metric-status-good">78%</div>
+        <div style="color:#8b92a8;font-size:11px;margin-top:4px;">Optimal</div>
+    </div>
+    """, unsafe_allow_html=True)
+
 with col2:
-    bmr = round(10 * st.session_state.profile["weight"] + 6.25 * st.session_state.profile["height"] - 5 * st.session_state.profile["age"] + 5)
-    tdee = round(bmr * 1.5)
-    cut_cals = tdee - 500
-    st.metric("🔥 Daily kcal (cut)", cut_cals)
+    st.markdown("""
+    <div class="metric-card">
+        <div class="metric-title">🔋 Body Battery</div>
+        <div class="metric-value metric-status-good">85</div>
+        <div style="color:#8b92a8;font-size:11px;margin-top:4px;">Charged</div>
+    </div>
+    """, unsafe_allow_html=True)
+
 with col3:
-    protein_g = round(st.session_state.profile["weight"] * 2.0)
-    st.metric("🥩 Protein (g)", protein_g)
+    st.markdown("""
+    <div class="metric-card">
+        <div class="metric-title">🍽️ Calories</div>
+        <div class="metric-value">1,420</div>
+        <div style="color:#8b92a8;font-size:11px;margin-top:4px;">/ 2,100 kcal</div>
+    </div>
+    """, unsafe_allow_html=True)
+
 with col4:
-    st.metric("📚 Weekly Study", f"{st.session_state.profile['study_hours']}h")
+    st.markdown("""
+    <div class="metric-card">
+        <div class="metric-title">📚 Study Today</div>
+        <div class="metric-value metric-status-warn">2.5h</div>
+        <div style="color:#8b92a8;font-size:11px;margin-top:4px;">/ 3h target</div>
+    </div>
+    """, unsafe_allow_html=True)
 
-# ============================================================
-# TABS
-# ============================================================
-tab_chat, tab_nutrition, tab_study, tab_dashboard = st.tabs(
-    ["💬 Chat with LifeOS", "🥗 Nutrition Log", "📚 Study Log", "📊 Dashboard"]
-)
+st.markdown("<br>", unsafe_allow_html=True)
 
-# ---------- CHAT TAB ----------
-with tab_chat:
-    st.markdown("### Quick Actions")
-    qa_col1, qa_col2, qa_col3, qa_col4 = st.columns(4)
-    quick_prompt = None
-    with qa_col1:
-        if st.button("🌅 Morning Briefing", use_container_width=True):
-            quick_prompt = "Good morning! Give me my daily briefing. Today I slept 7h, HRV 55ms, RHR 58bpm, Body Battery 75."
-    with qa_col2:
-        if st.button("📊 Weekly Review", use_container_width=True):
-            quick_prompt = "Give me my weekly review based on what we've discussed."
-    with qa_col3:
-        if st.button("💪 Workout Advice", use_container_width=True):
-            quick_prompt = "What workout should I do today given my recovery?"
-    with qa_col4:
-        if st.button("🎯 Set a Goal", use_container_width=True):
-            quick_prompt = "I want to set a new goal."
+# Progress bars
+col_a, col_b = st.columns(2)
+with col_a:
+    st.markdown("**🥩 Macros Today**")
+    st.progress(0.55, text="Protein: 91g / 165g")
+    st.progress(0.42, text="Carbs: 105g / 250g")
+    st.progress(0.60, text="Fats: 42g / 70g")
 
-    # Display chat history
+with col_b:
+    st.markdown("**📅 Weekly Study Progress**")
+    st.progress(0.65, text="Accounting: 6.5h / 5h ✅")
+    st.progress(0.40, text="Law: 2h / 5h")
+    st.progress(0.20, text="Stats: 1h / 5h")
+    st.progress(0.30, text="Macro: 1.5h / 5h")
+
+st.markdown("---")
+
+# ============================================
+# CHAT INTERFACE
+# ============================================
+st.markdown("### 💬 Chat with LifeOS")
+
+# Display chat history
+chat_container = st.container()
+with chat_container:
     for msg in st.session_state.messages:
-        with st.chat_message(msg["role"]):
-            st.markdown(msg["content"])
-
-    # Chat input
-    user_input = st.chat_input("Talk to LifeOS… (e.g., 'I had oatmeal and 2 eggs')")
-    
-    if quick_prompt:
-        user_input = quick_prompt
-
-    if user_input:
-        if not st.session_state.api_key:
-            st.error("⚠️ Please enter your Anthropic API Key in the sidebar.")
+        if msg["role"] == "user":
+            st.markdown(f'<div class="chat-message-user">{msg["content"]}</div>', unsafe_allow_html=True)
         else:
-            # Append user message
-            st.session_state.messages.append({"role": "user", "content": user_input})
-            with st.chat_message("user"):
-                st.markdown(user_input)
+            st.markdown(f'<div class="chat-message-ai">{msg["content"]}</div>', unsafe_allow_html=True)
 
-            # Call Claude
-            with st.chat_message("assistant"):
-                placeholder = st.empty()
-                try:
-                    client = anthropic.Anthropic(api_key=st.session_state.api_key)
-                    system_prompt = build_system_prompt(st.session_state.profile)
+# Handle quick prompt from sidebar
+prompt_to_send = None
+if "quick_prompt" in st.session_state and st.session_state.quick_prompt:
+    prompt_to_send = st.session_state.quick_prompt
+    st.session_state.quick_prompt = None
 
-                    kwargs = {
-                        "model": model_choice,
-                        "max_tokens": max_tokens,
-                        "system": system_prompt,
-                        "messages": [
-                            {"role": m["role"], "content": m["content"]}
-                            for m in st.session_state.messages
-                        ],
-                    }
-                    if use_thinking:
-                        kwargs["thinking"] = {"type": "enabled", "budget_tokens": 2000}
+# Chat input
+user_input = st.chat_input("Ask LifeOS anything... (e.g., 'I had eggs and toast', 'Should I study now?')")
 
-                    # Stream the response
-                    full_response = ""
-                    with client.messages.stream(**kwargs) as stream:
-                        for text in stream.text_stream:
-                            full_response += text
-                            placeholder.markdown(full_response + "▌")
-                    placeholder.markdown(full_response)
+if user_input:
+    prompt_to_send = user_input
 
-                    st.session_state.messages.append({"role": "assistant", "content": full_response})
-
-                except anthropic.AuthenticationError:
-                    st.error("❌ Invalid API Key. Please check your key in the sidebar.")
-                except anthropic.APIError as e:
-                    st.error(f"❌ API Error: {str(e)}")
-                except Exception as e:
-                    st.error(f"❌ Error: {str(e)}")
-
-# ---------- NUTRITION TAB ----------
-with tab_nutrition:
-    st.markdown("### 🥗 Log a Meal")
-    with st.form("nutrition_form", clear_on_submit=True):
-        meal_text = st.text_area("What did you eat?", placeholder="e.g., 2 scrambled eggs, toast, banana, coffee")
-        meal_type = st.selectbox("Meal", ["Breakfast", "Lunch", "Dinner", "Snack"])
-        submitted = st.form_submit_button("➕ Log Meal", use_container_width=True)
-        if submitted and meal_text:
-            st.session_state.nutrition_log.append({
-                "time": datetime.now().strftime("%H:%M"),
-                "meal": meal_type,
-                "food": meal_text
-            })
-            st.success(f"Logged {meal_type}: {meal_text}")
-
-    st.markdown("### Today's Meals")
-    if st.session_state.nutrition_log:
-        for entry in st.session_state.nutrition_log:
-            st.markdown(f"""
-            <div class="pillar-box">
-                <strong>{entry['meal']}</strong> — {entry['time']}<br>
-                {entry['food']}
-            </div>
-            """, unsafe_allow_html=True)
-        if st.button("🤖 Analyze My Day"):
-            summary = "\n".join([f"- {e['meal']} ({e['time']}): {e['food']}" for e in st.session_state.nutrition_log])
-            st.session_state.messages.append({
-                "role": "user",
-                "content": f"Analyze my nutrition for today:\n{summary}\n\nGive me macros estimate, gaps, and suggestions for the rest of the day."
-            })
-            st.rerun()
+# ============================================
+# PROCESS MESSAGE
+# ============================================
+if prompt_to_send:
+    if not st.session_state.api_key:
+        st.error("⚠️ Please enter your Anthropic API key in the sidebar first.")
     else:
-        st.info("No meals logged yet today.")
+        # Add user message
+        st.session_state.messages.append({"role": "user", "content": prompt_to_send})
+        
+        try:
+            client = anthropic.Anthropic(api_key=st.session_state.api_key)
+            
+            # Build message history for API
+            api_messages = [
+                {"role": m["role"], "content": m["content"]} 
+                for m in st.session_state.messages
+            ]
+            
+            with st.spinner("🧠 LifeOS is thinking..."):
+                response = client.messages.create(
+                    model="claude-sonnet-4-5",
+                    max_tokens=4000,
+                    system=SYSTEM_PROMPT,
+                    messages=api_messages
+                )
+                
+                ai_response = response.content[0].text
+                st.session_state.messages.append({"role": "assistant", "content": ai_response})
+                st.rerun()
+                
+        except anthropic.AuthenticationError:
+            st.error("❌ Invalid API key. Please check your key in the sidebar.")
+        except anthropic.NotFoundError as e:
+            st.error(f"❌ Model not found. Try changing model to 'claude-sonnet-4-5' or 'claude-3-5-sonnet-20241022'. Error: {e}")
+        except Exception as e:
+            st.error(f"❌ Error: {str(e)}")
 
-# ---------- STUDY TAB ----------
-with tab_study:
-    st.markdown("### 📚 Log a Study Session")
-    with st.form("study_form", clear_on_submit=True):
-        col_a, col_b = st.columns(2)
-        with col_a:
-            subject = st.selectbox("Subject", ["Accounting", "Law", "Stats", "Macro", "Other"])
-            duration = st.number_input("Duration (minutes)", 5, 300, 60)
-        with col_b:
-            focus = st.slider("Focus Rating (1-5)", 1, 5, 4)
-            topic = st.text_input("Topic", placeholder="e.g., Cost accounting chapter 5")
-        log_btn = st.form_submit_button("➕ Log Session", use_container_width=True)
-        if log_btn:
-            st.session_state.study_log.append({
-                "date": datetime.now().strftime("%Y-%m-%d %H:%M"),
-                "subject": subject,
-                "duration": duration,
-                "focus": focus,
-                "topic": topic
-            })
-            st.success(f"Logged {duration}min of {subject}!")
-
-    st.markdown("### Recent Sessions")
-    if st.session_state.study_log:
-        total_min = sum(e["duration"] for e in st.session_state.study_log)
-        st.metric("Total Logged", f"{total_min/60:.1f}h / {st.session_state.profile['study_hours']}h weekly")
-        st.progress(min(total_min / 60 / st.session_state.profile['study_hours'], 1.0))
-        for entry in reversed(st.session_state.study_log[-10:]):
-            st.markdown(f"""
-            <div class="pillar-box">
-                <strong>{entry['subject']}</strong> — {entry['duration']}min · Focus: {'⭐'*entry['focus']}<br>
-                <small>{entry['date']} · {entry['topic']}</small>
-            </div>
-            """, unsafe_allow_html=True)
-    else:
-        st.info("No study sessions logged yet.")
-
-# ---------- DASHBOARD TAB ----------
-with tab_dashboard:
-    st.markdown("### 📊 Your LifeOS Dashboard")
-    
-    d1, d2, d3 = st.columns(3)
-    with d1:
-        st.markdown("#### 🫀 Health (manual entry)")
-        recovery = st.slider("Whoop Recovery %", 0, 100, 70, key="rec")
-        hrv = st.number_input("HRV (ms)", 20, 150, 55, key="hrv")
-        sleep_hours = st.number_input("Sleep (h)", 0.0, 12.0, 7.5, 0.5, key="sl")
-    
-    with d2:
-        st.markdown("#### 🏃 Activity (manual entry)")
-        body_battery = st.slider("Body Battery", 0, 100, 65, key="bb")
-        steps = st.number_input("Steps today", 0, 50000, 8000, 500, key="st")
-        stress = st.slider("Stress Score", 0, 100, 30, key="strs")
-    
-    with d3:
-        st.markdown("#### 🎯 Today's Targets")
-        st.metric("Calories", f"{cut_cals} kcal")
-        st.metric("Protein", f"{protein_g} g")
-        st.metric("Sleep target", "7.5h")
-
-    if st.button("🔄 Send Snapshot to LifeOS", type="primary"):
-        snapshot = f"""Here's my current snapshot:
-- Recovery: {recovery}%
-- HRV: {hrv}ms
-- Sleep last night: {sleep_hours}h
-- Body Battery: {body_battery}
-- Steps: {steps}
-- Stress: {stress}
-
-What should I focus on today?"""
-        st.session_state.messages.append({"role": "user", "content": snapshot})
-        st.success("Snapshot sent to chat! Switch to the Chat tab.")
-
-# ============================================================
+# ============================================
 # FOOTER
-# ============================================================
+# ============================================
 st.markdown("---")
 st.markdown(
-    "<center><small>LifeOS v1.0 · Powered by Claude · "
-    "Your data stays in your session</small></center>",
+    '<p style="text-align:center;color:#8b92a8;font-size:12px;">'
+    '🌟 LifeOS v1.0 • Built with Claude AI • Your data stays private'
+    '</p>',
     unsafe_allow_html=True
 )
