@@ -4,6 +4,8 @@ A Telegram bot that turns a commitment you just made into a confirmed reminder, 
 
 Built to the fence in [scope.md](scope.md); architecture and decisions in [architecturedoc.md](architecturedoc.md).
 
+**Class demo (no setup):** [Wazy MVP Demo](https://claude.ai/artifact/9BQp78zTUWniaNVK14Ngyq), a one-page clickable version of the same flow with a demo clock. Source: `demo/wazy-demo.html`.
+
 ## What it does (and nothing else)
 
 1. You message the bot the moment you promise something: *"told Marta I'd send the deck Friday"*.
