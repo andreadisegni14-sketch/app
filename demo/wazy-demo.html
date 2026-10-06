@@ -1,0 +1,393 @@
+<title>Wazy MVP Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: phone-width chat (the only screen the user sees) beside a demo rail for the class: clock + the one database table. */
+:root {
+  --bg: #eef1f0;
+  --surface: #ffffff;
+  --chat: #e3e9e7;
+  --ink: #17211f;
+  --muted: #5b6965;
+  --line: #cfd8d5;
+  --accent: #d9822b;      /* the "promise" amber */
+  --accent-ink: #ffffff;
+  --mine: #1f5e57;        /* user bubble */
+  --mine-ink: #f2f7f6;
+  --ok: #2f7d4f;
+  --warn: #b5651d;
+  --off: #8a8f8d;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111816; --surface: #19221f; --chat: #0d1311; --ink: #e6eeeb; --muted: #95a39e; --line: #2a3632;
+  --accent: #e8964a; --accent-ink: #1a1208; --mine: #2b7a70; --mine-ink: #f2f7f6; --ok: #6cc08d; --warn: #e8a160; --off: #7b8481;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #111816; --surface: #19221f; --chat: #0d1311; --ink: #e6eeeb; --muted: #95a39e; --line: #2a3632;
+  --accent: #e8964a; --accent-ink: #1a1208; --mine: #2b7a70; --mine-ink: #f2f7f6; --ok: #6cc08d; --warn: #e8a160; --off: #7b8481;
+  color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.5 var(--body); }
+.page { max-width: 1120px; margin: 0 auto; padding-block: 28px 40px; padding-inline: 16px; display: grid; gap: 28px; grid-template-columns: minmax(0, 400px) minmax(0, 1fr); align-items: start; }
+@media (max-width: 860px) { .page { grid-template-columns: minmax(0, 1fr); } }
+
+/* Phone */
+.phone { background: var(--surface); border: 1px solid var(--line); border-radius: 28px; overflow: hidden; display: flex; flex-direction: column; height: min(760px, calc(100dvh - 56px)); min-height: 520px; box-shadow: 0 18px 40px -24px rgb(0 0 0 / .35); }
+.bar { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+.avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font: 800 18px var(--display); }
+.bar b { font: 600 17px var(--display); display: block; }
+.bar small { color: var(--muted); font-size: 13px; }
+.log { flex: 1; overflow-y: auto; background: var(--chat); padding: 16px 12px; display: flex; flex-direction: column; gap: 10px; }
+.msg { max-width: 86%; padding: 9px 13px; border-radius: 16px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.msg.bot { background: var(--surface); align-self: flex-start; border-bottom-left-radius: 5px; }
+.msg.user { background: var(--mine); color: var(--mine-ink); align-self: flex-end; border-bottom-right-radius: 5px; }
+.msg.reminder { border: 2px solid var(--accent); }
+.msg .via { display: block; margin-top: 6px; font: 11px var(--mono); color: var(--muted); letter-spacing: .02em; }
+.btns { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.btns button { flex: 1 1 auto; font: 700 14px var(--body); padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer; }
+.btns button:hover { border-color: var(--accent); }
+.typing { align-self: flex-start; color: var(--muted); font-size: 14px; padding-left: 6px; }
+.compose { display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--line); }
+.compose input { flex: 1; min-width: 0; font: 16px var(--body); padding: 10px 14px; border-radius: 22px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+.compose button { font: 700 15px var(--body); padding: 0 18px; border-radius: 22px; border: 0; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* Rail */
+.rail { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+h1 { font: 800 clamp(34px, 5vw, 52px)/1 var(--display); margin: 0; letter-spacing: -.02em; text-wrap: balance; }
+h1 span { color: var(--accent); }
+.lede { margin: 10px 0 0; color: var(--muted); max-width: 60ch; }
+h2 { font: 600 13px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 10px; }
+.try { display: flex; flex-wrap: wrap; gap: 8px; }
+.try button { font: 15px var(--body); padding: 7px 12px; border-radius: 999px; border: 1px dashed var(--muted); background: transparent; color: var(--ink); cursor: pointer; text-align: left; }
+.try button:hover { border-style: solid; border-color: var(--accent); }
+.clock { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+.clock time { font: 600 18px var(--mono); font-variant-numeric: tabular-nums; flex: 1 1 200px; }
+.clock button { font: 700 14px var(--body); padding: 9px 14px; border-radius: 10px; cursor: pointer; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+.clock button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.clock button:disabled { opacity: .45; cursor: not-allowed; }
+.note { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font: 13px var(--mono); font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { color: var(--muted); font-weight: 600; }
+tr:last-child td { border-bottom: 0; }
+td.what { white-space: normal; min-width: 160px; font-family: var(--body); font-size: 14px; }
+.pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; border: 1px solid currentColor; }
+.s-proposed { color: var(--muted); } .s-confirmed, .s-snoozed { color: var(--warn); } .s-done { color: var(--ok); } .s-dropped, .s-ignored, .s-not_commitment { color: var(--off); }
+.empty { padding: 16px; color: var(--muted); font-family: var(--body); }
+.scope { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; font-size: 14px; }
+.scope ul { margin: 0; padding-left: 18px; color: var(--muted); }
+.scope li + li { margin-top: 2px; }
+.link { background: none; border: 0; color: var(--muted); text-decoration: underline; cursor: pointer; font: 13px var(--body); padding: 0; }
+@media (prefers-reduced-motion: no-preference) { .msg { animation: pop .18s ease-out; } @keyframes pop { from { transform: translateY(4px); opacity: .4; } } }
+</style>
+
+<div class="page">
+  <section class="phone" aria-label="Wazy chat">
+    <div class="bar"><div class="avatar" aria-hidden="true">W</div><div><b>Wazy</b><small id="status">bot · reminds you once</small></div></div>
+    <div class="log" id="log" aria-live="polite"></div>
+    <form class="compose" id="compose">
+      <input id="text" autocomplete="off" placeholder="Type a commitment you just made…" aria-label="Message">
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <div class="rail">
+    <header>
+      <h1>Wazy<span>.</span></h1>
+      <p class="lede">Send a commitment the moment you make it. Wazy checks what it understood, then reminds you once on the day and asks if you did it.</p>
+    </header>
+
+    <section>
+      <h2>Try a commitment</h2>
+      <div class="try" id="try">
+        <button type="button">told Marta I'd send the deck Friday</button>
+        <button type="button">promised Leon to review his CV tomorrow at 6pm</button>
+        <button type="button">need to pay the society treasurer back by Monday</button>
+        <button type="button">what do I still owe?</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Demo clock</h2>
+      <div class="clock">
+        <time id="clock"></time>
+        <button type="button" class="primary" id="jump">Jump to next reminder</button>
+        <button type="button" id="reset">Reset demo</button>
+      </div>
+      <p class="note" id="jumpnote">Confirm a commitment, then jump ahead to see its reminder.</p>
+    </section>
+
+    <section>
+      <h2>The one table the founders read</h2>
+      <div class="tablewrap"><table>
+        <thead><tr><th>what</th><th>for_whom</th><th>due</th><th>status</th><th>captured</th><th>answered</th><th>snoozes</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table></div>
+      <p class="note">The raw message is never stored, only what was extracted. Users never see this table.</p>
+    </section>
+
+    <section class="scope">
+      <div><h2>Tests one assumption</h2><ul><li>A3: people message a commitment the moment they make it.</li><li>Proof: half the pilot users capture 3+ per week in week 2.</li></ul></div>
+      <div><h2>Deliberately not built</h2><ul><li>Email, calendar, accounts, payments</li><li>Dashboards, analytics, voice, sharing</li><li>Recurring or custom snoozes</li></ul></div>
+    </section>
+  </div>
+</div>
+
+<script>
+(() => {
+  const DAY = 864e5, HOUR = 36e5;
+  const $ = (id) => document.getElementById(id);
+  const log = $("log"), rowsEl = $("rows");
+  const WEEKDAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+  const MONTHS = ["january","february","march","april","may","june","july","august","september","october","november","december"];
+
+  let offset, commitments, messages, nextId, sample = null;
+
+  function now() { return new Date(Date.now() + offset); }
+  const fmtDay = (d) => d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
+  const fmtTime = (d) => d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
+  const fmtShort = (d) => d ? d.toLocaleString("en-GB", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) : "—";
+  const ymd = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  const atLocal = (date, time) => { const [y, m, d] = date.split("-").map(Number); const [h, mi] = time.split(":").map(Number); return new Date(y, m - 1, d, h, mi); };
+
+  // ---------- Extraction: Claude when available, offline parser otherwise ----------
+  function offlineExtract(text, today) {
+    const lower = text.toLowerCase();
+    const signals = [];
+    if (/what do i (still )?owe|what('s| is) (still )?pending|what do i have (left|pending)/.test(lower)) signals.push("asked_what_owed");
+    if (/calendar/.test(lower)) signals.push("calendar_request");
+    if (/^(from|subject|to):|wrote:/m.test(lower)) signals.push("pasted_email");
+    const isQuestion = /\?\s*$/.test(text) || /^(hi|hello|hey|thanks|thank you|ok|okay)\b/.test(lower);
+    if (isQuestion || signals.includes("asked_what_owed")) {
+      return { is_commitment: false, what: signals.includes("asked_what_owed") ? "Asked what they still owe" : "Not a commitment", for_whom: null, due_date: null, due_time: null, confidence: 0.6, signals };
+    }
+
+    // Date
+    let due = new Date(today.getTime() + DAY), m;
+    if (/\b(today|tonight|this evening)\b/.test(lower)) due = new Date(today);
+    else if (/\btomorrow\b/.test(lower)) due = new Date(today.getTime() + DAY);
+    else if ((m = lower.match(/\bin (\d+) days?\b/))) due = new Date(today.getTime() + Number(m[1]) * DAY);
+    else if (/\bnext week\b/.test(lower)) { const add = ((8 - today.getDay()) % 7) || 7; due = new Date(today.getTime() + add * DAY); }
+    else if (/\bend of (the )?week\b/.test(lower)) { const add = ((5 - today.getDay() + 7) % 7) || 7; due = new Date(today.getTime() + add * DAY); }
+    else {
+      const wd = WEEKDAYS.findIndex((w) => new RegExp(`\\b${w}\\b`).test(lower));
+      if (wd >= 0) { const add = ((wd - today.getDay() + 7) % 7) || 7; due = new Date(today.getTime() + add * DAY); }
+    }
+
+    // Time
+    let time = null;
+    if ((m = lower.match(/\b(\d{1,2})(?::(\d{2}))?\s*(am|pm)\b/))) {
+      let h = Number(m[1]) % 12; if (m[3] === "pm") h += 12; time = `${String(h).padStart(2, "0")}:${m[2] || "00"}`;
+    } else if ((m = lower.match(/\b([01]?\d|2[0-3]):([0-5]\d)\b/))) time = `${m[1].padStart(2, "0")}:${m[2]}`;
+    else if (/\bnoon\b/.test(lower)) time = "12:00";
+    else if (/\b(tonight|this evening)\b/.test(lower)) time = "20:00";
+
+    // Person
+    const notNames = new Set([...WEEKDAYS, ...MONTHS, "i", "the", "my", "a", "next", "tomorrow", "today"]);
+    const name = "([A-ZÀ-Ý][a-zà-ÿ]+(?: [A-ZÀ-Ý][a-zà-ÿ]+)?)";
+    let who = null;
+    for (const re of [new RegExp(`\\b(?:told|promised|promise|tell|owe|asked|remind)\\s+${name}`), new RegExp(`\\b(?:for|to|with)\\s+${name}`), new RegExp(`\\b${name}'s\\b`), /\b(?:the|my) ([a-z]+ (?:treasurer|president|boss|manager|professor|team))\b/i]) {
+      const hit = text.match(re);
+      if (hit && !notNames.has(hit[1].toLowerCase())) { who = hit[1]; break; }
+    }
+
+    // What
+    let what = text
+      .replace(/^\s*(i\s+)?(told|promised|promise)\s+[^\s]+\s+(that\s+)?(i'?d|i would|i'?ll|i will|to)?\s*/i, "")
+      .replace(/^\s*(i\s+)?(need to|have to|must|should|gotta|got to|remember to|will|'ll)\s+/i, "")
+      .replace(/\b(by|on|before|until|this|next|at)?\s*(today|tonight|this evening|tomorrow|next week|end of (the )?week|in \d+ days?|monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b/gi, "")
+      .replace(/\b(at|by)?\s*\d{1,2}(:\d{2})?\s*(am|pm)\b/gi, "").replace(/\b(at|by)?\s*([01]?\d|2[0-3]):[0-5]\d\b/g, "")
+      .replace(/\s+/g, " ").replace(/[\s,.;:!-]+$/, "").trim();
+    if (!what) what = text.trim();
+    what = what.charAt(0).toUpperCase() + what.slice(1);
+    return { is_commitment: true, what, for_whom: who, due_date: ymd(due), due_time: time, confidence: 0.6, signals };
+  }
+
+  async function extract(text) {
+    const today = now();
+    if (sample) {
+      const prompt = `You turn a short message into a structured commitment for Wazy, an assistant that reminds busy people of the small things they promised.
+Today is ${WEEKDAYS[today.getDay()]} ${ymd(today)}.
+Reply with only one JSON object with these fields:
+- is_commitment: true if the message describes something the user said they will do; false for greetings, questions or anything else.
+- what: the action, short, in the user's words, cleaned up (e.g. "Send the deck"); no person or date. If not a commitment, a neutral label of at most six words such as "Asked what they still owe".
+- for_whom: the person or organisation it is for, or null.
+- due_date: YYYY-MM-DD resolved against today. Weekday names mean the next occurrence after today; "next week" alone means next Monday; no deadline means tomorrow. null only if not a commitment.
+- due_time: "HH:MM" 24h if a time of day was given, else null.
+- confidence: 0 to 1.
+- signals: array, any of "pasted_email", "calendar_request", "asked_what_owed" that describe the message.
+Example: {"is_commitment":true,"what":"Send the deck","for_whom":"Marta","due_date":"2026-10-09","due_time":null,"confidence":0.92,"signals":[]}
+
+Message:
+${text}`;
+      try {
+        const r = await sample.json(prompt, { modelTier: "quick" });
+        const ok = r && typeof r === "object" && typeof r.is_commitment === "boolean" && typeof r.what === "string" && r.what.trim()
+          && (r.due_date === null || /^\d{4}-\d{2}-\d{2}$/.test(r.due_date)) && (r.due_time == null || /^\d{2}:\d{2}$/.test(r.due_time));
+        if (ok) return { ...r, for_whom: r.for_whom || null, due_time: r.due_time || null, signals: Array.isArray(r.signals) ? r.signals.map(String) : [], via: "Read by Claude" };
+      } catch (e) {
+        if (["not_granted", "sampling_disabled", "not_declared", "capability_disabled", "capability_removed"].includes(e && e.code)) sample = null;
+      }
+    }
+    return { ...offlineExtract(text, today), via: "Read by the offline parser" };
+  }
+
+  // ---------- Bot logic (mirrors src/bot.ts) ----------
+  function schedule(e, at) {
+    if (!e.due_date) return { due: null, remind: null };
+    const due = atLocal(e.due_date, e.due_time || "23:59");
+    let remind = atLocal(e.due_date, e.due_time || "09:00");
+    if (remind <= at) remind = new Date(at.getTime() + HOUR);
+    return { due, remind };
+  }
+
+  function summary(c, withReminder = true) {
+    const lines = [`📝 ${c.what}`];
+    if (c.for_whom) lines.push(`👤 For: ${c.for_whom}`);
+    if (c.due) lines.push(`📅 By: ${fmtDay(c.due)}`);
+    if (withReminder && c.remind) lines.push(`⏰ Reminder: ${fmtDay(c.remind)}, ${fmtTime(c.remind)}`);
+    return lines.join("\n");
+  }
+
+  const proposalButtons = (id) => [["✅ Confirm", "confirm"], ["✏️ Edit", "edit"], ["🙈 Ignore", "ignore"]].map(([label, action]) => ({ label, action, id }));
+  const reminderButtons = (id) => [["✅ Done", "done"], ["💤 Snooze 1 day", "snooze"], ["🗑 Drop", "drop"]].map(([label, action]) => ({ label, action, id }));
+
+  function say(from, text, extra = {}) { messages.push({ from, text, ...extra }); render(); }
+
+  async function onSend(text) {
+    text = text.trim();
+    if (!text) return;
+    say("user", text);
+    const typing = document.createElement("div");
+    typing.className = "typing"; typing.textContent = "Wazy is reading…";
+    log.append(typing); log.scrollTop = log.scrollHeight;
+    const e = await extract(text);
+    typing.remove();
+    const at = now();
+    const { due, remind } = schedule(e, at);
+    const pending = e.is_commitment ? commitments.find((c) => c.awaiting_edit && c.status === "proposed") : null;
+
+    if (pending) {
+      Object.assign(pending, { what: e.what, for_whom: e.for_whom, due, remind, awaiting_edit: false, edit_count: pending.edit_count + 1, signals: [...new Set([...pending.signals, ...e.signals])] });
+      say("bot", `Updated:\n\n${summary(pending)}`, { buttons: proposalButtons(pending.id), via: e.via });
+      return;
+    }
+    const c = {
+      id: nextId++, what: e.what, for_whom: e.is_commitment ? e.for_whom : null, due: e.is_commitment ? due : null, remind: e.is_commitment ? remind : null,
+      status: e.is_commitment ? "proposed" : "not_commitment", created: at, answered: null, snoozes: 0, edit_count: 0, signals: e.signals, awaiting_edit: false,
+    };
+    commitments.push(c);
+    if (!e.is_commitment) {
+      say("bot", "I didn't spot a commitment in that. Send me something you promised, e.g. \"send Marta the deck by Friday\".", { via: e.via });
+      return;
+    }
+    say("bot", summary(c), { buttons: proposalButtons(c.id), via: e.via });
+  }
+
+  function press(msg, btn) {
+    const c = commitments.find((x) => x.id === btn.id);
+    const at = now();
+    let reply = null;
+    if (c) {
+      const open = c.status === "proposed", live = c.status === "confirmed" || c.status === "snoozed";
+      if (btn.action === "confirm" && open) { c.status = "confirmed"; c.awaiting_edit = false; reply = `${summary(c)}\n\n✅ Confirmed. I'll remind you then.`; }
+      if (btn.action === "edit" && open) { c.awaiting_edit = true; reply = `${summary(c)}\n\n✏️ Send me the corrected version as a new message.`; }
+      if (btn.action === "ignore" && open) { c.status = "ignored"; c.awaiting_edit = false; reply = `${c.what}\n\n🙈 Ignored. I won't remind you about it.`; }
+      if (btn.action === "done" && live) { c.status = "done"; c.answered = at; c.remind = null; reply = `${c.what}\n\n🎉 Done. Nice one.`; }
+      if (btn.action === "snooze" && live) { c.status = "snoozed"; c.snoozes++; c.remind = new Date(at.getTime() + DAY); reply = `${c.what}\n\n💤 Snoozed. I'll remind you again tomorrow at ${fmtTime(c.remind)}.`; }
+      if (btn.action === "drop" && live) { c.status = "dropped"; c.answered = at; c.remind = null; reply = `${c.what}\n\n🗑 Dropped. No more reminders for this one.`; }
+    }
+    msg.buttons = null;
+    if (reply) { msg.text = reply; msg.reminder = false; }
+    render();
+  }
+
+  function sendDueReminders() {
+    const at = now();
+    for (const c of commitments) {
+      if ((c.status === "confirmed" || c.status === "snoozed") && c.remind && c.remind <= at && !c.reminded) {
+        c.reminded = true;
+        messages.push({ from: "bot", text: `⏰ Reminder\n\n${summary(c, false)}`, buttons: reminderButtons(c.id), reminder: true });
+      }
+    }
+    for (const c of commitments) if (c.reminded && c.remind && c.remind > at) c.reminded = false; // re-arm after a snooze
+  }
+
+  function nextReminder() {
+    return commitments.filter((c) => (c.status === "confirmed" || c.status === "snoozed") && c.remind && !c.reminded)
+      .sort((a, b) => a.remind - b.remind)[0] || null;
+  }
+
+  // ---------- Rendering ----------
+  function render() {
+    log.textContent = "";
+    for (const m of messages) {
+      const el = document.createElement("div");
+      el.className = `msg ${m.from}${m.reminder ? " reminder" : ""}`;
+      el.textContent = m.text;
+      if (m.via) { const v = document.createElement("span"); v.className = "via"; v.textContent = m.via; el.append(v); }
+      if (m.buttons) {
+        const row = document.createElement("div"); row.className = "btns";
+        for (const b of m.buttons) {
+          const btn = document.createElement("button"); btn.type = "button"; btn.textContent = b.label;
+          btn.onclick = () => press(m, b); row.append(btn);
+        }
+        el.append(row);
+      }
+      log.append(el);
+    }
+    log.scrollTop = log.scrollHeight;
+
+    rowsEl.textContent = "";
+    if (!commitments.length) {
+      const tr = document.createElement("tr"); const td = document.createElement("td");
+      td.colSpan = 7; td.className = "empty"; td.textContent = "Nothing captured yet. Send a commitment in the chat and its row appears here.";
+      tr.append(td); rowsEl.append(tr);
+    }
+    for (const c of [...commitments].reverse()) {
+      const tr = document.createElement("tr");
+      const cells = [c.what, c.for_whom || "—", fmtShort(c.due), null, fmtShort(c.created), fmtShort(c.answered), String(c.snoozes)];
+      cells.forEach((v, i) => {
+        const td = document.createElement("td");
+        if (i === 0) td.className = "what";
+        if (i === 3) { const p = document.createElement("span"); p.className = `pill s-${c.status}`; p.textContent = c.status; td.append(p); }
+        else td.textContent = v;
+        tr.append(td);
+      });
+      rowsEl.append(tr);
+    }
+    tick(false);
+  }
+
+  function tick(check = true) {
+    $("clock").textContent = now().toLocaleString("en-GB", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", second: "2-digit" });
+    const nr = nextReminder();
+    $("jump").disabled = !nr;
+    $("jumpnote").textContent = nr ? `Next reminder: ${fmtShort(nr.remind)} (${nr.what})` : "Confirm a commitment, then jump ahead to see its reminder.";
+    if (check) { const before = messages.length; sendDueReminders(); if (messages.length !== before) render(); }
+  }
+
+  function reset() {
+    offset = 0; commitments = []; nextId = 1;
+    messages = [{ from: "bot", text: "Hi, I'm Wazy.\n\nThe moment you promise someone something, send it to me, e.g.\n\"told Marta I'd send the deck Friday\"\n\nI'll check what I understood, and on the day I'll remind you once." }];
+    render();
+  }
+
+  $("compose").addEventListener("submit", (ev) => { ev.preventDefault(); const t = $("text").value; $("text").value = ""; onSend(t); });
+  $("try").addEventListener("click", (ev) => { const b = ev.target.closest("button"); if (b) onSend(b.textContent); });
+  $("jump").addEventListener("click", () => { const nr = nextReminder(); if (nr) { offset += Math.max(0, nr.remind - now()) + 1000; tick(); } });
+  $("reset").addEventListener("click", reset);
+
+  reset();
+  setInterval(tick, 1000);
+  if (window.claude && window.claude.use) {
+    window.claude.use("sample").then((s) => { sample = s; }).catch(() => { sample = null; });
+  }
+})();
+</script>
