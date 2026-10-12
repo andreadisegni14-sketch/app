@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Genre Organizer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://js-cdn.music.apple.com/musickit/v3/musickit.js" async></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Apple Music Genre Organizer</h1>
+    <p class="muted">Builds genre playlists from your library. Your existing playlists, favorites and library are only read, never changed.</p>
+  </header>
+
+  <main>
+    <section id="step-connect" class="card">
+      <h2>1. Connect Apple Music</h2>
+      <p>You'll sign in on Apple's own MusicKit page. This app never sees your Apple ID password, and you can revoke access any time in your Apple ID settings.</p>
+      <button id="btn-connect" disabled>Loading MusicKit…</button>
+      <button id="btn-disconnect" class="secondary" hidden>Disconnect</button>
+      <p id="connect-status" class="muted"></p>
+    </section>
+
+    <section id="step-analyze" class="card" hidden>
+      <h2>2. Analyze library</h2>
+      <p>Reads all songs in your library, every playlist, and your Favorites. Nothing is written yet.</p>
+      <button id="btn-analyze">Analyze my library</button>
+      <pre id="log" class="log" hidden></pre>
+    </section>
+
+    <section id="step-preview" class="card" hidden>
+      <h2>3. Review the proposed organization</h2>
+      <div id="stats" class="stats"></div>
+
+      <details class="options">
+        <summary>Options</summary>
+        <div class="grid">
+          <label>Min songs per genre playlist <input type="number" id="opt-minGenreSize" min="1"></label>
+          <label>Min songs per subgenre playlist <input type="number" id="opt-minSubgenreSize" min="1"></label>
+          <label>Min songs per favorites playlist <input type="number" id="opt-minFavoritesSize" min="1"></label>
+          <label>Genre name prefix <input type="text" id="opt-genrePrefix"></label>
+          <label>Favorites name prefix <input type="text" id="opt-favoritesPrefix"></label>
+          <label class="check"><input type="checkbox" id="opt-favoritesSubgenres"> Favorites subgenre playlists</label>
+          <label class="check"><input type="checkbox" id="opt-includeUnclassified"> Playlist for songs with no genre</label>
+        </div>
+        <button id="btn-replan" class="secondary">Update preview</button>
+      </details>
+
+      <div class="toolbar">
+        <button id="btn-all" class="secondary small">Select all</button>
+        <button id="btn-none" class="secondary small">Select none</button>
+        <button id="btn-export" class="secondary small">Download plan (JSON)</button>
+      </div>
+      <div id="playlists"></div>
+
+      <details id="dupes-wrap"><summary id="dupes-title"></summary><div id="dupes"></div></details>
+
+      <div class="approve">
+        <p id="approve-summary"></p>
+        <button id="btn-apply">Approve &amp; create playlists</button>
+      </div>
+    </section>
+
+    <section id="step-apply" class="card" hidden>
+      <h2>4. Creating playlists</h2>
+      <pre id="apply-log" class="log"></pre>
+      <div id="results"></div>
+    </section>
+  </main>
+</body>
+</html>

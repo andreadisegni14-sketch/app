@@ -1,0 +1,13 @@
+{
+  "name": "apple-music-genre-organizer",
+  "version": "1.0.0",
+  "description": "Organize an Apple Music library into genre playlists using MusicKit and the Apple Music API",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/*.test.js",
+    "demo": "node scripts/demo.js"
+  }
+}
