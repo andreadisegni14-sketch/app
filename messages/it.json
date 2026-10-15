@@ -1,0 +1,1042 @@
+{
+  "meta": {
+    "siteName": "The Blue Legacy Foundation",
+    "tagline": "Una proposta di fondazione italiana per la costa mediterranea",
+    "description": "The Blue Legacy Foundation è un'iniziativa filantropica italiana in fase di proposta — non ancora costituita — per l'educazione costiera, il rinnovamento delle scuole e l'accesso alla vela per i giovani.",
+    "pages": {
+      "home": {
+        "title": "Aprire il mare alla prossima generazione",
+        "description": "Una proposta di fondazione italiana per l'educazione costiera, il rinnovamento delle scuole e l'accesso alla vela per i giovani. Non ancora costituita."
+      },
+      "mission": {
+        "title": "Missione",
+        "description": "I nostri valori, la teoria del cambiamento, la metodologia d'impatto e le intenzioni di governance."
+      },
+      "projects": {
+        "title": "Progetti",
+        "description": "Progetti proposti nei quattro pilastri, con stato, budget e tappe."
+      },
+      "sailing": {
+        "title": "Vela",
+        "description": "Regate benefiche proposte e opportunità di partnership nel mondo della nautica."
+      },
+      "gala": {
+        "title": "Il Gala Blue Legacy",
+        "description": "Il concept di un piccolo gala annuale di raccolta fondi in riva al mare. Registra il tuo interesse."
+      },
+      "partners": {
+        "title": "Partner",
+        "description": "Un prospetto di sponsorizzazione per aziende e organizzazioni — tutti i pacchetti sono proposte."
+      },
+      "donate": {
+        "title": "Sostienici",
+        "description": "Le donazioni non sono ancora aperte. Registra il tuo interesse a sostenere la fondazione."
+      },
+      "donateSuccess": {
+        "title": "Grazie",
+        "description": "La tua donazione è in fase di conferma."
+      },
+      "donateCancel": {
+        "title": "Donazione annullata",
+        "description": "Nessun pagamento è stato effettuato."
+      },
+      "transparency": {
+        "title": "Trasparenza",
+        "description": "Stato giuridico, policy e fondi effettivi, promessi e spesi."
+      },
+      "contact": {
+        "title": "Contatti",
+        "description": "Scrivi al gruppo promotore."
+      },
+      "privacy": {
+        "title": "Informativa privacy",
+        "description": "Come trattiamo i dati personali."
+      },
+      "cookies": {
+        "title": "Cookie policy",
+        "description": "I cookie utilizzati da questo sito."
+      },
+      "terms": {
+        "title": "Condizioni d'uso",
+        "description": "Condizioni per l'utilizzo di questo sito."
+      },
+      "accessibility": {
+        "title": "Dichiarazione di accessibilità",
+        "description": "I nostri impegni di accessibilità e come segnalare una barriera."
+      }
+    }
+  },
+  "a11y": {
+    "skipToContent": "Vai al contenuto principale",
+    "openMenu": "Apri il menu",
+    "closeMenu": "Chiudi il menu",
+    "mainNav": "Principale",
+    "footerNav": "Piè di pagina",
+    "legalNav": "Note legali",
+    "languageSwitcher": "Lingua",
+    "breadcrumb": "Percorso",
+    "artworkCaption": "Illustrazione originale. Sarà sostituita da fotografie con licenza e crediti man mano che saranno disponibili."
+  },
+  "nav": {
+    "home": "Home",
+    "mission": "Missione",
+    "projects": "Progetti",
+    "sailing": "Vela",
+    "gala": "Gala",
+    "partners": "Partner",
+    "donate": "Sostienici",
+    "transparency": "Trasparenza",
+    "contact": "Contatti",
+    "privacy": "Privacy",
+    "cookies": "Cookie",
+    "terms": "Condizioni",
+    "accessibility": "Accessibilità",
+    "switchLanguage": "English",
+    "switchLanguageLabel": "Read this page in English"
+  },
+  "status": {
+    "banner": "Fondazione in fase di proposta · non ancora costituita · donazioni non aperte",
+    "bannerLink": "Leggi lo stato di avvio",
+    "proposed": "Proposta",
+    "confirmed": "Confermato",
+    "demo": "Contenuto dimostrativo",
+    "demoHelp": "Questo contenuto è un esempio creato per la dimostrazione del sito. Non descrive un progetto o un beneficiario esistente.",
+    "illustrative": "Indicativo",
+    "illustrativeHelp": "Scenario indicativo a fini di pianificazione — non è un risultato finanziario né un impegno."
+  },
+  "footer": {
+    "about": "The Blue Legacy Foundation è un'iniziativa filantropica in fase di proposta. Non è ancora costituita, non è un ETS iscritto né una ONLUS e non può rilasciare ricevute fiscalmente deducibili.",
+    "explore": "Esplora",
+    "legal": "Note legali",
+    "notLegalAdvice": "Nessun contenuto di questo sito costituisce consulenza legale, fiscale o finanziaria.",
+    "credits": "Le illustrazioni sono opere originali create per questo sito.",
+    "copyright": "© {year} Il gruppo promotore di The Blue Legacy Foundation"
+  },
+  "common": {
+    "readMore": "Leggi di più",
+    "learnMore": "Scopri di più",
+    "viewProject": "Vedi il progetto",
+    "allProjects": "Tutti i progetti",
+    "backToProjects": "Torna ai progetti",
+    "location": "Luogo",
+    "status": "Stato",
+    "pillar": "Pilastro",
+    "budget": "Budget",
+    "total": "Totale",
+    "none": "Nessuno per ora",
+    "tbc": "Da confermare",
+    "registerInterest": "Registra il tuo interesse",
+    "contactUs": "Contattaci",
+    "lastUpdated": "Ultimo aggiornamento",
+    "previous": "Precedente",
+    "next": "Successiva",
+    "page": "Pagina {page} di {total}"
+  },
+  "pillars": {
+    "SAILING_FOR_IMPACT": {
+      "numeral": "I",
+      "title": "Vela per l'Impatto",
+      "short": "Portare in mare ragazze e ragazzi che altrimenti non ne avrebbero l'occasione, con istruttori qualificati presso circoli affermati.",
+      "body": "La vela insegna responsabilità, lavoro di squadra e rispetto per l'ambiente. Intendiamo finanziare posti in corsi tenuti da istruttori qualificati presso circoli affermati, coprendo quote, attrezzatura e trasporti, perché il costo non sia mai il motivo per cui un giovane resta a terra."
+    },
+    "COASTAL_SCHOOL_RENEWAL": {
+      "numeral": "II",
+      "title": "Rinnovamento delle Scuole Costiere",
+      "short": "Riqualificare scuole esistenti nelle comunità costiere: luoghi di apprendimento più sicuri, sani e attrezzati.",
+      "body": "Non costruiamo nuove scuole. Intendiamo lavorare con scuole esistenti e con gli enti pubblici che ne sono responsabili per finanziare interventi ben definiti — aule, laboratori, accessibilità, spazi per la didattica all'aperto — realizzati con le autorizzazioni necessarie."
+    },
+    "BLUE_HORIZONS_SCHOLARSHIPS": {
+      "numeral": "III",
+      "title": "Borse Blue Horizons",
+      "short": "Un sostegno contenuto, basato sul bisogno, per attrezzatura, certificazioni e studi legati al mare.",
+      "body": "Piccoli contributi, gestiti con cura, per attrezzatura, certificazioni di sicurezza e percorsi di studio legati alle professioni del mare e alle scienze marine, assegnati secondo criteri trasparenti e con una valutazione indipendente."
+    },
+    "ANNUAL_GALA": {
+      "numeral": "IV",
+      "title": "Gala Annuale Blue Legacy",
+      "short": "Una piccola, elegante serata in riva al mare che riunisce i sostenitori e finanzia i programmi.",
+      "body": "Una serata di eleganza sobria, in concomitanza con la stagione delle regate, in cui i sostenitori incontrano chi porta avanti il lavoro. Pubblicheremo separatamente i risultati lordi e netti, perché tutti possano vedere quanto la serata contribuisce davvero."
+    }
+  },
+  "projectStatus": {
+    "IDEA": "Idea",
+    "UNDER_REVIEW": "In valutazione",
+    "APPROVED": "Approvato",
+    "FUNDRAISING": "Raccolta fondi",
+    "IN_PROGRESS": "In corso",
+    "COMPLETED": "Completato"
+  },
+  "projectStatusHelp": {
+    "IDEA": "Un concept iniziale. Nessun partner, sito o budget è stato concordato.",
+    "UNDER_REVIEW": "In fase di valutazione di bisogno, fattibilità, tutela dei minori e due diligence.",
+    "APPROVED": "Approvato per il finanziamento dal consiglio, subordinatamente agli accordi.",
+    "FUNDRAISING": "Approvato e in raccolta fondi.",
+    "IN_PROGRESS": "Finanziato e in fase di realizzazione con i partner.",
+    "COMPLETED": "Realizzato; relazione finale e documentazione pubblicate."
+  },
+  "eventStatus": {
+    "PROPOSED": "Proposto",
+    "CONFIRMED": "Confermato",
+    "CANCELLED": "Annullato",
+    "COMPLETED": "Concluso"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Una proposta di fondazione italiana",
+      "title": "Aprire il mare alla prossima generazione.",
+      "lead": "The Blue Legacy Foundation nasce per rinnovare le scuole costiere, portare in mare giovani provenienti da contesti svantaggiati e riunire i sostenitori attorno alla tradizione velica del Mediterraneo.",
+      "primary": "Leggi la nostra missione",
+      "secondary": "Registra il tuo interesse"
+    },
+    "mission": {
+      "eyebrow": "Il nostro scopo",
+      "title": "Il mare come aula, aperta a ogni ragazzo della costa.",
+      "body": "Molti giovani crescono con il Mediterraneo davanti agli occhi senza mai navigarlo, e alcuni studiano in edifici scolastici che non sono più all'altezza delle loro esigenze. Vogliamo cambiare questa realtà, con pazienza e nel modo giusto: una scuola, un gruppo di giovani velisti, un evento ben organizzato alla volta — pubblicando esattamente come usiamo ogni euro."
+    },
+    "pillars": {
+      "eyebrow": "Quattro pilastri",
+      "title": "Come intendiamo operare"
+    },
+    "featured": {
+      "eyebrow": "Proposta in evidenza",
+      "title": "Il progetto pilota del primo anno",
+      "empty": "I progetti proposti saranno pubblicati qui quando saranno pronti per la valutazione."
+    },
+    "pilot": {
+      "eyebrow": "Primo anno, volutamente misurato",
+      "title": "Il progetto pilota proposto per il primo anno",
+      "items": [
+        "Riqualificazione di una scuola costiera esistente",
+        "Un piccolo programma di borse di vela per giovani",
+        "Una partnership con una regata benefica",
+        "Un piccolo gala di raccolta fondi"
+      ],
+      "note": "Ambiti, sedi e partner sono ancora da individuare. I budget sono scenari indicativi."
+    },
+    "participate": {
+      "eyebrow": "Partecipa",
+      "title": "C'è posto al timone",
+      "lead": "Non chiediamo ancora denaro. Cerchiamo persone e organizzazioni che vogliano contribuire a dare forma alla fondazione prima del suo avvio.",
+      "items": [
+        {
+          "title": "Futuri sostenitori",
+          "body": "Raccontaci come ti piacerebbe sostenere la fondazione. Nessun pagamento, nessun impegno.",
+          "cta": "Registra il tuo interesse",
+          "href": "/donate"
+        },
+        {
+          "title": "Aziende e circoli",
+          "body": "Scopri i pacchetti di partnership proposti e le collaborazioni nel mondo della nautica.",
+          "cta": "Prospetto partnership",
+          "href": "/partners"
+        },
+        {
+          "title": "Il gala",
+          "body": "Iscriviti alla lista di interesse per il primo Gala Blue Legacy.",
+          "cta": "Il concept del gala",
+          "href": "/gala"
+        },
+        {
+          "title": "Scuole ed educatori",
+          "body": "Conosci una scuola costiera o un programma di vela da cui dovremmo imparare? Scrivici.",
+          "cta": "Contatta il gruppo",
+          "href": "/contact"
+        }
+      ]
+    },
+    "launch": {
+      "eyebrow": "Stato di avvio",
+      "title": "A che punto siamo oggi",
+      "lead": "Preferiamo dirti chiaramente cosa non esiste ancora piuttosto che lasciarti supporre che esista.",
+      "items": [
+        {
+          "label": "Ente giuridico",
+          "value": "Non ancora costituito"
+        },
+        {
+          "label": "Iscrizione ETS / RUNTS",
+          "value": "Non iscritto"
+        },
+        {
+          "label": "Donazioni",
+          "value": "Non aperte"
+        },
+        {
+          "label": "Ricevute fiscalmente deducibili",
+          "value": "Non disponibili"
+        },
+        {
+          "label": "Progetti",
+          "value": "Proposte in preparazione"
+        },
+        {
+          "label": "Sponsor e partner",
+          "value": "Nessuno confermato"
+        }
+      ],
+      "cta": "Pagina completa sulla trasparenza"
+    }
+  },
+  "mission": {
+    "hero": {
+      "eyebrow": "Missione",
+      "title": "Una filantropia paziente e responsabile per la costa mediterranea.",
+      "lead": "Intendiamo unire la generosità di chi ama il mare ai bisogni dei giovani che vi vivono accanto — con la disciplina di un'istituzione ben gestita fin dal primo giorno."
+    },
+    "statement": "La missione che proponiamo è ampliare l'accesso all'istruzione e al mare per i giovani delle comunità costiere italiane, rinnovando le scuole che frequentano, aprendo loro lo sport della vela e sostenendo i loro passi successivi — con un finanziamento trasparente da parte di una comunità di sostenitori.",
+    "values": {
+      "eyebrow": "Valori",
+      "title": "I principi a cui ci impegniamo",
+      "items": [
+        {
+          "title": "Custodia",
+          "body": "Ogni euro ci è affidato. Pianifichiamo con prudenza, manteniamo una riserva e investiamo in ciò che funziona."
+        },
+        {
+          "title": "Franchezza",
+          "body": "Diciamo cosa è proposto, cosa è confermato e cosa è andato storto. Mai numeri gonfiati."
+        },
+        {
+          "title": "Dignità",
+          "body": "I beneficiari sono partner, non comparse. Non usiamo mai immagini o storie di giovani senza un consenso adeguato."
+        },
+        {
+          "title": "Sicurezza prima di tutto",
+          "body": "In mare e a scuola, la tutela dei minori e gli standard di sicurezza vengono prima della rapidità o della visibilità."
+        },
+        {
+          "title": "Sobrietà",
+          "body": "Eleganza senza eccessi. Eventi e amministrazione restano proporzionati alla missione."
+        },
+        {
+          "title": "Collaborazione",
+          "body": "Lavoriamo attraverso scuole, circoli ed enti pubblici esistenti, senza creare strutture parallele."
+        }
+      ]
+    },
+    "theory": {
+      "eyebrow": "Teoria del cambiamento",
+      "title": "Da un dono a un cambiamento duraturo",
+      "lead": "La nostra ipotesi di lavoro, che verificheremo e rivedremo sulla base dei dati:",
+      "steps": [
+        {
+          "title": "Risorse",
+          "body": "Contributi di famiglie fondatrici, aziende, ospiti del gala e singoli sostenitori, oltre a competenze offerte da volontari."
+        },
+        {
+          "title": "Attività",
+          "body": "Finanziare interventi nelle scuole con gli enti responsabili; finanziare posti in corsi di vela con circoli qualificati; assegnare borse contenute."
+        },
+        {
+          "title": "Risultati diretti",
+          "body": "Spazi di apprendimento migliorati, consegnati nel rispetto del budget; giovani che completano i corsi in sicurezza; borse assegnate con equità."
+        },
+        {
+          "title": "Esiti",
+          "body": "Migliori condizioni di studio quotidiane; fiducia, spirito di squadra e competenze in acqua; percorsi più chiari verso studi e lavori legati al mare."
+        },
+        {
+          "title": "Impatto di lungo periodo",
+          "body": "Comunità costiere in cui le opportunità non dipendono dal reddito familiare e in cui il mare è un patrimonio condiviso."
+        }
+      ],
+      "assumptions": "Ipotesi chiave da verificare: che le scuole partner e gli enti proprietari possano autorizzare i lavori entro un anno; che i circoli possano accogliere in sicurezza nuovi giovani velisti; e che una piccola fondazione ben governata possa mantenere la fiducia dei donatori grazie alla piena trasparenza."
+    },
+    "methodology": {
+      "eyebrow": "Metodologia d'impatto",
+      "title": "Come misureremo — e cosa non faremo",
+      "items": [
+        "Rilevare una situazione di partenza prima dell'avvio di ogni progetto, concordata con la scuola o il circolo partner.",
+        "Scegliere pochi indicatori per progetto, definiti in anticipo e pubblicati insieme al progetto.",
+        "Raccogliere solo i dati necessari. I dati relativi ai giovani sono aggregati e anonimizzati.",
+        "Cercare verifiche indipendenti per i lavori (collaudo tecnico) e per i bilanci.",
+        "Pubblicare i risultati, compresi ritardi, sforamenti e ciò che non ha funzionato.",
+        "Non dichiarare mai risultati non raggiunti, né contare due volte gli stessi beneficiari."
+      ]
+    },
+    "governance": {
+      "eyebrow": "Intenzioni di governance",
+      "title": "Costruita per meritare fiducia",
+      "lead": "Si tratta di intenzioni da formalizzare nello statuto con consulenti legali e contabili italiani. Non sono ancora in vigore.",
+      "items": [
+        "Un consiglio che includa membri indipendenti, non solo le famiglie fondatrici.",
+        "Una policy scritta sui conflitti di interesse, con dichiarazioni registrate ogni anno.",
+        "Decisioni di erogazione prese sulla base di criteri pubblicati, documentate e verbalizzate.",
+        "Doppia autorizzazione dei pagamenti e separazione delle funzioni finanziarie.",
+        "Bilancio annuale verificato da un professionista qualificato e relazione pubblica annuale.",
+        "Un referente per la tutela dei minori e una policy dedicata prima di qualsiasi attività con minori.",
+        "Sponsor e donatori non hanno voce nella selezione dei singoli beneficiari."
+      ]
+    }
+  },
+  "projects": {
+    "hero": {
+      "eyebrow": "Progetti",
+      "title": "Proposte, con etichette oneste.",
+      "lead": "Ogni progetto mostra il suo stato reale. Oggi sono tutte proposte iniziali: nessuna è finanziata e nessun beneficiario o sito è stato confermato."
+    },
+    "filters": {
+      "title": "Filtra i progetti",
+      "status": "Stato",
+      "pillar": "Pilastro",
+      "all": "Tutti",
+      "apply": "Applica filtri",
+      "reset": "Azzera",
+      "results": "{count, plural, =0 {Nessun progetto} one {# progetto} other {# progetti}}"
+    },
+    "empty": "Nessun progetto corrisponde a questi filtri.",
+    "emptyCta": "Mostra tutti i progetti",
+    "detail": {
+      "overview": "Panoramica",
+      "goals": "Obiettivi",
+      "budget": "Budget",
+      "budgetIllustrative": "Questo budget è uno scenario indicativo di pianificazione, non un preventivo, un impegno o un risultato finanziario.",
+      "budgetEmpty": "Non è ancora stato preparato un budget.",
+      "funding": "Finanziamento",
+      "pledged": "Promesso per iscritto",
+      "spent": "Speso",
+      "fundingDemo": "Contenuto dimostrativo: a questo progetto non sono associati fondi reali.",
+      "milestones": "Tappe",
+      "milestonesEmpty": "Le tappe saranno definite dopo l'approvazione del progetto.",
+      "milestoneDone": "Completata",
+      "milestonePlanned": "Prevista",
+      "updates": "Aggiornamenti",
+      "updatesEmpty": "Non sono ancora stati pubblicati aggiornamenti.",
+      "evidence": "Documentazione",
+      "evidenceEmpty": "La documentazione — autorizzazioni, collaudi tecnici, fatture e relazioni conclusive — sarà pubblicata qui con l'avanzamento del progetto.",
+      "privacy": "Privacy dei beneficiari",
+      "privacyDefault": "Non pubblichiamo nomi, immagini o dati identificativi di minori. Scuole e organizzazioni partner sono nominate solo con il loro consenso scritto. Le fotografie di giovani sono usate solo con il consenso documentato dei genitori o tutori, e mai con informazioni che permettano di localizzare un singolo ragazzo.",
+      "share": "Ti interessa questo progetto?",
+      "shareBody": "La raccolta fondi non è aperta. Puoi registrare il tuo interesse o farci una domanda."
+    }
+  },
+  "sailing": {
+    "hero": {
+      "eyebrow": "Vela",
+      "title": "La stagione delle regate, con uno scopo.",
+      "lead": "Molti di noi hanno capito il mare per la prima volta andando a vela. Vogliamo condividere questa esperienza con giovani che non ne hanno mai avuto l'occasione — accanto ai circoli e agli eventi che già rendono straordinaria la vela italiana."
+    },
+    "programme": {
+      "eyebrow": "Vela per l'Impatto",
+      "title": "Come funzionerebbe il programma giovani",
+      "items": [
+        {
+          "title": "Attraverso circoli affermati",
+          "body": "Corsi tenuti da istruttori qualificati presso circoli con comprovati standard di sicurezza — noi finanziamo i posti, non gestiamo barche."
+        },
+        {
+          "title": "Tutto coperto",
+          "body": "Quote dei corsi, giubbotti e attrezzatura, assicurazione e trasporti, perché il costo non sia mai un ostacolo."
+        },
+        {
+          "title": "Segnalati dalle scuole",
+          "body": "I partecipanti sono segnalati dalle scuole partner e da realtà del territorio secondo criteri trasparenti basati sul bisogno."
+        },
+        {
+          "title": "Tutela dei minori integrata",
+          "body": "Adulti verificati, consenso dei genitori, rapporti di supervisione e segnalazione degli incidenti concordati per iscritto con ogni circolo."
+        }
+      ]
+    },
+    "events": {
+      "eyebrow": "Regate benefiche",
+      "title": "Eventi proposti",
+      "lead": "Ogni evento qui sotto è una proposta, salvo che sia indicato esplicitamente come confermato. Non abbiamo accordi con alcuna regata, circolo o team velico.",
+      "empty": "Gli eventi proposti saranno elencati qui.",
+      "interest": "Registra il tuo interesse",
+      "date": "Periodo",
+      "location": "Luogo"
+    },
+    "partnerships": {
+      "eyebrow": "Partnership nautiche",
+      "title": "Opportunità per il mondo della vela",
+      "items": [
+        {
+          "title": "Circoli velici e scuole di vela",
+          "body": "Accogliere posti finanziati per giovani velisti, o aggiungere una dimensione benefica a una regata del circolo."
+        },
+        {
+          "title": "Organizzatori di regate",
+          "body": "Un partner benefico per una regata, una raccolta durante la premiazione o una parata velica dei giovani — alle condizioni che approverete."
+        },
+        {
+          "title": "Marina, cantieri e shipchandler",
+          "body": "Sostegno in natura: posti barca per le imbarcazioni scuola, manutenzione, dotazioni di sicurezza o attrezzatura per i borsisti."
+        },
+        {
+          "title": "Aziende del settore nautico",
+          "body": "Giornate di formazione, tirocini e mentoring collegati alle borse Blue Horizons."
+        }
+      ],
+      "cta": "Parliamo di una partnership"
+    },
+    "interestTitle": "Registra il tuo interesse per una regata proposta",
+    "interestLead": "Lasciaci i tuoi dati e ti scriveremo quando i piani saranno confermati. Non si tratta di una prenotazione."
+  },
+  "gala": {
+    "hero": {
+      "eyebrow": "Il Gala Blue Legacy",
+      "title": "Una serata in riva al mare, per la costa.",
+      "lead": "Un piccolo incontro annuale di sostenitori, con la stagione delle regate sullo sfondo e il lavoro della fondazione al centro."
+    },
+    "concept": {
+      "eyebrow": "Il concept",
+      "title": "Formato proposto",
+      "items": [
+        {
+          "title": "Raccolto per scelta",
+          "body": "Una cena placée per circa 100–120 ospiti (indicativi) in una location costiera da individuare."
+        },
+        {
+          "title": "Il lavoro, non lo spettacolo",
+          "body": "Un breve programma che presenta progetti, budget e avanzamenti — con racconti basati esclusivamente sul consenso."
+        },
+        {
+          "title": "Un'asta ponderata",
+          "body": "Solo lotti donati per iscritto dai loro proprietari, descritti con precisione, senza endorsement impliciti."
+        },
+        {
+          "title": "Ospitalità responsabile",
+          "body": "Fornitori locali, prodotti di stagione e un budget di produzione contenuto, pubblicato a consuntivo."
+        }
+      ]
+    },
+    "finance": {
+      "eyebrow": "Lordo e netto",
+      "title": "Quanto contribuisce davvero un gala",
+      "body": "Il dato principale di un gala è la raccolta lorda: il totale di biglietti, sponsorizzazioni della serata, asta e donazioni. Ma organizzare la serata ha dei costi: location, catering, produzione, assicurazione. Ai programmi arriva l'importo netto. Nel nostro scenario indicativo del primo anno, un gala con una raccolta lorda di {gross} e costi pari a {costs} contribuirebbe con {net} netti. Pubblicheremo sempre entrambe le cifre.",
+      "gross": "Raccolta lorda (indicativa)",
+      "costs": "Costi diretti (indicativi)",
+      "net": "Contributo netto (indicativo)"
+    },
+    "tickets": {
+      "title": "I biglietti non sono in vendita",
+      "body": "Non venderemo biglietti finché la fondazione non sarà costituita, l'evento approvato e non saranno in essere permessi, assicurazioni e accordi con la location. La lista di interesse qui sotto non comporta alcun obbligo né pagamento."
+    },
+    "details": {
+      "title": "In sintesi",
+      "date": "Periodo",
+      "location": "Location",
+      "status": "Stato"
+    },
+    "interestTitle": "Iscriviti alla lista di interesse del gala",
+    "interestLead": "Ti scriveremo quando data e location saranno confermate."
+  },
+  "partners": {
+    "hero": {
+      "eyebrow": "Partner",
+      "title": "Un prospetto di partnership — in bozza.",
+      "lead": "Cerchiamo un numero ristretto di partner fondatori che condividano i nostri valori. Tutto ciò che è in questa pagina è una proposta da discutere; nulla è una sponsorizzazione confermata."
+    },
+    "principles": {
+      "eyebrow": "I nostri principi",
+      "title": "Come collaboriamo",
+      "items": [
+        "Nessun nome o logo di partner compare da nessuna parte prima della firma e dell'approvazione di un accordo scritto.",
+        "I partner non influenzano mai la selezione dei singoli beneficiari.",
+        "Il riconoscimento è proporzionato e discreto. Non offriamo esclusive su scuole o giovani.",
+        "Svolgiamo una due diligence su ogni partner e possiamo rifiutare sostegni in conflitto con la nostra missione.",
+        "Rendicontiamo ai partner l'uso del loro contributo — anche quando i piani cambiano."
+      ]
+    },
+    "packages": {
+      "eyebrow": "Pacchetti proposti",
+      "title": "Livelli di partnership indicativi",
+      "note": "Proposte puramente indicative. Importi, benefici e riconoscimenti saranno concordati singolarmente per iscritto, dopo la costituzione della fondazione e previa consulenza legale e fiscale.",
+      "contribution": "Contributo annuo suggerito",
+      "items": [
+        {
+          "key": "FOUNDING_PARTNER",
+          "name": "Partner Fondatore",
+          "amount": "10.000 €",
+          "body": "Per le organizzazioni che vogliono contribuire a costruire la fondazione fin dal primo anno.",
+          "benefits": [
+            "Aggiornamento annuale su tutti i programmi e sui conti",
+            "Riconoscimento nella relazione annuale e al gala, con il vostro consenso",
+            "Invito a visitare un progetto concluso, ove la tutela dei minori lo consenta",
+            "Opportunità di volontariato aziendale su progetti adatti"
+          ]
+        },
+        {
+          "key": "REGATTA_PARTNER",
+          "name": "Partner Regata",
+          "amount": "5.000 €",
+          "body": "Associato alla partnership con la regata benefica e al programma di vela per giovani.",
+          "benefits": [
+            "Riconoscimento legato alla regata benefica, previa approvazione dell'organizzatore",
+            "Relazione sui posti di vela finanziati per i giovani",
+            "Invito alla parata velica dei giovani, ove organizzata"
+          ]
+        },
+        {
+          "key": "COMMUNITY_PARTNER",
+          "name": "Partner del Territorio",
+          "amount": "2.500 €",
+          "body": "Per le imprese locali delle comunità costiere che speriamo di servire.",
+          "benefits": [
+            "Riconoscimento sul sito e nella relazione annuale, con il vostro consenso",
+            "Aggiornamento annuale sui programmi"
+          ]
+        },
+        {
+          "key": "IN_KIND",
+          "name": "Partner in natura",
+          "amount": "Beni o servizi",
+          "body": "Imbarcazioni, dotazioni di sicurezza, servizi tecnici, location o competenze professionali.",
+          "benefits": [
+            "Riconoscimento proporzionato al valore fornito, concordato per iscritto",
+            "Valorizzazione e attestazione secondo indicazioni professionali"
+          ]
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Il percorso",
+      "title": "Dal primo contatto all'accordo",
+      "steps": [
+        "Richiesta — raccontaci della tua organizzazione e dei tuoi interessi.",
+        "Conversazione — condividiamo piani, budget e documenti di governance.",
+        "Due diligence — reciproca, comprese verifiche reputazionali e di conformità.",
+        "Accordo scritto — esaminato da consulenti legali e fiscali dopo la costituzione della fondazione.",
+        "Riconoscimento — solo dopo la firma, ed esattamente come concordato."
+      ]
+    },
+    "formTitle": "Richiesta di partnership",
+    "formLead": "Raccontaci qualcosa della tua organizzazione. Ti risponderemo personalmente."
+  },
+  "donate": {
+    "hero": {
+      "eyebrow": "Sostienici",
+      "title": "Le donazioni non sono ancora aperte.",
+      "lead": "La fondazione non è ancora costituita. Finché non sarà legalmente istituita, verificata dal fornitore di pagamenti e finché i termini delle donazioni non saranno approvati dai consulenti, non accetteremo denaro."
+    },
+    "why": {
+      "title": "Perché aspettiamo",
+      "items": [
+        "Un dono deve andare a un ente regolarmente costituito, con un conto bancario a proprio nome.",
+        "I donatori meritano condizioni chiare, approvate legalmente, e informazioni corrette sul trattamento fiscale.",
+        "Il fornitore di pagamenti deve verificare l'organizzazione prima di elaborare qualsiasi donazione."
+      ]
+    },
+    "tax": {
+      "title": "Sulla deducibilità fiscale",
+      "body": "Al momento non possiamo rilasciare ricevute fiscalmente deducibili e non dichiariamo nulla sul trattamento fiscale dei doni futuri. Dipenderà dalla forma giuridica scelta e dall'iscrizione, e sarà confermato con il supporto di professionisti prima dell'apertura delle donazioni."
+    },
+    "interestTitle": "Registra il tuo interesse a sostenerci",
+    "interestLead": "Nessun pagamento e nessun impegno. Ti contatteremo quando la fondazione sarà pronta ad accogliere sostegni.",
+    "enabled": {
+      "title": "Fai una donazione",
+      "lead": "I pagamenti sono gestiti in modo sicuro da Stripe sulla sua pagina di checkout. Non vediamo né conserviamo i dati della tua carta.",
+      "amount": "Importo (EUR)",
+      "presets": "Importi suggeriti",
+      "custom": "Altro importo",
+      "designation": "Destinazione",
+      "general": "Dove c'è più bisogno",
+      "terms": "Confermo di aver letto",
+      "termsLink": "Condizioni d'uso",
+      "privacyLink": "Informativa privacy",
+      "noTaxReceipt": "Nota: le email di conferma sono ricevute di pagamento, non ricevute fiscali. Ricevute valide a fini fiscali saranno rilasciate solo ove la legge lo consenta e con una formulazione approvata legalmente.",
+      "submit": "Procedi al checkout sicuro",
+      "redirecting": "Reindirizzamento al checkout sicuro…",
+      "mockNotice": "Modalità di prova: non verrà addebitato alcun pagamento reale."
+    },
+    "success": {
+      "title": "Grazie.",
+      "pending": "Siamo in attesa della conferma del fornitore di pagamenti. Di solito bastano pochi secondi; riceverai un'email dal fornitore.",
+      "confirmed": "La tua donazione di {amount} è stata confermata.",
+      "unknown": "Non abbiamo trovato questa sessione di pagamento. Se ti è stato addebitato un importo, contattaci e verificheremo.",
+      "mock": "Si trattava di un checkout in modalità di prova. Nessun importo è stato addebitato.",
+      "notReceipt": "Questa pagina non è una ricevuta fiscale.",
+      "back": "Torna alla home"
+    },
+    "cancel": {
+      "title": "La donazione è stata annullata.",
+      "body": "Nessun pagamento è stato effettuato. Se qualcosa non ha funzionato, ci farebbe piacere saperlo.",
+      "retry": "Torna alla pagina delle donazioni"
+    }
+  },
+  "transparency": {
+    "hero": {
+      "eyebrow": "Trasparenza",
+      "title": "Cosa è reale, cosa è previsto, cosa è promesso.",
+      "lead": "Questa pagina separa i fatti dalle intenzioni. Mostra solo cifre reali provenienti dal nostro registro ed etichetta ogni scenario come indicativo."
+    },
+    "legal": {
+      "eyebrow": "Stato giuridico",
+      "title": "Una fondazione proposta, non ancora costituita",
+      "items": [
+        {
+          "label": "Forma giuridica",
+          "value": "Da definire con i consulenti (in valutazione Fondazione ETS o Associazione ETS)"
+        },
+        {
+          "label": "Costituzione",
+          "value": "Non ancora costituita"
+        },
+        {
+          "label": "Iscrizione al RUNTS",
+          "value": "Non iscritta"
+        },
+        {
+          "label": "Qualifica ONLUS / ETS",
+          "value": "Nessuna — non viene dichiarata alcuna qualifica"
+        },
+        {
+          "label": "Ricevute fiscalmente deducibili",
+          "value": "Non disponibili"
+        },
+        {
+          "label": "Conto bancario",
+          "value": "Nessuno intestato alla fondazione"
+        }
+      ]
+    },
+    "ledger": {
+      "eyebrow": "Fondi effettivi",
+      "title": "Ricevuti, promessi e spesi",
+      "lead": "Cifre aggiornate dal nostro registro. Le transazioni dimostrative e di prova sono escluse.",
+      "received": "Ricevuti (al netto dei rimborsi)",
+      "pledged": "Promessi per iscritto",
+      "spent": "Spesi per i progetti",
+      "zeroNote": "Queste cifre sono pari a zero perché la fondazione non accetta né detiene ancora fondi."
+    },
+    "budget": {
+      "eyebrow": "Scenario indicativo",
+      "title": "Un budget indicativo per il primo anno",
+      "lead": "Uno scenario di pianificazione per mostrare come potrebbe essere strutturato un primo anno misurato. Non è una previsione, un obiettivo né un risultato.",
+      "revenue": "Entrate indicative",
+      "expenses": "Uscite indicative",
+      "total": "Totale",
+      "balance": "Saldo",
+      "programmeShare": "Programmi (scuola, vela, borse): {share}% delle uscite",
+      "galaNote": "La voce del gala tra le entrate è al lordo. I suoi costi diretti figurano tra le uscite, quindi il contributo netto in questo scenario è di {net}.",
+      "chartLabel": "Quota delle uscite indicative"
+    },
+    "policies": {
+      "eyebrow": "Policy",
+      "title": "Policy e relazioni",
+      "lead": "I documenti saranno pubblicati qui una volta adottati. Oggi la maggior parte è in fase di redazione.",
+      "status": "Stato",
+      "items": [
+        {
+          "name": "Informativa privacy",
+          "state": "Bozza pubblicata, in attesa di revisione legale",
+          "href": "/privacy"
+        },
+        {
+          "name": "Cookie policy",
+          "state": "Bozza pubblicata, in attesa di revisione legale",
+          "href": "/cookies"
+        },
+        {
+          "name": "Policy per la tutela dei minori",
+          "state": "In preparazione — necessaria prima di qualsiasi attività con minori"
+        },
+        {
+          "name": "Policy sui conflitti di interesse",
+          "state": "In preparazione"
+        },
+        {
+          "name": "Policy di accettazione delle donazioni",
+          "state": "In preparazione"
+        },
+        {
+          "name": "Procedura per reclami e segnalazioni (whistleblowing)",
+          "state": "In preparazione"
+        },
+        {
+          "name": "Relazione annuale e bilancio",
+          "state": "Non ancora disponibili — il primo seguirà il primo esercizio"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contatti",
+      "title": "Scrivi al gruppo promotore.",
+      "lead": "Domande, idee, segnalazioni di scuole o circoli, richieste della stampa — leggiamo ogni messaggio."
+    },
+    "next": {
+      "title": "Cosa succede dopo",
+      "items": [
+        "Il tuo messaggio viene conservato in modo sicuro e letto da un membro del gruppo promotore.",
+        "Cerchiamo di rispondere entro dieci giorni lavorativi.",
+        "Usiamo i tuoi dati solo per risponderti, come descritto nell'informativa privacy."
+      ]
+    },
+    "formTitle": "Invia un messaggio"
+  },
+  "forms": {
+    "required": "obbligatorio",
+    "optional": "facoltativo",
+    "submit": "Invia",
+    "sending": "Invio in corso…",
+    "honeypot": "Lascia vuoto questo campo",
+    "consent": "Ho letto l'{privacy} e acconsento all'uso dei miei dati per rispondere a questa richiesta.",
+    "privacyLink": "informativa privacy",
+    "labels": {
+      "name": "Nome e cognome",
+      "email": "Indirizzo email",
+      "topic": "Argomento",
+      "message": "Messaggio",
+      "organizationName": "Organizzazione",
+      "contactName": "Il tuo nome",
+      "phone": "Telefono",
+      "website": "Sito web",
+      "packageInterest": "Livello di partnership di interesse",
+      "organization": "Organizzazione (se presente)",
+      "partySize": "Numero di ospiti",
+      "supportType": "Come ti piacerebbe aiutare?"
+    },
+    "hints": {
+      "website": "Inizia con https://",
+      "partySize": "Solo indicativo, 1–20",
+      "message": "Almeno 10 caratteri"
+    },
+    "choose": "Seleziona…",
+    "topics": {
+      "GENERAL": "Domanda generale",
+      "VOLUNTEERING": "Volontariato o competenze",
+      "SCHOOL_OR_PARTNER_REFERRAL": "Segnala una scuola, un circolo o un partner",
+      "PRESS": "Stampa",
+      "OTHER": "Altro"
+    },
+    "supportTypes": {
+      "ONE_OFF": "Un dono una tantum",
+      "RECURRING": "Donazioni regolari",
+      "CORPORATE": "Sostegno tramite la mia azienda",
+      "IN_KIND": "Sostegno in natura (beni, servizi, location)",
+      "VOLUNTEERING": "Tempo e competenze",
+      "UNDECIDED": "Non lo so ancora"
+    },
+    "sponsorPackages": {
+      "FOUNDING_PARTNER": "Partner Fondatore (proposta)",
+      "REGATTA_PARTNER": "Partner Regata (proposta)",
+      "COMMUNITY_PARTNER": "Partner del Territorio (proposta)",
+      "IN_KIND": "Partnership in natura",
+      "UNDECIDED": "Non lo so ancora"
+    },
+    "errors": {
+      "required": "Questo campo è obbligatorio.",
+      "tooShort": "Il testo è troppo breve.",
+      "tooLong": "Il testo è troppo lungo.",
+      "email": "Inserisci un indirizzo email valido.",
+      "phone": "Inserisci un numero di telefono valido.",
+      "url": "Inserisci un indirizzo web completo che inizi con https://",
+      "number": "Inserisci un numero intero.",
+      "partySize": "Inserisci un numero tra 1 e 20.",
+      "consentRequired": "Conferma di aver letto l'informativa privacy.",
+      "amountInvalid": "Inserisci un importo come 50 o 50,00.",
+      "amountMin": "La donazione minima è di 5 €.",
+      "amountMax": "Per doni superiori a 10.000 € contattaci direttamente.",
+      "projectUnavailable": "Questo progetto al momento non accetta donazioni."
+    },
+    "messages": {
+      "fixErrors": "Correggi i campi evidenziati.",
+      "rateLimited": "Troppi invii dalla tua connessione. Attendi qualche minuto e riprova.",
+      "serverError": "Si è verificato un problema da parte nostra e il messaggio non è stato inviato. Riprova più tardi.",
+      "contactSuccess": "Grazie — abbiamo ricevuto il tuo messaggio. Cerchiamo di rispondere entro dieci giorni lavorativi.",
+      "supportSuccess": "Grazie — abbiamo registrato il tuo interesse. Ti contatteremo quando la fondazione sarà pronta. Nessun pagamento è stato effettuato.",
+      "sponsorSuccess": "Grazie — abbiamo ricevuto la tua richiesta. Un membro del gruppo promotore ti risponderà personalmente.",
+      "eventSuccess": "Grazie — sei nella lista di interesse. Non si tratta di una prenotazione né di un biglietto.",
+      "eventUpdated": "La tua registrazione esistente è stata aggiornata.",
+      "eventClosed": "La registrazione di interesse per questo evento è chiusa.",
+      "donationsDisabled": "Le donazioni al momento non sono aperte.",
+      "duplicateSubmission": "Questo modulo è già stato inviato. Ricarica la pagina per ricominciare.",
+      "paymentUnavailable": "Il fornitore di pagamenti è temporaneamente non disponibile. Nessun pagamento è stato effettuato. Riprova più tardi."
+    }
+  },
+  "consent": {
+    "title": "Le tue scelte sulla privacy",
+    "body": "Utilizziamo solo i cookie tecnici necessari al funzionamento del sito. Con il tuo permesso useremmo anche statistiche rispettose della privacy, senza cookie, per capire quali pagine sono utili.",
+    "accept": "Consenti statistiche",
+    "reject": "Solo tecnici",
+    "manage": "Scelte privacy",
+    "learnMore": "Cookie policy"
+  },
+  "finance": {
+    "revenue": {
+      "familyContributions": "Contributi delle famiglie",
+      "corporateSponsors": "Tre sponsor aziendali da 10.000 € ciascuno",
+      "galaGross": "Raccolta lorda del gala",
+      "individualDonations": "Donazioni individuali"
+    },
+    "expenses": {
+      "schoolRenovation": "Riqualificazione della scuola",
+      "youthSailing": "Vela per i giovani",
+      "equipmentScholarships": "Attrezzatura e borse",
+      "gala": "Costi del gala",
+      "administration": "Amministrazione",
+      "reserve": "Riserva"
+    }
+  },
+  "legal": {
+    "reviewNotice": "Bozza in attesa di revisione da parte di un legale italiano. Il testo è fornito per trasparenza e non costituisce consulenza legale.",
+    "lastUpdated": "Ultimo aggiornamento: {date}",
+    "controllerPending": "Fino alla costituzione della fondazione, i dati personali inviati tramite questo sito sono trattati dai promotori dell'iniziativa. La loro identità completa e il loro indirizzo saranno indicati qui prima del lancio pubblico; con la costituzione, la fondazione diventerà titolare del trattamento.",
+    "privacy": {
+      "title": "Informativa privacy",
+      "intro": "Questa informativa spiega come sono trattati i dati personali inviati tramite questo sito, ai sensi del Regolamento (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003 e successive modifiche.",
+      "sections": [
+        {
+          "heading": "Chi è responsabile",
+          "body": [
+            "{controller}"
+          ]
+        },
+        {
+          "heading": "Quali dati raccogliamo",
+          "body": [
+            "Moduli di contatto e richieste: nome, indirizzo email, messaggio e, per le richieste di partnership, l'organizzazione ed eventualmente telefono e sito web.",
+            "Interesse per eventi: nome, indirizzo email, eventuale organizzazione, numero indicativo di ospiti e messaggio.",
+            "Donazioni (solo quando attivate): importo, valuta e l'indirizzo email che fornisci al nostro fornitore di pagamenti. I dati della carta sono inseriti nella pagina ospitata da Stripe e non raggiungono mai i nostri server.",
+            "Dati di sicurezza: per un breve periodo usiamo un hash irreversibile e con chiave del tuo indirizzo IP per prevenire abusi. Non conserviamo il tuo indirizzo IP in chiaro."
+          ]
+        },
+        {
+          "heading": "Perché li usiamo e su quale base giuridica",
+          "body": [
+            "Per rispondere alla tua richiesta e gestire il rapporto che ci chiedi (art. 6.1.b GDPR, misure su tua richiesta).",
+            "Per mantenere sicuro il sito e prevenire lo spam (art. 6.1.f, legittimo interesse).",
+            "Per conservare le registrazioni delle donazioni richieste dalla legge, una volta attivate (art. 6.1.c, obbligo legale).",
+            "Statistiche facoltative, solo con il tuo consenso (art. 6.1.a)."
+          ]
+        },
+        {
+          "heading": "Minori",
+          "body": [
+            "Questo sito non è rivolto ai minori e non raccogliamo consapevolmente i loro dati tramite esso. Non pubblichiamo mai dati identificativi o immagini di minori senza il consenso documentato di un genitore o tutore e senza tutele adeguate."
+          ]
+        },
+        {
+          "heading": "Chi li riceve",
+          "body": [
+            "I membri del gruppo promotore che ne hanno bisogno per rispondere. Fornitori che agiscono su nostra istruzione: hosting (Vercel), hosting del database, email transazionali (Resend, se attivato) e pagamenti (Stripe, se attivato). Alcuni fornitori possono trattare dati al di fuori del SEE con garanzie adeguate, come le Clausole Contrattuali Standard dell'UE."
+          ]
+        },
+        {
+          "heading": "Per quanto tempo li conserviamo",
+          "body": [
+            "Richieste: fino a 24 mesi dall'ultimo contatto, salvo che un rapporto in corso richieda un periodo più lungo.",
+            "Registrazioni delle donazioni: per il periodo previsto dalla legge italiana (di norma 10 anni).",
+            "Hash per la prevenzione degli abusi: fino a qualche ora."
+          ]
+        },
+        {
+          "heading": "I tuoi diritti",
+          "body": [
+            "Puoi chiedere accesso, rettifica, cancellazione, limitazione, portabilità e opporti al trattamento; puoi revocare il consenso in qualsiasi momento. Usa il modulo di contatto per esercitare i tuoi diritti. Hai inoltre il diritto di proporre reclamo al Garante per la protezione dei dati personali (www.garanteprivacy.it)."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie policy",
+      "intro": "Questo sito utilizza il minor numero possibile di cookie.",
+      "tableName": "Nome",
+      "tablePurpose": "Finalità",
+      "tableDuration": "Durata",
+      "tableType": "Tipo",
+      "rows": [
+        {
+          "name": "blf_consent",
+          "purpose": "Ricorda la tua scelta sulla privacy",
+          "duration": "6 mesi",
+          "type": "Tecnico"
+        },
+        {
+          "name": "blf_session",
+          "purpose": "Mantiene l'accesso del personale autorizzato, solo nell'area di amministrazione",
+          "duration": "12 ore",
+          "type": "Tecnico"
+        }
+      ],
+      "analytics": "Statistiche: se — e solo se — consenti le statistiche e il servizio è configurato, carichiamo uno script di analisi rispettoso della privacy (Plausible) che non imposta cookie e non ti traccia tra siti diversi. Puoi modificare la tua scelta in qualsiasi momento con il link \"Scelte privacy\" nel piè di pagina.",
+      "noThirdParty": "Non utilizziamo cookie pubblicitari, di profilazione o di tracciamento dei social network."
+    },
+    "terms": {
+      "title": "Condizioni d'uso",
+      "intro": "Utilizzando questo sito accetti le presenti condizioni.",
+      "sections": [
+        {
+          "heading": "Natura dell'iniziativa",
+          "body": [
+            "The Blue Legacy Foundation è un'iniziativa in fase di proposta e non è ancora costituita. Non è un Ente del Terzo Settore (ETS) iscritto, non è una ONLUS e non può rilasciare ricevute fiscalmente deducibili. Nulla in questo sito costituisce un'offerta, una sollecitazione di fondi o la dichiarazione di tali qualifiche."
+          ]
+        },
+        {
+          "heading": "Progetti, eventi e cifre",
+          "body": [
+            "Progetti ed eventi sono proposte, salvo che siano indicati esplicitamente come confermati. I budget sono scenari indicativi, salvo diversa indicazione esplicita. I contenuti contrassegnati come \"dimostrativi\" sono esempi."
+          ]
+        },
+        {
+          "heading": "Nessuna partnership implicita",
+          "body": [
+            "Non abbiamo partnership, sponsorizzazioni o endorsement da parte di alcuna organizzazione, evento, team o persona, salvo che ciò sia indicato in questo sito con il loro consenso scritto. I riferimenti al mondo della vela in generale non implicano alcuna affiliazione."
+          ]
+        },
+        {
+          "heading": "Nessuna consulenza",
+          "body": [
+            "Nessun contenuto di questo sito costituisce consulenza legale, fiscale, finanziaria o di investimento."
+          ]
+        },
+        {
+          "heading": "Proprietà intellettuale",
+          "body": [
+            "Testi e illustrazioni originali sono di proprietà del gruppo promotore. Le fotografie di terzi, ove utilizzate, sono accreditate con la relativa licenza."
+          ]
+        },
+        {
+          "heading": "Responsabilità e legge applicabile",
+          "body": [
+            "Curiamo l'accuratezza delle informazioni ma non possiamo garantirne completezza e aggiornamento. Le presenti condizioni sono regolate dalla legge italiana."
+          ]
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Dichiarazione di accessibilità",
+      "intro": "Vogliamo che questo sito sia utilizzabile da tutti. Il nostro obiettivo è rispettare le Linee guida per l'accessibilità dei contenuti web (WCAG) 2.2 a livello AA.",
+      "sections": [
+        {
+          "heading": "Cosa abbiamo fatto",
+          "body": [
+            "Titoli e aree semantiche, un link per saltare al contenuto, navigazione completa da tastiera con focus visibile, contrasto cromatico adeguato, alternative testuali, campi dei moduli etichettati con messaggi di errore chiari, rispetto delle preferenze di movimento ridotto e layout che funzionano dagli smartphone ai grandi schermi."
+          ]
+        },
+        {
+          "heading": "Limiti noti",
+          "body": [
+            "Questa dichiarazione si basa su nostri test e su verifiche automatiche; non è ancora stato svolto un audit indipendente. I documenti pubblicati in PDF potrebbero non essere tutti pienamente accessibili."
+          ]
+        },
+        {
+          "heading": "Quadro normativo",
+          "body": [
+            "In quanto iniziativa privata senza scopo di lucro in fase di proposta, non siamo attualmente soggetti agli obblighi di accessibilità della Legge 4/2004 (\"Legge Stanca\") come applicata da AgID; ne seguiamo volontariamente i principi."
+          ]
+        },
+        {
+          "heading": "Segnalazioni",
+          "body": [
+            "Se incontri una barriera, segnalacela tramite il modulo di contatto, descrivendo la pagina e il problema. Cerchiamo di rispondere entro dieci giorni lavorativi."
+          ]
+        }
+      ]
+    }
+  },
+  "notFound": {
+    "title": "Fuori rotta.",
+    "body": "Non abbiamo trovato la pagina che cercavi.",
+    "home": "Torna alla home"
+  },
+  "error": {
+    "title": "Qualcosa è andato storto.",
+    "body": "Si è verificato un errore imprevisto. Riprova.",
+    "retry": "Riprova"
+  },
+  "loading": "Caricamento…"
+}

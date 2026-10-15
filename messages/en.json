@@ -1,0 +1,1042 @@
+{
+  "meta": {
+    "siteName": "The Blue Legacy Foundation",
+    "tagline": "A proposed Italian foundation for the Mediterranean coast",
+    "description": "The Blue Legacy Foundation is a proposed Italian philanthropic initiative — not yet incorporated — for coastal education, school renewal and access to sailing for young people.",
+    "pages": {
+      "home": {
+        "title": "Opening the sea to the next generation",
+        "description": "A proposed Italian foundation for coastal education, school renewal and access to sailing for young people. Not yet incorporated."
+      },
+      "mission": {
+        "title": "Mission",
+        "description": "Our values, theory of change, impact methodology and governance intentions."
+      },
+      "projects": {
+        "title": "Projects",
+        "description": "Proposed projects across our four pillars, with status, budgets and milestones."
+      },
+      "sailing": {
+        "title": "Sailing",
+        "description": "Proposed charity regattas and maritime partnership opportunities."
+      },
+      "gala": {
+        "title": "The Blue Legacy Gala",
+        "description": "The concept for a small annual fundraising gala by the sea. Register your interest."
+      },
+      "partners": {
+        "title": "Partners",
+        "description": "A sponsorship prospectus for companies and organisations — all packages are proposals."
+      },
+      "donate": {
+        "title": "Support us",
+        "description": "Donations are not yet open. Register your interest in supporting the foundation."
+      },
+      "donateSuccess": {
+        "title": "Thank you",
+        "description": "Your donation is being confirmed."
+      },
+      "donateCancel": {
+        "title": "Donation cancelled",
+        "description": "No payment was taken."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "Legal status, policies, and actual versus pledged versus spent funds."
+      },
+      "contact": {
+        "title": "Contact",
+        "description": "Write to the founding team."
+      },
+      "privacy": {
+        "title": "Privacy notice",
+        "description": "How we process personal data."
+      },
+      "cookies": {
+        "title": "Cookie policy",
+        "description": "The cookies this website uses."
+      },
+      "terms": {
+        "title": "Terms of use",
+        "description": "Terms for using this website."
+      },
+      "accessibility": {
+        "title": "Accessibility statement",
+        "description": "Our accessibility commitments and how to report a barrier."
+      }
+    }
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNav": "Main",
+    "footerNav": "Footer",
+    "legalNav": "Legal",
+    "languageSwitcher": "Language",
+    "breadcrumb": "Breadcrumb",
+    "artworkCaption": "Original illustration. Licensed and credited photography will replace it as it becomes available."
+  },
+  "nav": {
+    "home": "Home",
+    "mission": "Mission",
+    "projects": "Projects",
+    "sailing": "Sailing",
+    "gala": "Gala",
+    "partners": "Partners",
+    "donate": "Support us",
+    "transparency": "Transparency",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "terms": "Terms",
+    "accessibility": "Accessibility",
+    "switchLanguage": "Italiano",
+    "switchLanguageLabel": "Leggi questa pagina in italiano"
+  },
+  "status": {
+    "banner": "Proposed foundation · not yet incorporated · donations not open",
+    "bannerLink": "Read our launch status",
+    "proposed": "Proposed",
+    "confirmed": "Confirmed",
+    "demo": "Demo content",
+    "demoHelp": "This record is sample content created for the website demonstration. It does not describe an existing project or beneficiary.",
+    "illustrative": "Illustrative",
+    "illustrativeHelp": "Illustrative scenario for planning — not an actual financial result or commitment."
+  },
+  "footer": {
+    "about": "The Blue Legacy Foundation is a proposed philanthropic initiative. It is not yet incorporated, is not a registered ETS or ONLUS, and cannot issue tax-deductible receipts.",
+    "explore": "Explore",
+    "legal": "Legal",
+    "notLegalAdvice": "Nothing on this website is legal, tax or financial advice.",
+    "credits": "Illustrations are original artwork created for this website.",
+    "copyright": "© {year} The Blue Legacy Foundation founding team"
+  },
+  "common": {
+    "readMore": "Read more",
+    "learnMore": "Learn more",
+    "viewProject": "View project",
+    "allProjects": "All projects",
+    "backToProjects": "Back to projects",
+    "location": "Location",
+    "status": "Status",
+    "pillar": "Pillar",
+    "budget": "Budget",
+    "total": "Total",
+    "none": "None yet",
+    "tbc": "To be confirmed",
+    "registerInterest": "Register your interest",
+    "contactUs": "Contact us",
+    "lastUpdated": "Last updated",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page {page} of {total}"
+  },
+  "pillars": {
+    "SAILING_FOR_IMPACT": {
+      "numeral": "I",
+      "title": "Sailing for Impact",
+      "short": "Bringing young people who would not otherwise have the chance onto the water, with qualified instructors at established clubs.",
+      "body": "Sailing teaches responsibility, teamwork and respect for the environment. We intend to fund places on courses run by qualified instructors at established clubs, covering fees, kit and transport, so that cost is never the reason a young person stays ashore."
+    },
+    "COASTAL_SCHOOL_RENEWAL": {
+      "numeral": "II",
+      "title": "Coastal School Renewal",
+      "short": "Upgrading existing schools in coastal communities — safer, healthier, better-equipped places to learn.",
+      "body": "We do not build new schools. We intend to work with existing schools and the public bodies responsible for them to fund well-scoped improvements — classrooms, laboratories, accessibility, outdoor learning spaces — delivered with the required authorisations."
+    },
+    "BLUE_HORIZONS_SCHOLARSHIPS": {
+      "numeral": "III",
+      "title": "Blue Horizons Scholarships",
+      "short": "Modest, needs-based support for equipment, certification and study linked to the sea.",
+      "body": "Small, carefully administered awards for equipment, safety certification and study connected to maritime careers and marine science, awarded through transparent criteria and independent review."
+    },
+    "ANNUAL_GALA": {
+      "numeral": "IV",
+      "title": "Annual Blue Legacy Gala",
+      "short": "A small, elegant evening by the sea that gathers supporters and funds the programmes.",
+      "body": "An evening of restrained elegance, timed around the regatta season, where supporters meet the people behind the work. We will report gross and net results separately, so everyone can see what the evening truly contributes."
+    }
+  },
+  "projectStatus": {
+    "IDEA": "Idea",
+    "UNDER_REVIEW": "Under review",
+    "APPROVED": "Approved",
+    "FUNDRAISING": "Fundraising",
+    "IN_PROGRESS": "In progress",
+    "COMPLETED": "Completed"
+  },
+  "projectStatusHelp": {
+    "IDEA": "An early concept. No partner, site or budget has been agreed.",
+    "UNDER_REVIEW": "Being assessed for need, feasibility, safeguarding and due diligence.",
+    "APPROVED": "Approved for funding by the board, subject to agreements.",
+    "FUNDRAISING": "Approved and actively raising funds.",
+    "IN_PROGRESS": "Funded and being delivered with partners.",
+    "COMPLETED": "Delivered; final report and evidence published."
+  },
+  "eventStatus": {
+    "PROPOSED": "Proposed",
+    "CONFIRMED": "Confirmed",
+    "CANCELLED": "Cancelled",
+    "COMPLETED": "Completed"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "A proposed Italian foundation",
+      "title": "Opening the sea to the next generation.",
+      "lead": "The Blue Legacy Foundation is being established to renew coastal schools, bring young people from disadvantaged backgrounds onto the water, and gather supporters around the Mediterranean's sailing tradition.",
+      "primary": "Read our mission",
+      "secondary": "Register your interest"
+    },
+    "mission": {
+      "eyebrow": "Our purpose",
+      "title": "The sea as a classroom, open to every child on the coast.",
+      "body": "Many young people grow up within sight of the Mediterranean yet never sail on it, and some study in school buildings that have not kept pace with their needs. We want to change that, slowly and properly: one school, one group of young sailors, one well-run event at a time — and to publish exactly what we do with every euro."
+    },
+    "pillars": {
+      "eyebrow": "Four pillars",
+      "title": "How we intend to work"
+    },
+    "featured": {
+      "eyebrow": "Featured proposal",
+      "title": "The first-year pilot",
+      "empty": "Proposed projects will be published here once they are ready for review."
+    },
+    "pilot": {
+      "eyebrow": "Year one, deliberately modest",
+      "title": "The proposed first-year pilot",
+      "items": [
+        "Renovation of one existing coastal school",
+        "A modest youth sailing scholarship programme",
+        "One charity regatta partnership",
+        "One small fundraising gala"
+      ],
+      "note": "Scope, sites and partners are still to be selected. Budgets are illustrative scenarios."
+    },
+    "participate": {
+      "eyebrow": "Participate",
+      "title": "There is room at the helm",
+      "lead": "We are not asking for money yet. We are looking for people and organisations who want to help shape the foundation before it launches.",
+      "items": [
+        {
+          "title": "Future supporters",
+          "body": "Tell us how you might like to support the foundation. No payment, no obligation.",
+          "cta": "Register interest",
+          "href": "/donate"
+        },
+        {
+          "title": "Companies & clubs",
+          "body": "Explore proposed partnership packages and maritime collaborations.",
+          "cta": "Partnership prospectus",
+          "href": "/partners"
+        },
+        {
+          "title": "The gala",
+          "body": "Join the interest list for the first Blue Legacy Gala.",
+          "cta": "Gala concept",
+          "href": "/gala"
+        },
+        {
+          "title": "Schools & educators",
+          "body": "Know a coastal school or a sailing programme we should learn from? Write to us.",
+          "cta": "Contact the team",
+          "href": "/contact"
+        }
+      ]
+    },
+    "launch": {
+      "eyebrow": "Launch status",
+      "title": "Where we are today",
+      "lead": "We would rather tell you plainly what does not exist yet than let you assume it does.",
+      "items": [
+        {
+          "label": "Legal entity",
+          "value": "Not yet incorporated"
+        },
+        {
+          "label": "ETS / RUNTS registration",
+          "value": "Not registered"
+        },
+        {
+          "label": "Donations",
+          "value": "Not open"
+        },
+        {
+          "label": "Tax-deductible receipts",
+          "value": "Not available"
+        },
+        {
+          "label": "Projects",
+          "value": "Proposals in preparation"
+        },
+        {
+          "label": "Sponsors and partners",
+          "value": "None confirmed"
+        }
+      ],
+      "cta": "Full transparency page"
+    }
+  },
+  "mission": {
+    "hero": {
+      "eyebrow": "Mission",
+      "title": "Patient, accountable philanthropy for the Mediterranean coast.",
+      "lead": "We intend to connect the generosity of people who love the sea with the needs of the young people who live beside it — and to do so with the discipline of a well-run institution from the very first day."
+    },
+    "statement": "Our proposed mission is to widen access to education and to the sea for young people in Italian coastal communities, by renewing the schools they attend, opening the sport of sailing to them, and supporting their next steps — funded transparently by a community of supporters.",
+    "values": {
+      "eyebrow": "Values",
+      "title": "What we hold ourselves to",
+      "items": [
+        {
+          "title": "Stewardship",
+          "body": "Every euro is held in trust. We plan prudently, keep a reserve, and spend on what works."
+        },
+        {
+          "title": "Candour",
+          "body": "We say what is proposed, what is confirmed and what went wrong. No inflated numbers, ever."
+        },
+        {
+          "title": "Dignity",
+          "body": "Beneficiaries are partners, not props. We never use images or stories of young people without proper consent."
+        },
+        {
+          "title": "Safety first",
+          "body": "On the water and in schools, safeguarding and safety standards come before speed or visibility."
+        },
+        {
+          "title": "Restraint",
+          "body": "Elegance without excess. Our events and our administration stay proportionate to our mission."
+        },
+        {
+          "title": "Partnership",
+          "body": "We work through existing schools, clubs and public bodies rather than building parallel structures."
+        }
+      ]
+    },
+    "theory": {
+      "eyebrow": "Theory of change",
+      "title": "From a gift to a lasting difference",
+      "lead": "Our working hypothesis, which we will test and revise with evidence:",
+      "steps": [
+        {
+          "title": "Resources",
+          "body": "Contributions from founding families, companies, gala guests and individual supporters, plus volunteer expertise."
+        },
+        {
+          "title": "Activities",
+          "body": "Fund school improvements with the responsible authorities; fund sailing places with qualified clubs; award modest scholarships."
+        },
+        {
+          "title": "Outputs",
+          "body": "Improved learning spaces delivered on budget; young people completing courses safely; scholarships awarded fairly."
+        },
+        {
+          "title": "Outcomes",
+          "body": "Better daily learning conditions; confidence, teamwork and water skills; clearer pathways into maritime study and work."
+        },
+        {
+          "title": "Long-term impact",
+          "body": "Coastal communities where opportunity does not depend on family income, and where the sea is a shared heritage."
+        }
+      ],
+      "assumptions": "Key assumptions we must verify: that partner schools and public owners can authorise works within a year; that clubs can host additional young sailors safely; and that a small, well-governed foundation can sustain donor trust through full transparency."
+    },
+    "methodology": {
+      "eyebrow": "Impact methodology",
+      "title": "How we will measure — and what we will not do",
+      "items": [
+        "Record a baseline before any project starts, agreed with the partner school or club.",
+        "Choose a small number of indicators per project, defined in advance and published with the project.",
+        "Collect only the data we need. Data about young people is aggregated and anonymised.",
+        "Seek independent verification for works (technical sign-off) and for financial statements.",
+        "Publish results, including delays, overruns and things that did not work.",
+        "Never report outputs we have not delivered, nor count beneficiaries more than once."
+      ]
+    },
+    "governance": {
+      "eyebrow": "Governance intentions",
+      "title": "Built to be trusted",
+      "lead": "These are intentions to be formalised in the statute with Italian legal and accounting advisers. They are not yet in force.",
+      "items": [
+        "A board that includes independent members, not only founding families.",
+        "A written conflicts-of-interest policy, with declarations recorded annually.",
+        "Grant decisions taken against published criteria, documented and minuted.",
+        "Dual authorisation for payments and segregation of financial duties.",
+        "Annual accounts reviewed by a qualified professional, and an annual public report.",
+        "A designated safeguarding lead and a child-safeguarding policy before any activity with minors.",
+        "Sponsors and donors have no say over the selection of individual beneficiaries."
+      ]
+    }
+  },
+  "projects": {
+    "hero": {
+      "eyebrow": "Projects",
+      "title": "Proposals, honestly labelled.",
+      "lead": "Every project shows its real status. Today all of them are early proposals: none is funded, and no beneficiary or site has been confirmed."
+    },
+    "filters": {
+      "title": "Filter projects",
+      "status": "Status",
+      "pillar": "Pillar",
+      "all": "All",
+      "apply": "Apply filters",
+      "reset": "Reset",
+      "results": "{count, plural, =0 {No projects} one {# project} other {# projects}}"
+    },
+    "empty": "No projects match these filters.",
+    "emptyCta": "Show all projects",
+    "detail": {
+      "overview": "Overview",
+      "goals": "Goals",
+      "budget": "Budget",
+      "budgetIllustrative": "This budget is an illustrative scenario for planning, not a quote, a commitment or a financial result.",
+      "budgetEmpty": "No budget has been prepared yet.",
+      "funding": "Funding",
+      "pledged": "Pledged in writing",
+      "spent": "Spent",
+      "fundingDemo": "Demo content: no real funds are associated with this project.",
+      "milestones": "Milestones",
+      "milestonesEmpty": "Milestones will be set once the project is approved.",
+      "milestoneDone": "Completed",
+      "milestonePlanned": "Planned",
+      "updates": "Updates",
+      "updatesEmpty": "No updates have been published yet.",
+      "evidence": "Documentary evidence",
+      "evidenceEmpty": "Evidence — such as authorisations, technical sign-offs, invoices and completion reports — will be published here as the project progresses.",
+      "privacy": "Beneficiary privacy",
+      "privacyDefault": "We publish no names, images or identifying details of minors. Schools and partner organisations are named only with their written consent. Photographs of young people are used only with documented guardian consent, and never with information that could locate an individual child.",
+      "share": "Interested in this project?",
+      "shareBody": "Funding is not open. You can register interest or ask a question."
+    }
+  },
+  "sailing": {
+    "hero": {
+      "eyebrow": "Sailing",
+      "title": "The regatta season, with a purpose.",
+      "lead": "Sailing is how many of us first understood the sea. We intend to share that with young people who have never had the chance — working alongside the clubs and events that already make Italian sailing remarkable."
+    },
+    "programme": {
+      "eyebrow": "Sailing for Impact",
+      "title": "How the youth programme would work",
+      "items": [
+        {
+          "title": "Through established clubs",
+          "body": "Courses run by qualified instructors at clubs with proven safety records — we fund places, we do not run boats."
+        },
+        {
+          "title": "Everything covered",
+          "body": "Course fees, buoyancy aids and kit, insurance and transport, so cost never stands in the way."
+        },
+        {
+          "title": "Referred by schools",
+          "body": "Participants are referred by partner schools and community organisations using transparent, needs-based criteria."
+        },
+        {
+          "title": "Safeguarding built in",
+          "body": "Vetted adults, parental consent, supervision ratios and incident reporting agreed in writing with every club."
+        }
+      ]
+    },
+    "events": {
+      "eyebrow": "Charity regattas",
+      "title": "Proposed events",
+      "lead": "Every event below is a proposal unless it is explicitly marked as confirmed. We have no agreement with any regatta, club or sailing team.",
+      "empty": "Proposed events will be listed here.",
+      "interest": "Register interest",
+      "date": "Timing",
+      "location": "Location"
+    },
+    "partnerships": {
+      "eyebrow": "Maritime partnerships",
+      "title": "Opportunities for the sailing community",
+      "items": [
+        {
+          "title": "Yacht clubs and sailing schools",
+          "body": "Host funded places for young sailors, or add a charity dimension to an existing club regatta."
+        },
+        {
+          "title": "Regatta organisers",
+          "body": "A charity partner for a race, a prize-giving collection or a youth sail-past — on terms you approve."
+        },
+        {
+          "title": "Marinas, boatyards and chandlers",
+          "body": "In-kind support: berths for training boats, maintenance, safety equipment or kit for scholars."
+        },
+        {
+          "title": "Marine businesses",
+          "body": "Skills days, internships and mentoring connected to Blue Horizons scholarships."
+        }
+      ],
+      "cta": "Discuss a partnership"
+    },
+    "interestTitle": "Register interest in a proposed regatta",
+    "interestLead": "Leave your details and we will write when plans are confirmed. This is not a booking."
+  },
+  "gala": {
+    "hero": {
+      "eyebrow": "The Blue Legacy Gala",
+      "title": "An evening by the sea, for the coast.",
+      "lead": "A small annual gathering of supporters, with the regatta season as its backdrop and the foundation's work at its centre."
+    },
+    "concept": {
+      "eyebrow": "The concept",
+      "title": "Proposed format",
+      "items": [
+        {
+          "title": "Intimate by design",
+          "body": "A seated dinner for an indicative 100–120 guests at a coastal venue, to be selected."
+        },
+        {
+          "title": "The work, not the spectacle",
+          "body": "A short programme presenting projects, budgets and progress — with consent-based storytelling only."
+        },
+        {
+          "title": "A considered auction",
+          "body": "Only lots donated in writing by their owners, described accurately, with no implied endorsements."
+        },
+        {
+          "title": "Responsible hospitality",
+          "body": "Local suppliers, seasonal produce and a modest production budget, published afterwards."
+        }
+      ]
+    },
+    "finance": {
+      "eyebrow": "Gross versus net",
+      "title": "What a gala really contributes",
+      "body": "A gala's headline figure is its gross fundraising — the total of tickets, sponsorship of the evening, auction and gifts. But staging the evening has costs: venue, catering, production, insurance. What reaches the programmes is the net amount. In our illustrative first-year scenario, a gala grossing {gross} with costs of {costs} would contribute {net} net. We will always publish both figures.",
+      "gross": "Gross fundraising (illustrative)",
+      "costs": "Direct costs (illustrative)",
+      "net": "Net contribution (illustrative)"
+    },
+    "tickets": {
+      "title": "Tickets are not on sale",
+      "body": "We will not sell tickets until the foundation is incorporated, the event has been approved, and the necessary permits, insurance and venue agreements are in place. The interest list below carries no obligation and no payment."
+    },
+    "details": {
+      "title": "At a glance",
+      "date": "Timing",
+      "location": "Venue",
+      "status": "Status"
+    },
+    "interestTitle": "Join the gala interest list",
+    "interestLead": "We will write to you once a date and venue are confirmed."
+  },
+  "partners": {
+    "hero": {
+      "eyebrow": "Partners",
+      "title": "A partnership prospectus — in draft.",
+      "lead": "We are seeking a small number of founding partners who share our values. Everything on this page is a proposal for discussion; nothing is a confirmed sponsorship."
+    },
+    "principles": {
+      "eyebrow": "Our principles",
+      "title": "How we partner",
+      "items": [
+        "No partner name or logo appears anywhere until a written agreement is signed and approved.",
+        "Partners never influence the selection of individual beneficiaries.",
+        "Recognition is proportionate and tasteful. We do not offer exclusivity over schools or young people.",
+        "We carry out due diligence on every partner, and may decline support that conflicts with our mission.",
+        "We report to partners on how their contribution was used — including when plans change."
+      ]
+    },
+    "packages": {
+      "eyebrow": "Proposed packages",
+      "title": "Indicative partnership levels",
+      "note": "Indicative proposals only. Amounts, benefits and recognition will be agreed individually in writing, after the foundation is incorporated and subject to legal and tax advice.",
+      "contribution": "Suggested annual contribution",
+      "items": [
+        {
+          "key": "FOUNDING_PARTNER",
+          "name": "Founding Partner",
+          "amount": "€10,000",
+          "body": "For organisations who want to help build the foundation from its first year.",
+          "benefits": [
+            "Annual briefing on all programmes and accounts",
+            "Recognition in the annual report and at the gala, with your consent",
+            "Invitation to visit a completed project, where safeguarding allows",
+            "Staff volunteering opportunities on suitable projects"
+          ]
+        },
+        {
+          "key": "REGATTA_PARTNER",
+          "name": "Regatta Partner",
+          "amount": "€5,000",
+          "body": "Associated with the charity regatta partnership and the youth sailing programme.",
+          "benefits": [
+            "Recognition connected to the charity regatta, subject to the organiser's approval",
+            "Programme report on the youth sailing places funded",
+            "Invitation to the youth sail-past, where one is held"
+          ]
+        },
+        {
+          "key": "COMMUNITY_PARTNER",
+          "name": "Community Partner",
+          "amount": "€2,500",
+          "body": "For local businesses in the coastal communities we hope to serve.",
+          "benefits": [
+            "Recognition on the website and in the annual report, with your consent",
+            "Annual programme update"
+          ]
+        },
+        {
+          "key": "IN_KIND",
+          "name": "In-kind partner",
+          "amount": "Goods or services",
+          "body": "Boats, safety equipment, technical services, venues or professional expertise.",
+          "benefits": [
+            "Recognition proportionate to the value provided, agreed in writing",
+            "Valuation and acknowledgement in line with professional advice"
+          ]
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Process",
+      "title": "From first conversation to agreement",
+      "steps": [
+        "Enquiry — tell us about your organisation and interests.",
+        "Conversation — we share plans, budgets and governance documents.",
+        "Due diligence — on both sides, including reputational and compliance checks.",
+        "Written agreement — reviewed by legal and tax advisers once the foundation is incorporated.",
+        "Recognition — only after signature, and exactly as agreed."
+      ]
+    },
+    "formTitle": "Partnership enquiry",
+    "formLead": "Tell us a little about your organisation. We will reply personally."
+  },
+  "donate": {
+    "hero": {
+      "eyebrow": "Support us",
+      "title": "Donations are not open yet.",
+      "lead": "The foundation is not yet incorporated. Until it is legally established, its payment provider has verified it and its donation terms have been approved by its advisers, we will not accept money."
+    },
+    "why": {
+      "title": "Why we are waiting",
+      "items": [
+        "A gift should go to a properly constituted entity, with a bank account in its own name.",
+        "Donors deserve clear, legally approved terms and accurate information about tax treatment.",
+        "Our payment provider must verify the organisation before processing any donation."
+      ]
+    },
+    "tax": {
+      "title": "About tax deductibility",
+      "body": "We cannot currently offer tax-deductible receipts, and we make no claim about the tax treatment of future gifts. That will depend on the legal form chosen and on registration, and will be confirmed with professional advice before donations open."
+    },
+    "interestTitle": "Register your interest in supporting us",
+    "interestLead": "No payment and no commitment. We will contact you once the foundation is ready to accept support.",
+    "enabled": {
+      "title": "Make a donation",
+      "lead": "Payments are processed securely by Stripe on its hosted checkout page. We never see or store your card details.",
+      "amount": "Amount (EUR)",
+      "presets": "Suggested amounts",
+      "custom": "Other amount",
+      "designation": "Designation",
+      "general": "Where it is needed most",
+      "terms": "I confirm that I have read the",
+      "termsLink": "Terms of use",
+      "privacyLink": "Privacy notice",
+      "noTaxReceipt": "Please note: confirmation emails are payment acknowledgements, not tax receipts. Receipts suitable for tax purposes will be issued only where the law allows and with legally approved wording.",
+      "submit": "Continue to secure checkout",
+      "redirecting": "Redirecting to secure checkout…",
+      "mockNotice": "Test mode: no real payment will be taken."
+    },
+    "success": {
+      "title": "Thank you.",
+      "pending": "We are waiting for confirmation from our payment provider. This usually takes a few seconds; you will receive an email from the provider.",
+      "confirmed": "Your donation of {amount} has been confirmed.",
+      "unknown": "We could not find this checkout session. If you were charged, please contact us and we will look into it.",
+      "mock": "This was a test-mode checkout. No money was taken.",
+      "notReceipt": "This page is not a tax receipt.",
+      "back": "Return to the homepage"
+    },
+    "cancel": {
+      "title": "Your donation was cancelled.",
+      "body": "No payment was taken. If something went wrong, we would be grateful to hear about it.",
+      "retry": "Return to the donation page"
+    }
+  },
+  "transparency": {
+    "hero": {
+      "eyebrow": "Transparency",
+      "title": "What is real, what is planned, what is pledged.",
+      "lead": "This page separates facts from intentions. It shows only real figures from our ledger, and labels every scenario as illustrative."
+    },
+    "legal": {
+      "eyebrow": "Legal status",
+      "title": "A proposed foundation, not yet incorporated",
+      "items": [
+        {
+          "label": "Legal form",
+          "value": "To be decided with advisers (Fondazione ETS or Associazione ETS under consideration)"
+        },
+        {
+          "label": "Incorporation",
+          "value": "Not yet incorporated"
+        },
+        {
+          "label": "RUNTS registration",
+          "value": "Not registered"
+        },
+        {
+          "label": "ONLUS / ETS status",
+          "value": "None — no such status is claimed"
+        },
+        {
+          "label": "Tax-deductible receipts",
+          "value": "Not available"
+        },
+        {
+          "label": "Bank account",
+          "value": "None in the foundation's name"
+        }
+      ]
+    },
+    "ledger": {
+      "eyebrow": "Actual funds",
+      "title": "Received, pledged and spent",
+      "lead": "Live figures from our ledger. Demo and test transactions are excluded.",
+      "received": "Received (net of refunds)",
+      "pledged": "Pledged in writing",
+      "spent": "Spent on projects",
+      "zeroNote": "These figures are zero because the foundation does not yet accept or hold funds."
+    },
+    "budget": {
+      "eyebrow": "Illustrative scenario",
+      "title": "An illustrative first-year budget",
+      "lead": "A planning scenario to show how a modest first year could be structured. It is not a forecast, a target or a result.",
+      "revenue": "Illustrative revenue",
+      "expenses": "Illustrative expenses",
+      "total": "Total",
+      "balance": "Balance",
+      "programmeShare": "Programmes (school, sailing, scholarships): {share}% of expenses",
+      "galaNote": "The gala line in revenue is gross. Its direct costs appear in expenses, so its net contribution in this scenario is {net}.",
+      "chartLabel": "Share of illustrative expenses"
+    },
+    "policies": {
+      "eyebrow": "Policies",
+      "title": "Policies and reports",
+      "lead": "Documents will be published here once adopted. Today, most are being drafted.",
+      "status": "Status",
+      "items": [
+        {
+          "name": "Privacy notice",
+          "state": "Draft published, pending legal review",
+          "href": "/privacy"
+        },
+        {
+          "name": "Cookie policy",
+          "state": "Draft published, pending legal review",
+          "href": "/cookies"
+        },
+        {
+          "name": "Child-safeguarding policy",
+          "state": "In preparation — required before any activity with minors"
+        },
+        {
+          "name": "Conflicts-of-interest policy",
+          "state": "In preparation"
+        },
+        {
+          "name": "Donation acceptance policy",
+          "state": "In preparation"
+        },
+        {
+          "name": "Complaints and whistleblowing procedure",
+          "state": "In preparation"
+        },
+        {
+          "name": "Annual report and accounts",
+          "state": "None yet — the first will follow the first financial year"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Write to the founding team.",
+      "lead": "Questions, ideas, introductions to schools or clubs, or press enquiries — we read every message."
+    },
+    "next": {
+      "title": "What happens next",
+      "items": [
+        "Your message is stored securely and read by a member of the founding team.",
+        "We aim to reply within ten working days.",
+        "We use your details only to answer you, as set out in our privacy notice."
+      ]
+    },
+    "formTitle": "Send a message"
+  },
+  "forms": {
+    "required": "required",
+    "optional": "optional",
+    "submit": "Send",
+    "sending": "Sending…",
+    "honeypot": "Leave this field empty",
+    "consent": "I have read the {privacy} and agree that my details are used to answer this request.",
+    "privacyLink": "privacy notice",
+    "labels": {
+      "name": "Full name",
+      "email": "Email address",
+      "topic": "Topic",
+      "message": "Message",
+      "organizationName": "Organisation",
+      "contactName": "Your name",
+      "phone": "Phone",
+      "website": "Website",
+      "packageInterest": "Partnership level of interest",
+      "organization": "Organisation (if any)",
+      "partySize": "Number of guests",
+      "supportType": "How might you like to help?"
+    },
+    "hints": {
+      "website": "Starting with https://",
+      "partySize": "Indicative only, 1–20",
+      "message": "At least 10 characters"
+    },
+    "choose": "Please choose…",
+    "topics": {
+      "GENERAL": "General question",
+      "VOLUNTEERING": "Volunteering or expertise",
+      "SCHOOL_OR_PARTNER_REFERRAL": "Suggest a school, club or partner",
+      "PRESS": "Press",
+      "OTHER": "Something else"
+    },
+    "supportTypes": {
+      "ONE_OFF": "A one-off gift",
+      "RECURRING": "Regular giving",
+      "CORPORATE": "Support through my company",
+      "IN_KIND": "In-kind support (goods, services, venues)",
+      "VOLUNTEERING": "Time and expertise",
+      "UNDECIDED": "Not sure yet"
+    },
+    "sponsorPackages": {
+      "FOUNDING_PARTNER": "Founding Partner (proposal)",
+      "REGATTA_PARTNER": "Regatta Partner (proposal)",
+      "COMMUNITY_PARTNER": "Community Partner (proposal)",
+      "IN_KIND": "In-kind partnership",
+      "UNDECIDED": "Not sure yet"
+    },
+    "errors": {
+      "required": "This field is required.",
+      "tooShort": "This is too short.",
+      "tooLong": "This is too long.",
+      "email": "Enter a valid email address.",
+      "phone": "Enter a valid phone number.",
+      "url": "Enter a full web address starting with https://",
+      "number": "Enter a whole number.",
+      "partySize": "Enter a number between 1 and 20.",
+      "consentRequired": "Please confirm you have read the privacy notice.",
+      "amountInvalid": "Enter an amount such as 50 or 50.00.",
+      "amountMin": "The minimum donation is €5.",
+      "amountMax": "For gifts above €10,000 please contact us directly.",
+      "projectUnavailable": "This project is not currently accepting donations."
+    },
+    "messages": {
+      "fixErrors": "Please correct the highlighted fields.",
+      "rateLimited": "Too many submissions from your connection. Please wait a few minutes and try again.",
+      "serverError": "Something went wrong on our side and your message was not sent. Please try again later.",
+      "contactSuccess": "Thank you — your message has been received. We aim to reply within ten working days.",
+      "supportSuccess": "Thank you — your interest has been recorded. We will contact you when the foundation is ready. No payment has been taken.",
+      "sponsorSuccess": "Thank you — your enquiry has been received. A member of the founding team will reply personally.",
+      "eventSuccess": "Thank you — you are on the interest list. This is not a booking or a ticket.",
+      "eventUpdated": "Your existing registration has been updated.",
+      "eventClosed": "Interest registration for this event is closed.",
+      "donationsDisabled": "Donations are not currently open.",
+      "duplicateSubmission": "This form was already submitted. Please reload the page to start again.",
+      "paymentUnavailable": "Our payment provider is temporarily unavailable. No payment was taken. Please try again later."
+    }
+  },
+  "consent": {
+    "title": "Your privacy choices",
+    "body": "We use only the technical cookies needed to run this site. With your permission we would also use privacy-friendly, cookie-free statistics to understand which pages are useful.",
+    "accept": "Allow statistics",
+    "reject": "Technical only",
+    "manage": "Privacy choices",
+    "learnMore": "Cookie policy"
+  },
+  "finance": {
+    "revenue": {
+      "familyContributions": "Family contributions",
+      "corporateSponsors": "Three corporate sponsors at €10,000 each",
+      "galaGross": "Gala gross fundraising",
+      "individualDonations": "Individual donations"
+    },
+    "expenses": {
+      "schoolRenovation": "School renovation",
+      "youthSailing": "Youth sailing",
+      "equipmentScholarships": "Equipment and scholarships",
+      "gala": "Gala costs",
+      "administration": "Administration",
+      "reserve": "Reserve"
+    }
+  },
+  "legal": {
+    "reviewNotice": "Draft pending review by Italian legal counsel. This text is provided for transparency and is not legal advice.",
+    "lastUpdated": "Last updated: {date}",
+    "controllerPending": "Until the foundation is incorporated, personal data submitted through this website is processed by the founding promoters of the initiative. Their full identity and address will be stated here before public launch, and the foundation will become the data controller upon incorporation.",
+    "privacy": {
+      "title": "Privacy notice",
+      "intro": "This notice explains how personal data submitted through this website is processed, in accordance with Regulation (EU) 2016/679 (GDPR) and Italian Legislative Decree 196/2003 as amended.",
+      "sections": [
+        {
+          "heading": "Who is responsible",
+          "body": [
+            "{controller}"
+          ]
+        },
+        {
+          "heading": "What data we collect",
+          "body": [
+            "Contact and enquiry forms: your name, email address, message and, for partnership enquiries, your organisation and optionally a phone number and website.",
+            "Event interest: your name, email address, optional organisation, indicative number of guests and message.",
+            "Donations (only once enabled): the amount, currency and the email address you give our payment provider. Card details are entered on Stripe's hosted page and never reach our servers.",
+            "Security data: a keyed, irreversible hash of your IP address is used for a short time to prevent abuse. We do not store your IP address in clear."
+          ]
+        },
+        {
+          "heading": "Why we use it and on what legal basis",
+          "body": [
+            "To answer your request and manage the relationship you ask for (Art. 6(1)(b) GDPR, steps at your request).",
+            "To keep the website secure and prevent spam (Art. 6(1)(f), legitimate interest).",
+            "To keep donation records required by law, once donations are enabled (Art. 6(1)(c), legal obligation).",
+            "Optional statistics, only with your consent (Art. 6(1)(a))."
+          ]
+        },
+        {
+          "heading": "Minors",
+          "body": [
+            "This website is not directed at children and we do not knowingly collect their data through it. We never publish identifying details or images of minors without documented consent from a parent or guardian and appropriate safeguards."
+          ]
+        },
+        {
+          "heading": "Who receives it",
+          "body": [
+            "Members of the founding team who need it to respond. Service providers acting on our instructions: hosting (Vercel), database hosting, transactional email (Resend, if enabled) and payments (Stripe, if enabled). Some providers may process data outside the EEA under appropriate safeguards such as the EU Standard Contractual Clauses."
+          ]
+        },
+        {
+          "heading": "How long we keep it",
+          "body": [
+            "Enquiries: up to 24 months after the last contact, unless a continuing relationship requires longer.",
+            "Donation records: for the period required by Italian law (normally 10 years).",
+            "Abuse-prevention hashes: up to a few hours."
+          ]
+        },
+        {
+          "heading": "Your rights",
+          "body": [
+            "You may request access, rectification, erasure, restriction, portability, and object to processing; you may withdraw consent at any time. Use the contact form to exercise your rights. You also have the right to lodge a complaint with the Garante per la protezione dei dati personali (www.garanteprivacy.it)."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie policy",
+      "intro": "This website uses as few cookies as possible.",
+      "tableName": "Name",
+      "tablePurpose": "Purpose",
+      "tableDuration": "Duration",
+      "tableType": "Type",
+      "rows": [
+        {
+          "name": "blf_consent",
+          "purpose": "Remembers your privacy choice",
+          "duration": "6 months",
+          "type": "Technical"
+        },
+        {
+          "name": "blf_session",
+          "purpose": "Keeps authorised staff signed in to the administration area only",
+          "duration": "12 hours",
+          "type": "Technical"
+        }
+      ],
+      "analytics": "Statistics: if — and only if — you allow statistics, and the service is configured, we load a privacy-friendly analytics script (Plausible) that does not set cookies or track you across websites. You can change your choice at any time using the \"Privacy choices\" link in the footer.",
+      "noThirdParty": "We do not use advertising, profiling or social-media tracking cookies."
+    },
+    "terms": {
+      "title": "Terms of use",
+      "intro": "By using this website you accept these terms.",
+      "sections": [
+        {
+          "heading": "Status of the initiative",
+          "body": [
+            "The Blue Legacy Foundation is a proposed initiative and is not yet incorporated. It is not a registered Third Sector Entity (ETS), it is not an ONLUS, and it cannot issue tax-deductible receipts. Nothing on this website is an offer, a solicitation of funds, or a claim of any such status."
+          ]
+        },
+        {
+          "heading": "Projects, events and figures",
+          "body": [
+            "Projects and events are proposals unless explicitly marked as confirmed. Budgets are illustrative scenarios unless explicitly stated otherwise. Content labelled \"Demo\" is sample content."
+          ]
+        },
+        {
+          "heading": "No partnerships implied",
+          "body": [
+            "We have no partnership, sponsorship or endorsement from any organisation, event, team or person unless it is stated on this website with their written consent. Mentions of the sailing world in general do not imply any affiliation."
+          ]
+        },
+        {
+          "heading": "No advice",
+          "body": [
+            "Nothing on this website is legal, tax, financial or investment advice."
+          ]
+        },
+        {
+          "heading": "Intellectual property",
+          "body": [
+            "Texts and original illustrations are the property of the founding team. Third-party photographs, where used, are credited with their licence."
+          ]
+        },
+        {
+          "heading": "Liability and law",
+          "body": [
+            "We take care to keep information accurate but cannot guarantee it is complete or current. These terms are governed by Italian law."
+          ]
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility statement",
+      "intro": "We want this website to be usable by everyone. We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA.",
+      "sections": [
+        {
+          "heading": "What we have done",
+          "body": [
+            "Semantic headings and landmarks, a skip link, full keyboard navigation with visible focus, sufficient colour contrast, text alternatives, labelled form fields with clear error messages, support for reduced-motion preferences, and layouts that work from small phones to large screens."
+          ]
+        },
+        {
+          "heading": "Known limitations",
+          "body": [
+            "This statement is based on our own testing and automated checks; an independent audit has not yet been carried out. Documents published as PDFs may not all be fully accessible."
+          ]
+        },
+        {
+          "heading": "Legal framework",
+          "body": [
+            "As a proposed private non-profit initiative, we are not currently subject to the accessibility obligations of Law 4/2004 (\"Legge Stanca\") as applied by AgID; we follow its principles voluntarily."
+          ]
+        },
+        {
+          "heading": "Feedback",
+          "body": [
+            "If you encounter a barrier, please tell us through the contact form, describing the page and the problem. We aim to respond within ten working days."
+          ]
+        }
+      ]
+    }
+  },
+  "notFound": {
+    "title": "Off the chart.",
+    "body": "We could not find the page you were looking for.",
+    "home": "Back to the homepage"
+  },
+  "error": {
+    "title": "Something went wrong.",
+    "body": "An unexpected error occurred. Please try again.",
+    "retry": "Try again"
+  },
+  "loading": "Loading…"
+}

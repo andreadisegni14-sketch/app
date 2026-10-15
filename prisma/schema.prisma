@@ -1,0 +1,519 @@
+// The Blue Legacy Foundation — data model.
+//
+// Principles:
+// - Store only the personal data needed to answer an enquiry or reconcile a payment.
+// - Never store card data: payments are handled by hosted Stripe Checkout.
+// - Records created by the seed script are flagged `isDemo` and labelled DEMO in the UI.
+// - Money is stored as integer minor units (cents) together with an ISO currency code.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ---------------------------------------------------------------------------
+// Enums
+// ---------------------------------------------------------------------------
+
+enum RoleName {
+  ADMIN
+  EDITOR
+  VIEWER
+}
+
+enum Pillar {
+  SAILING_FOR_IMPACT
+  COASTAL_SCHOOL_RENEWAL
+  BLUE_HORIZONS_SCHOLARSHIPS
+  ANNUAL_GALA
+}
+
+enum ProjectStatus {
+  IDEA
+  UNDER_REVIEW
+  APPROVED
+  FUNDRAISING
+  IN_PROGRESS
+  COMPLETED
+}
+
+enum InquiryStatus {
+  NEW
+  IN_PROGRESS
+  RESOLVED
+  ARCHIVED
+  SPAM
+}
+
+enum EmailStatus {
+  PENDING
+  SENT
+  FAILED
+  NOT_CONFIGURED
+}
+
+enum ContactTopic {
+  GENERAL
+  VOLUNTEERING
+  SCHOOL_OR_PARTNER_REFERRAL
+  PRESS
+  SUPPORT_INTEREST
+  OTHER
+}
+
+enum InquirySource {
+  CONTACT_FORM
+  DONATE_INTEREST
+}
+
+enum SupportType {
+  ONE_OFF
+  RECURRING
+  CORPORATE
+  IN_KIND
+  VOLUNTEERING
+  UNDECIDED
+}
+
+enum SponsorPackage {
+  FOUNDING_PARTNER
+  REGATTA_PARTNER
+  COMMUNITY_PARTNER
+  IN_KIND
+  UNDECIDED
+}
+
+enum EventType {
+  REGATTA
+  GALA
+  PARTNERSHIP
+  OTHER
+}
+
+enum EventStatus {
+  PROPOSED
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+enum DonationStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+  EXPIRED
+  REFUNDED
+}
+
+enum PaymentProvider {
+  STRIPE
+  MOCK
+}
+
+enum ReconciliationStatus {
+  UNRECONCILED
+  RECONCILED
+  DISCREPANCY
+}
+
+enum MediaKind {
+  IMAGE
+  DOCUMENT
+}
+
+enum OrganizationType {
+  SCHOOL
+  SAILING_CLUB
+  NONPROFIT
+  PUBLIC_BODY
+  OTHER
+}
+
+enum DueDiligenceStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  APPROVED
+  REJECTED
+}
+
+// ---------------------------------------------------------------------------
+// Identity & access
+// ---------------------------------------------------------------------------
+
+model Role {
+  id          String   @id @default(cuid())
+  name        RoleName @unique
+  description String
+  users       User[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model User {
+  id               String     @id @default(cuid())
+  email            String     @unique
+  name             String
+  passwordHash     String
+  roleId           String
+  role             Role       @relation(fields: [roleId], references: [id])
+  isActive         Boolean    @default(true)
+  failedLoginCount Int        @default(0)
+  lockedUntil      DateTime?
+  lastLoginAt      DateTime?
+  sessions         Session[]
+  auditLogs        AuditLog[]
+  mediaUploads     MediaAsset[]
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+
+  @@index([roleId])
+}
+
+/// Server-side session. `id` is the SHA-256 hash of the cookie token; the raw token is never stored.
+model Session {
+  id        String   @id
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  userAgent String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+/// Fixed-window rate limiter shared across serverless instances. Keys contain only hashed identifiers.
+model RateLimit {
+  key         String   @id
+  count       Int
+  windowStart DateTime
+  expiresAt   DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([expiresAt])
+}
+
+// ---------------------------------------------------------------------------
+// Programmes
+// ---------------------------------------------------------------------------
+
+model Project {
+  id                   String                    @id @default(cuid())
+  slug                 String                    @unique
+  pillar               Pillar
+  status               ProjectStatus             @default(IDEA)
+  isDemo               Boolean                   @default(false)
+  isPublished          Boolean                   @default(false)
+  isFeatured           Boolean                   @default(false)
+  sortOrder            Int                       @default(0)
+  titleEn              String
+  titleIt              String
+  summaryEn            String
+  summaryIt            String
+  descriptionEn        String                    @db.Text
+  descriptionIt        String                    @db.Text
+  locationEn           String
+  locationIt           String
+  region               String?
+  goalsEn              String[]
+  goalsIt              String[]
+  currency             String                    @default("EUR") @db.Char(3)
+  budgetCents          Int                       @default(0)
+  budgetIsIllustrative Boolean                   @default(true)
+  /// Array of { labelEn, labelIt, amountCents } — validated with Zod before writing.
+  budgetLines          Json                      @default("[]")
+  /// Amounts backed by written pledges only.
+  pledgedCents         Int                       @default(0)
+  spentCents           Int                       @default(0)
+  privacyNoteEn        String?                   @db.Text
+  privacyNoteIt        String?                   @db.Text
+  coverMediaId         String?
+  coverMedia           MediaAsset?               @relation("ProjectCover", fields: [coverMediaId], references: [id], onDelete: SetNull)
+  milestones           ProjectMilestone[]
+  updates              ProjectUpdate[]
+  media                MediaAsset[]              @relation("ProjectMedia")
+  beneficiaries        BeneficiaryOrganization[]
+  donations            Donation[]
+  createdAt            DateTime                  @default(now())
+  updatedAt            DateTime                  @updatedAt
+
+  @@index([status])
+  @@index([pillar])
+  @@index([isPublished, sortOrder])
+}
+
+model ProjectMilestone {
+  id            String    @id @default(cuid())
+  projectId     String
+  project       Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  titleEn       String
+  titleIt       String
+  descriptionEn String?   @db.Text
+  descriptionIt String?   @db.Text
+  targetLabelEn String?
+  targetLabelIt String?
+  completedAt   DateTime?
+  sortOrder     Int       @default(0)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([projectId, sortOrder])
+}
+
+model ProjectUpdate {
+  id          String    @id @default(cuid())
+  projectId   String
+  project     Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  titleEn     String
+  titleIt     String
+  bodyEn      String    @db.Text
+  bodyIt      String    @db.Text
+  isPublished Boolean   @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([projectId, publishedAt])
+}
+
+/// Images and documents. Small files are stored in Postgres (`data`) so the app runs without
+/// object storage; `externalUrl` supports assets hosted elsewhere.
+model MediaAsset {
+  id                       String    @id @default(cuid())
+  kind                     MediaKind
+  fileName                 String
+  mimeType                 String
+  sizeBytes                Int
+  sha256                   String
+  data                     Bytes?
+  externalUrl              String?
+  width                    Int?
+  height                   Int?
+  altEn                    String    @default("")
+  altIt                    String    @default("")
+  credit                   String?
+  license                  String?
+  sourceUrl                String?
+  isPublic                 Boolean   @default(false)
+  /// Safeguarding: assets that depict minors cannot be made public without confirmed guardian consent.
+  depictsMinors            Boolean   @default(false)
+  guardianConsentConfirmed Boolean   @default(false)
+  projectId                String?
+  project                  Project?  @relation("ProjectMedia", fields: [projectId], references: [id], onDelete: SetNull)
+  coverFor                 Project[] @relation("ProjectCover")
+  uploadedById             String?
+  uploadedBy               User?     @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+  createdAt                DateTime  @default(now())
+  updatedAt                DateTime  @updatedAt
+
+  @@index([projectId])
+  @@index([kind, isPublic])
+  @@index([sha256])
+}
+
+model BeneficiaryOrganization {
+  id                 String             @id @default(cuid())
+  name               String
+  type               OrganizationType
+  region             String?
+  contactName        String?
+  contactEmail       String?
+  dueDiligenceStatus DueDiligenceStatus @default(NOT_STARTED)
+  dueDiligenceNotes  String?            @db.Text
+  /// The organisation may be named publicly only with written consent.
+  publicNameConsent  Boolean            @default(false)
+  isDemo             Boolean            @default(false)
+  projects           Project[]
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+
+  @@unique([name, region])
+  @@index([dueDiligenceStatus])
+}
+
+// ---------------------------------------------------------------------------
+// Events
+// ---------------------------------------------------------------------------
+
+model Event {
+  id            String          @id @default(cuid())
+  slug          String          @unique
+  type          EventType
+  status        EventStatus     @default(PROPOSED)
+  isDemo        Boolean         @default(false)
+  isPublished   Boolean         @default(true)
+  interestOpen  Boolean         @default(true)
+  titleEn       String
+  titleIt       String
+  summaryEn     String          @db.Text
+  summaryIt     String          @db.Text
+  locationEn    String
+  locationIt    String
+  dateLabelEn   String
+  dateLabelIt   String
+  startsAt      DateTime?
+  sortOrder     Int             @default(0)
+  interests     EventInterest[]
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  @@index([type, status])
+  @@index([isPublished, sortOrder])
+}
+
+model EventInterest {
+  id             String        @id @default(cuid())
+  eventId        String
+  event          Event         @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  name           String
+  email          String
+  organization   String?
+  partySize      Int?
+  message        String?       @db.Text
+  locale         String        @default("en")
+  consentAt      DateTime
+  privacyVersion String
+  status         InquiryStatus @default(NEW)
+  emailStatus    EmailStatus   @default(PENDING)
+  emailError     String?
+  internalNotes  String?       @db.Text
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@unique([eventId, email])
+  @@index([status, createdAt])
+}
+
+// ---------------------------------------------------------------------------
+// Enquiries
+// ---------------------------------------------------------------------------
+
+model SponsorInquiry {
+  id               String         @id @default(cuid())
+  organizationName String
+  contactName      String
+  email            String
+  phone            String?
+  website          String?
+  packageInterest  SponsorPackage @default(UNDECIDED)
+  message          String         @db.Text
+  locale           String         @default("en")
+  consentAt        DateTime
+  privacyVersion   String
+  status           InquiryStatus  @default(NEW)
+  emailStatus      EmailStatus    @default(PENDING)
+  emailError       String?
+  internalNotes    String?        @db.Text
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+
+  @@index([status, createdAt])
+  @@index([email])
+}
+
+model ContactInquiry {
+  id             String        @id @default(cuid())
+  source         InquirySource @default(CONTACT_FORM)
+  topic          ContactTopic  @default(GENERAL)
+  supportType    SupportType?
+  name           String
+  email          String
+  message        String        @db.Text
+  locale         String        @default("en")
+  consentAt      DateTime
+  privacyVersion String
+  status         InquiryStatus @default(NEW)
+  emailStatus    EmailStatus   @default(PENDING)
+  emailError     String?
+  internalNotes  String?       @db.Text
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@index([source, status, createdAt])
+  @@index([email])
+}
+
+// ---------------------------------------------------------------------------
+// Donations (disabled until incorporation, compliance and payment-provider approval)
+// ---------------------------------------------------------------------------
+
+model Donation {
+  id                      String               @id @default(cuid())
+  status                  DonationStatus       @default(PENDING)
+  provider                PaymentProvider
+  amountCents             Int
+  currency                String               @db.Char(3)
+  amountReceivedCents     Int?
+  /// Client-generated key preventing duplicate checkout sessions on double submission.
+  idempotencyKey          String               @unique
+  stripeCheckoutSessionId String?              @unique
+  stripePaymentIntentId   String?              @unique
+  livemode                Boolean              @default(false)
+  donorEmail              String?
+  projectId               String?
+  project                 Project?             @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  locale                  String               @default("en")
+  completedAt             DateTime?
+  reconciliationStatus    ReconciliationStatus @default(UNRECONCILED)
+  reconciledAt            DateTime?
+  reconciledById          String?
+  reconciliationNote      String?              @db.Text
+  events                  DonationEvent[]
+  createdAt               DateTime             @default(now())
+  updatedAt               DateTime             @updatedAt
+
+  @@index([status, createdAt])
+  @@index([reconciliationStatus])
+  @@index([projectId])
+}
+
+/// Append-only log of processed payment-provider events. The unique provider event id makes webhook
+/// processing idempotent.
+model DonationEvent {
+  id              String    @id @default(cuid())
+  providerEventId String    @unique
+  type            String
+  donationId      String?
+  donation        Donation? @relation(fields: [donationId], references: [id], onDelete: SetNull)
+  /// Minimal summary (ids, amounts, status) — never card data or full payloads.
+  summary         Json
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([donationId])
+  @@index([type, createdAt])
+}
+
+// ---------------------------------------------------------------------------
+// Governance
+// ---------------------------------------------------------------------------
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  actor      User?    @relation(fields: [actorId], references: [id], onDelete: SetNull)
+  action     String
+  entityType String
+  entityId   String?
+  metadata   Json?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([createdAt])
+  @@index([entityType, entityId])
+  @@index([actorId])
+}
+
+model SiteSetting {
+  key         String   @id
+  value       Json
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
