@@ -126,6 +126,7 @@ Owner column: **L** = lawyer, **N** = notary, **A** = accountant, **F** = founde
 | 12.2 | Distinguish sponsorship (with consideration) from donation (liberal gift) for tax/VAT | A |
 | 12.3 | Trademark licences for any logo use; approval process | L |
 | 12.4 | Prohibit any implication of endorsement by third parties not party to the agreement | L |
+| 12.5 | Related-party partnership with YoungGuns (windsurf project owned by a founder): written agreement on market terms, board approval without the founder's vote, public disclosure, tax/VAT treatment of shared events and sponsors | L, A |
 
 ## 13. Beneficiary due diligence
 

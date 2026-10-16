@@ -17,6 +17,8 @@ export default defineConfig({
           name: 'unit',
           environment: 'node',
           include: ['tests/unit/**/*.test.ts'],
+          // next-intl's ESM build imports `next/server` without an extension; let Vite resolve it.
+          server: { deps: { inline: ['next-intl'] } },
         },
       },
       {

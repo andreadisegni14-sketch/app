@@ -19,7 +19,9 @@ internal regulations with Italian advisers.
 | Data-protection contact | Privacy requests, exports, retention, breach handling | ADMIN |
 
 Principles: least privilege, at least two people for anything involving money, no one approves
-their own expense or a project in which they have an interest.
+their own expense or a project in which they have an interest. The windsurf partnership with
+YoungGuns, owned by a founder, is a related-party arrangement: written terms, board approval
+without that founder's vote, and disclosure on the Transparency page.
 
 ## Weekly operating workflow
 

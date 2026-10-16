@@ -35,3 +35,12 @@ test('language switch works without JavaScript', async ({ browser }) => {
   await expect(page.getByTestId('language-switch').first()).toHaveAttribute('href', '/it/gala')
   await context.close()
 })
+
+test('sailing page presents the YoungGuns windsurf partnership with its disclosure', async ({ page }) => {
+  await page.goto('/it/sailing')
+  const section = page.locator('section[aria-labelledby="youngguns"]')
+  await expect(page.getByRole('heading', { name: 'Blue Legacy × YoungGuns' })).toBeVisible()
+  await expect(section).toContainText('in fase di definizione')
+  await expect(section).toContainText('collegata a un fondatore')
+  await expect(section.locator('img')).toHaveCount(0)
+})

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { siteUrl } from '@/lib/runtime-config'
+import { isSiteOffline, siteUrl } from '@/lib/runtime-config'
 import { db } from '@/lib/db'
 import { localizedPath } from '@/lib/seo'
 
@@ -8,6 +8,7 @@ export const dynamic = 'force-dynamic'
 const STATIC_PATHS = ['/', '/mission', '/projects', '/sailing', '/gala', '/partners', '/donate', '/transparency', '/contact', '/privacy', '/cookies', '/terms', '/accessibility']
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  if (isSiteOffline()) return []
   const site = siteUrl()
   let projects: { slug: string; updatedAt: Date }[] = []
   try {

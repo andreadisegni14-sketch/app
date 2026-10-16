@@ -1,6 +1,8 @@
 import createMiddleware from 'next-intl/middleware'
 import { NextResponse, type NextRequest } from 'next/server'
 import { routing } from './i18n/routing'
+import { OFFLINE_PAGE } from './lib/offline-page'
+import { isSiteOffline } from './lib/runtime-config'
 
 const intl = createMiddleware(routing)
 
@@ -15,6 +17,13 @@ export default function proxy(request: NextRequest) {
       return NextResponse.redirect(new URL('/admin/login', request.url))
     }
     return NextResponse.next()
+  }
+
+  if (isSiteOffline()) {
+    return new NextResponse(OFFLINE_PAGE, {
+      status: 503,
+      headers: { 'Content-Type': 'text/html; charset=utf-8', 'Retry-After': '86400', 'X-Robots-Tag': 'noindex, nofollow', 'Cache-Control': 'no-store' },
+    })
   }
 
   return intl(request)
