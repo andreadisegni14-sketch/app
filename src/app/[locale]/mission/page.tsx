@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import { HowWeBuild } from '@/components/site/HowWeBuild'
 import { PageHero } from '@/components/ui/PageHero'
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { buttonStyles } from '@/components/ui/styles'
@@ -75,6 +76,8 @@ export default async function MissionPage({ params }: Props) {
         </ol>
         <p className="mt-10 max-w-3xl border-l-2 border-gold pl-5 text-sm leading-relaxed text-ivory/80">{t('theory.assumptions')}</p>
       </Section>
+
+      <HowWeBuild detailed />
 
       <Section labelledBy="methodology">
         <div className="grid gap-12 lg:grid-cols-2">

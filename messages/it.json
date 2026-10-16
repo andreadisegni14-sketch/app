@@ -206,7 +206,7 @@
       "eyebrow": "Primo anno, volutamente misurato",
       "title": "Il progetto pilota proposto per il primo anno",
       "items": [
-        "Riqualificazione di una scuola esistente in Marocco o in Kenya, con un partner locale verificato",
+        "Riqualificazione di una scuola esistente in Marocco o in Kenya, realizzata tramite un ente benefico che costruisce scuole",
         "Un piccolo fondo di borse di studio per gli studenti della scuola partner",
         "Una partnership con una regata benefica per incontrare sostenitori e sponsor",
         "Un piccolo gala di raccolta fondi"
@@ -369,6 +369,47 @@
         "Sponsor e donatori non hanno voce nella selezione dei singoli beneficiari."
       ]
     }
+  },
+  "howWeBuild": {
+    "eyebrow": "Come lo faremo",
+    "title": "Costruiamo scuole insieme a chi lo fa già bene.",
+    "lead": "Non apriremo uffici né cantieri nostri in Africa. Sceglieremo enti benefici affermati che costruiscono e rinnovano scuole in Marocco, in Kenya e in altri paesi, e li useremo come nostri partner sul campo: noi raccogliamo i fondi e controlliamo, loro costruiscono con le comunità locali.",
+    "steps": [
+      {
+        "title": "Raccogliamo i fondi",
+        "body": "Regate, il gala, sponsor e donatori. Ogni contributo è destinato a un progetto scolastico preciso."
+      },
+      {
+        "title": "Scegliamo un ente benefico che costruisce scuole",
+        "body": "Cerchiamo organizzazioni registrate, con scuole già completate da poter visitare, bilanci verificati e una politica di tutela dei minori."
+      },
+      {
+        "title": "Finanziamo una scuola precisa",
+        "body": "Firmiamo un accordo scritto per una scuola specifica, con budget, tempi e risultati attesi. I fondi vengono versati a tranche, solo quando ogni fase è completata."
+      },
+      {
+        "title": "Verifichiamo e rendicontiamo",
+        "body": "Foto, collaudo tecnico, visite sul posto e una relazione finale pubblicata su questo sito, con i costi reali."
+      }
+    ],
+    "whyTitle": "Perché tramite enti benefici",
+    "why": [
+      "Conoscono il territorio, la lingua, le leggi e le imprese locali.",
+      "Hanno già costruito scuole: meno rischi e tempi più certi.",
+      "Le comunità e le autorità scolastiche sono coinvolte fin dall’inizio.",
+      "Più soldi vanno alle aule, meno alla nostra struttura."
+    ],
+    "criteriaTitle": "Come sceglieremo gli enti partner",
+    "criteria": [
+      "Registrazione legale nel proprio paese e statuto coerente con l’istruzione.",
+      "Almeno alcune scuole già completate, con referenze di altri finanziatori.",
+      "Bilanci annuali disponibili e, dove possibile, revisionati.",
+      "Politica di tutela dei minori e verifica del personale.",
+      "Coinvolgimento della comunità e accordo con le autorità scolastiche.",
+      "Conto bancario intestato all’ente e controlli antiriciclaggio e sanzioni."
+    ],
+    "note": "Non abbiamo ancora scelto né contattato alcun ente partner. Pubblicheremo il nome di un partner solo dopo un accordo firmato e con il suo consenso scritto.",
+    "cta": "Leggi come lavoriamo"
   },
   "projects": {
     "hero": {

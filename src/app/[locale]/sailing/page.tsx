@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import { Windsurf } from '@/components/art/Windsurf'
 import { EventInterestForm } from '@/components/forms/EventInterestForm'
 import { EventCard } from '@/components/site/EventCard'
 import { PageHero } from '@/components/ui/PageHero'
@@ -49,9 +50,19 @@ export default async function SailingPage({ params }: Props) {
       </Section>
 
       <Section tone="navy" labelledBy="youngguns">
-        <SectionHeader eyebrow={t('sailing.youngguns.eyebrow')} title={t('sailing.youngguns.title')} lead={t('sailing.youngguns.lead')} id="youngguns" />
-        <p className="mb-10 inline-block rounded-full border border-gold/60 px-4 py-1.5 text-sm text-gold">{t('sailing.youngguns.status')}</p>
-        <ul className="grid gap-px overflow-hidden rounded-xl bg-ivory/15 md:grid-cols-3">
+        <div className="grid items-center gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-6">
+            <SectionHeader eyebrow={t('sailing.youngguns.eyebrow')} title={t('sailing.youngguns.title')} lead={t('sailing.youngguns.lead')} id="youngguns" />
+            <p className="inline-block rounded-full border border-gold/60 px-4 py-1.5 text-sm text-gold">{t('sailing.youngguns.status')}</p>
+          </div>
+          <figure className="lg:col-span-6">
+            <div className="overflow-hidden rounded-2xl shadow-2xl shadow-black/30 ring-1 ring-ivory/10">
+              <Windsurf className="aspect-[5/4] h-auto w-full" />
+            </div>
+            <figcaption className="mt-3 text-xs text-ivory/55">{t('a11y.artworkCaption')}</figcaption>
+          </figure>
+        </div>
+        <ul className="mt-14 grid gap-px overflow-hidden rounded-xl bg-ivory/15 md:grid-cols-3">
           {youngguns.map((item) => (
             <li key={item.title} className="bg-navy p-8">
               <h3 className="text-2xl">{item.title}</h3>
@@ -59,7 +70,7 @@ export default async function SailingPage({ params }: Props) {
             </li>
           ))}
         </ul>
-        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-ivory/70">{t('sailing.youngguns.disclosure')}</p>
+        <p className="mt-8 max-w-3xl border-l-2 border-gold pl-5 text-sm leading-relaxed text-ivory/75">{t('sailing.youngguns.disclosure')}</p>
         <Link href="/contact" className={`${buttonStyles.gold} mt-8`}>
           {t('sailing.youngguns.cta')}
         </Link>

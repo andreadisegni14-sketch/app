@@ -44,3 +44,13 @@ test('sailing page presents the YoungGuns windsurf partnership with its disclosu
   await expect(section).toContainText('collegata a un fondatore')
   await expect(section.locator('img')).toHaveCount(0)
 })
+
+test('home and mission explain that schools are built through partner charities', async ({ page }) => {
+  for (const path of ['/it', '/it/mission']) {
+    await page.goto(path)
+    const section = page.locator('section[aria-labelledby="how-we-build"]')
+    await expect(section.getByRole('heading', { level: 2 })).toContainText('Costruiamo scuole')
+    await expect(section.getByTestId('how-step')).toHaveCount(4)
+    await expect(section).toContainText('Non abbiamo ancora scelto né contattato alcun ente partner')
+  }
+})

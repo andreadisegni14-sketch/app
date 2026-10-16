@@ -206,7 +206,7 @@
       "eyebrow": "Year one, deliberately modest",
       "title": "The proposed first-year pilot",
       "items": [
-        "Renovation of one existing school in Morocco or Kenya, with a vetted local partner",
+        "Renovation of one existing school in Morocco or Kenya, delivered through a charity that builds schools",
         "A small scholarship fund for students of the partner school",
         "One charity regatta partnership to meet supporters and sponsors",
         "One small fundraising gala"
@@ -369,6 +369,47 @@
         "Sponsors and donors have no say over the selection of individual beneficiaries."
       ]
     }
+  },
+  "howWeBuild": {
+    "eyebrow": "How we will do it",
+    "title": "We build schools with those who already do it well.",
+    "lead": "We will not open our own offices or building sites in Africa. We will choose established charities that build and renovate schools in Morocco, Kenya and other countries, and work through them as our partners on the ground: we raise the funds and provide oversight, they build with the local communities.",
+    "steps": [
+      {
+        "title": "We raise the funds",
+        "body": "Regattas, the gala, sponsors and donors. Every contribution is earmarked for a specific school project."
+      },
+      {
+        "title": "We choose a charity that builds schools",
+        "body": "We look for registered organisations with completed schools we can visit, audited accounts and a child-safeguarding policy."
+      },
+      {
+        "title": "We fund one specific school",
+        "body": "We sign a written agreement for a specific school, with budget, timeline and expected results. Funds are released in instalments, only when each stage is complete."
+      },
+      {
+        "title": "We verify and report",
+        "body": "Photographs, a technical sign-off, site visits and a final report published on this website, with the real costs."
+      }
+    ],
+    "whyTitle": "Why through charities",
+    "why": [
+      "They know the area, the language, the laws and the local builders.",
+      "They have built schools before: lower risk and more reliable timelines.",
+      "Communities and education authorities are involved from the start.",
+      "More money goes to classrooms, less to our own overheads."
+    ],
+    "criteriaTitle": "How we will choose partner charities",
+    "criteria": [
+      "Legal registration in their own country and a statute focused on education.",
+      "Several completed schools, with references from other funders.",
+      "Annual accounts available and, where possible, audited.",
+      "A child-safeguarding policy and vetting of staff.",
+      "Community involvement and agreement with the education authorities.",
+      "A bank account in the organisation’s own name, with anti-money-laundering and sanctions checks."
+    ],
+    "note": "We have not yet chosen or contacted any partner charity. We will publish a partner’s name only after a signed agreement and with their written consent.",
+    "cta": "Read how we work"
   },
   "projects": {
     "hero": {
