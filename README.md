@@ -217,6 +217,10 @@ only after the legal checklist — Stripe donations. See `.env.example`.
 
 After deploying, check `https://YOUR_DOMAIN/api/health`, `/sitemap.xml` and `/robots.txt`.
 
+**Alternative: Render.** `render.yaml` describes the service, and `npm run render-build` does the
+same preparation as on Vercel. Provide `DATABASE_URL` (e.g. from Neon) plus `SEED_ADMIN_EMAIL` /
+`SEED_ADMIN_PASSWORD`; the site address comes from Render's `RENDER_EXTERNAL_URL` automatically.
+
 Self-hosting elsewhere works too: `npm ci && npm run build && npm run db:deploy && npm run db:seed && npm start`
 (set `PRODUCTION_DEPLOYMENT=true`).
 

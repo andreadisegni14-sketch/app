@@ -1,0 +1,23 @@
+# Render Blueprint: one web service built from this repository.
+# The database is external (e.g. Neon); paste its connection string as DATABASE_URL when prompted.
+# Site address (RENDER_EXTERNAL_URL) and production mode (RENDER) are provided by Render automatically.
+services:
+  - type: web
+    name: blue-legacy-foundation
+    runtime: node
+    region: frankfurt
+    plan: free
+    branch: main
+    autoDeploy: true
+    buildCommand: npm run render-build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22.12.0"
+      - key: DATABASE_URL
+        sync: false
+      - key: SEED_ADMIN_EMAIL
+        sync: false
+      - key: SEED_ADMIN_PASSWORD
+        sync: false
