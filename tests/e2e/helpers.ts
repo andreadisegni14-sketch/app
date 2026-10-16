@@ -6,7 +6,7 @@ export const PUBLIC_PATHS = [
   '/',
   '/mission',
   '/projects',
-  '/projects/coastal-school-renewal-pilot',
+  '/projects/school-renewal-pilot-africa',
   '/sailing',
   '/gala',
   '/partners',

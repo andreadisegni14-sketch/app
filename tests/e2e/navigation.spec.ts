@@ -72,7 +72,7 @@ test.describe('main navigation', () => {
   test('SEO files are served', async ({ request }) => {
     const sitemap = await request.get('/sitemap.xml')
     expect(sitemap.status()).toBe(200)
-    expect(await sitemap.text()).toContain('/projects/coastal-school-renewal-pilot')
+    expect(await sitemap.text()).toContain('/projects/school-renewal-pilot-africa')
     const robots = await (await request.get('/robots.txt')).text()
     expect(robots).toContain('Disallow: /admin')
   })

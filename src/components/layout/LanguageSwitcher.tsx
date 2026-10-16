@@ -1,7 +1,7 @@
 'use client'
 
 import { useLocale } from 'next-intl'
-import { getPathname, Link, usePathname } from '@/i18n/navigation'
+import { Link, usePathname, useRouter } from '@/i18n/navigation'
 
 /**
  * Server-rendered link to the same page in the other language (works without JavaScript).
@@ -10,6 +10,7 @@ import { getPathname, Link, usePathname } from '@/i18n/navigation'
 export function LanguageSwitcher({ label, ariaLabel, className = '' }: { label: string; ariaLabel: string; className?: string }) {
   const locale = useLocale()
   const pathname = usePathname()
+  const router = useRouter()
   const target = locale === 'en' ? 'it' : 'en'
 
   return (
@@ -24,7 +25,7 @@ export function LanguageSwitcher({ label, ariaLabel, className = '' }: { label: 
         const search = window.location.search
         if (!search || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return
         event.preventDefault()
-        window.location.assign(`${getPathname({ href: pathname, locale: target })}${search}`)
+        router.push({ pathname, query: Object.fromEntries(new URLSearchParams(search)) }, { locale: target })
       }}
       className={`inline-flex min-h-11 items-center gap-2 rounded-full border border-ivory/25 px-3.5 text-xs font-semibold tracking-[0.14em] text-ivory uppercase transition-colors hover:border-gold hover:text-gold-light ${className}`}
     >

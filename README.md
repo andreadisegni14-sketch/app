@@ -1,9 +1,10 @@
 # The Blue Legacy Foundation — website & operations platform
 
 Bilingual (English default, Italian at `/it`) website and administration platform for **The Blue
-Legacy Foundation**, a *proposed* Italian philanthropic initiative focused on Mediterranean coastal
-education, renewing existing schools, access to sailing for disadvantaged young people, and small
-charity events linked to the regatta season.
+Legacy Foundation**, a *proposed* Italian philanthropic initiative to renovate and equip existing
+schools in Africa (starting with countries such as Morocco and Kenya) and to support their students,
+funded by a community of sailors and supporters through charity regattas and a small annual gala —
+with the long-term ambition of a regatta carrying the foundation's name.
 
 > **Status: the foundation is NOT yet incorporated.** The site says so on every page. It does not
 > claim ETS/ONLUS status, tax deductibility, registration, beneficiaries, sponsors or partnerships.
@@ -112,6 +113,10 @@ a "Demo content" badge publicly. They describe the *proposed* first-year pilot. 
 donations, enquiries or users are seeded (a user is created only if `SEED_ADMIN_EMAIL` and
 `SEED_ADMIN_PASSWORD` are provided). When the founding team has reviewed the wording, untick
 "Demo" for each record in the admin.
+
+The demo wording lives in `prisma/demo-content.ts`. After changing it, existing databases are
+updated with `npx tsx scripts/demo-content-sql.ts`, which prints the SQL statements (UPDATE/INSERT
+only, and only for rows still flagged as demo) to run against the database.
 
 ## Creating admin users
 

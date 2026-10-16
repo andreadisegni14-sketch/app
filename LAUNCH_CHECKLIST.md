@@ -69,8 +69,8 @@ Full detail for advisers: [docs/LEGAL_ADVISER_CHECKLIST.md](docs/LEGAL_ADVISER_C
 
 ### Requires approvals or partnership agreements 🔒
 - ☐ Board approval of the first-year plan and budget (replacing illustrative figures)
-- ☐ School: agreement with the school and the public body that owns the building; works permits
-- ☐ Sailing: written agreements with clubs incl. safeguarding, insurance, qualifications
+- ☐ Schools in Africa: vetted local partner, agreement with the school and the public body that runs it, local works permits
+- ☐ Cross-border grants: advice for each country (see adviser checklist section 19), banking for transfers abroad
 - ☐ Regatta: written agreement with the organising club before any public mention by name
 - ☐ Sponsors: signed sponsorship agreements before any name or logo appears
 - ☐ Gala: venue contract, permits (e.g. SIAE, public entertainment, food & beverage), insurance,

@@ -148,7 +148,7 @@ Owner column: **L** = lawyer, **N** = notary, **A** = accountant, **F** = founde
 
 | # | Item | Owner |
 |---|---|---|
-| 15.1 | Legal route for a private foundation to fund works on publicly owned school buildings (donation of works or funds to the owning body; public-procurement implications) | L |
+| 15.1 | Legal route for a private foundation to fund works on publicly owned school buildings in the partner country (donation of works or funds to the owning body; local procurement implications) | L |
 | 15.2 | Permits (e.g. CILA/SCIA/permesso di costruire), safety, accessibility, fire rules | L |
 | 15.3 | Responsibility for design, works supervision (direzione lavori), testing (collaudo) | L |
 | 15.4 | Ownership of works and equipment after handover | L |
@@ -180,6 +180,23 @@ Owner column: **L** = lawyer, **N** = notary, **A** = accountant, **F** = founde
 | 18.3 | Donor-side incentives available, conditions and wording | A |
 | 18.4 | Family contributions: gift-tax and documentation considerations | A |
 | 18.5 | Cross-border donors (EU / non-EU) | A |
+
+## 19. Working in Africa (Morocco, Kenya and other countries)
+
+The programme funds schools outside Italy. Each country needs its own advice, ideally from local
+counsel working with the Italian advisers.
+
+| # | Item | Owner |
+|---|---|---|
+| 19.1 | Whether the chosen Italian form may make grants abroad, and how cross-border grants must be documented and reported | L, A |
+| 19.2 | Local legal status required of partner organisations (e.g. registration as an association or NGO in each country) and how to verify it | L |
+| 19.3 | Whether the foundation itself must register or obtain approval to operate or fund works in each country | L |
+| 19.4 | Rules for works on local public schools: authorisations, ownership of works and equipment, local procurement | L |
+| 19.5 | Transfer of funds abroad: banking, anti-money-laundering, sanctions screening, currency and tax treatment | A |
+| 19.6 | Grant agreements with local partners: instalments against milestones, audit rights, reporting, termination | L |
+| 19.7 | Child safeguarding across jurisdictions: local law, vetting of partner staff, consent for images of children | L |
+| 19.8 | Data protection for data transferred to or from partner countries | L |
+| 19.9 | Insurance and travel safety for monitoring visits | L, A |
 
 ## Website items to change after advice
 
