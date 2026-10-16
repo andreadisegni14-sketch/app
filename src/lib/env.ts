@@ -1,4 +1,6 @@
 import 'server-only'
+import { createHash } from 'node:crypto'
+import { databaseUrl, siteUrl } from '@/lib/runtime-config'
 
 /**
  * Server-side configuration and feature flags.
@@ -57,8 +59,7 @@ export function getDonationsMode(): DonationsMode {
 }
 
 export function getSiteUrl(): string {
-  const url = nonEmpty(process.env.NEXT_PUBLIC_SITE_URL) ?? 'http://localhost:3000'
-  return url.replace(/\/+$/, '')
+  return siteUrl()
 }
 
 export function getEmailConfig() {
@@ -81,6 +82,10 @@ let warnedAboutSalt = false
 export function getHashSalt(): string {
   const salt = nonEmpty(process.env.RATE_LIMIT_SALT)
   if (salt) return salt
+  // Without an explicit salt, derive a stable secret from the database credentials, which are
+  // private and already present in every deployment.
+  const db = databaseUrl()
+  if (db) return createHash('sha256').update(`blf-rate-limit:${db}`).digest('hex')
   if (isProductionDeployment() && !warnedAboutSalt) {
     warnedAboutSalt = true
     console.warn('[config] RATE_LIMIT_SALT is not set; using an insecure default. Set it in production.')

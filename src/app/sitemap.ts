@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { siteUrl } from '@/lib/runtime-config'
 import { db } from '@/lib/db'
 import { localizedPath } from '@/lib/seo'
 
@@ -7,7 +8,7 @@ export const dynamic = 'force-dynamic'
 const STATIC_PATHS = ['/', '/mission', '/projects', '/sailing', '/gala', '/partners', '/donate', '/transparency', '/contact', '/privacy', '/cookies', '/terms', '/accessibility']
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const site = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').replace(/\/+$/, '')
+  const site = siteUrl()
   let projects: { slug: string; updatedAt: Date }[] = []
   try {
     projects = await db.project.findMany({ where: { isPublished: true }, select: { slug: true, updatedAt: true } })

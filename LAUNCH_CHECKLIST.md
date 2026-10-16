@@ -23,10 +23,10 @@ Legend: ✅ done in this repository · ☐ to do by the team · 🔒 blocked on 
 
 ### Before the first public deployment
 - ☐ Create production PostgreSQL (EU region) with automated backups / point-in-time recovery
-- ☐ Configure Vercel project, environment variables (`.env.example`), custom domain, HTTPS
-- ☐ Set a strong `RATE_LIMIT_SALT`
-- ☐ Run `npm run db:seed` and `npm run admin:create` against production; store credentials in a
-  password manager; enable MFA on Vercel, database, GitHub, Stripe and email accounts
+- ☐ Import the repository into Vercel and connect a Neon database (README → Production deployment)
+- ☐ Set `SEED_ADMIN_EMAIL` / `SEED_ADMIN_PASSWORD`, redeploy, sign in, then remove the password variable
+- ☐ Store credentials in a password manager; enable MFA on Vercel, Neon, GitHub, Stripe and email accounts
+- ☐ Custom domain in Vercel, then set `NEXT_PUBLIC_SITE_URL`; optionally set your own `RATE_LIMIT_SALT`
 - ☐ Review every DEMO project and event; untick "Demo" only after the team adopts the wording
 - ☐ Replace the privacy-notice placeholder for the data controller with the promoters' identity
   and address (lawyer to review)
@@ -78,8 +78,8 @@ Full detail for advisers: [docs/LEGAL_ADVISER_CHECKLIST.md](docs/LEGAL_ADVISER_C
 - ☐ Prospective patrons: written consent before any name appears publicly
 
 ### Requires production credentials 🔑
-- ☐ `DATABASE_URL` / `DIRECT_URL` (production database)
-- ☐ `RATE_LIMIT_SALT`
+- ☐ Production database (set automatically by Vercel's Neon integration)
+- ☐ `RATE_LIMIT_SALT` (optional; derived automatically otherwise)
 - ☐ `RESEND_API_KEY`, `EMAIL_FROM`, `NOTIFICATION_EMAIL` (optional)
 - ☐ `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET` (only when donations are approved)
 - ☐ `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` (optional)

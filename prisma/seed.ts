@@ -1,5 +1,5 @@
 /**
- * Seed data. Idempotent (safe to re-run).
+ * Seed data. Idempotent and create-only (safe to run on every deploy; never overwrites admin edits).
  *
  * - Roles are always created.
  * - Projects and events describe the PROPOSED first-year pilot and are flagged isDemo=true,
@@ -13,8 +13,9 @@ import 'dotenv/config'
 import bcrypt from 'bcryptjs'
 import { PrismaPg } from '@prisma/adapter-pg'
 import { PrismaClient } from '../src/generated/prisma/client'
+import { databaseUrl } from '../src/lib/runtime-config'
 
-const connectionString = process.env.DATABASE_URL
+const connectionString = databaseUrl()
 if (!connectionString) throw new Error('DATABASE_URL is not set')
 const db = new PrismaClient({ adapter: new PrismaPg({ connectionString }) })
 
@@ -193,33 +194,50 @@ async function main() {
     await db.role.upsert({ where: { name: role.name }, create: role, update: { description: role.description } })
   }
 
-  for (const { milestones, ...project } of PROJECTS) {
-    const budgetCents = project.budgetLines.reduce((sum, l) => sum + l.amountCents, 0)
-    const data = { ...project, status: 'IDEA' as const, isDemo: true, isPublished: true, isFeatured: project.isFeatured ?? false, budgetCents, budgetIsIllustrative: true }
-    const saved = await db.project.upsert({ where: { slug: project.slug }, create: data, update: data })
-    await db.projectMilestone.deleteMany({ where: { projectId: saved.id } })
-    if (milestones.length) {
-      await db.projectMilestone.createMany({ data: milestones.map((m, i) => ({ ...m, projectId: saved.id, sortOrder: i })) })
-    }
-  }
+  // Demo content is created exactly once per database. A marker records it, so later runs
+  // (for example on every deploy) never overwrite admin edits or bring back deleted records.
+  const marker = await db.siteSetting.findUnique({ where: { key: 'seed.demoContentCreatedAt' } })
+  if (marker) {
+    console.log('Demo content was already created on this database; leaving content untouched.')
+  } else {
+    const created = await db.$transaction(async (tx) => {
+      let count = 0
+      for (const { milestones, ...project } of PROJECTS) {
+        const budgetCents = project.budgetLines.reduce((sum, l) => sum + l.amountCents, 0)
+        const data = { ...project, status: 'IDEA' as const, isDemo: true, isPublished: true, isFeatured: project.isFeatured ?? false, budgetCents, budgetIsIllustrative: true }
+        if (await tx.project.findUnique({ where: { slug: project.slug }, select: { id: true } })) continue
+        const saved = await tx.project.create({ data })
+        count++
+        if (milestones.length) {
+          await tx.projectMilestone.createMany({ data: milestones.map((m, i) => ({ ...m, projectId: saved.id, sortOrder: i })) })
+        }
+      }
 
-  for (const event of EVENTS) {
-    const data = { ...event, status: 'PROPOSED' as const, isDemo: true, isPublished: true, interestOpen: true }
-    await db.event.upsert({ where: { slug: event.slug }, create: data, update: data })
-  }
+      for (const event of EVENTS) {
+        const data = { ...event, status: 'PROPOSED' as const, isDemo: true, isPublished: true, interestOpen: true }
+        await tx.event.upsert({ where: { slug: event.slug }, create: data, update: {} })
+      }
 
-  await db.siteSetting.upsert({
-    where: { key: 'launchStatusNote' },
-    create: {
-      key: 'launchStatusNote',
-      value: {
-        en: 'DEMO: the founding team is preparing the legal form and statute with Italian advisers.',
-        it: "DEMO: il gruppo promotore sta preparando forma giuridica e statuto con consulenti italiani.",
-      },
-      description: 'Optional note shown in the launch-status section of the homepage.',
-    },
-    update: {},
-  })
+      await tx.siteSetting.upsert({
+        where: { key: 'launchStatusNote' },
+        create: {
+          key: 'launchStatusNote',
+          value: {
+            en: 'DEMO: the founding team is preparing the legal form and statute with Italian advisers.',
+            it: "DEMO: il gruppo promotore sta preparando forma giuridica e statuto con consulenti italiani.",
+          },
+          description: 'Optional note shown in the launch-status section of the homepage.',
+        },
+        update: {},
+      })
+
+      await tx.siteSetting.create({
+        data: { key: 'seed.demoContentCreatedAt', value: new Date().toISOString(), description: 'Set by the seed script; prevents demo content from being recreated.' },
+      })
+      return count
+    })
+    console.log(`Created ${created} DEMO projects; ensured ${EVENTS.length} DEMO events.`)
+  }
 
   const email = process.env.SEED_ADMIN_EMAIL?.trim().toLowerCase()
   const password = process.env.SEED_ADMIN_PASSWORD
@@ -236,7 +254,7 @@ async function main() {
     console.log('No SEED_ADMIN_EMAIL/SEED_ADMIN_PASSWORD provided: no user created. Run `npm run admin:create` to add one.')
   }
 
-  console.log(`Seeded ${roles.length} roles, ${PROJECTS.length} DEMO projects, ${EVENTS.length} DEMO events.`)
+  console.log(`Ensured ${roles.length} roles.`)
 }
 
 main()

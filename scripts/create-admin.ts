@@ -12,6 +12,7 @@ import { stdin, stdout } from 'node:process'
 import bcrypt from 'bcryptjs'
 import { PrismaPg } from '@prisma/adapter-pg'
 import { PrismaClient } from '../src/generated/prisma/client'
+import { databaseUrl } from '../src/lib/runtime-config'
 
 function arg(name: string): string | undefined {
   const index = process.argv.indexOf(`--${name}`)
@@ -35,7 +36,7 @@ async function main() {
     throw new Error('Password must be at least 12 characters and include letters and a number')
   }
 
-  const connectionString = process.env.DATABASE_URL
+  const connectionString = databaseUrl()
   if (!connectionString) throw new Error('DATABASE_URL is not set')
   const db = new PrismaClient({ adapter: new PrismaPg({ connectionString }) })
   try {

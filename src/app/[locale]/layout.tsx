@@ -12,6 +12,7 @@ import { SiteFooter } from '@/components/layout/SiteFooter'
 import { SiteHeader } from '@/components/layout/SiteHeader'
 import { StatusBanner } from '@/components/layout/StatusBanner'
 import { analyticsConfigured } from '@/lib/public-config'
+import { siteUrl } from '@/lib/runtime-config'
 import { alternates } from '@/lib/seo'
 
 type Props = { children: React.ReactNode; params: Promise<{ locale: string }> }
@@ -29,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'meta' })
   return {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+    metadataBase: new URL(siteUrl()),
     title: { default: t('siteName'), template: `%s · ${t('siteName')}` },
     description: t('description'),
     applicationName: t('siteName'),

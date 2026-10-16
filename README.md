@@ -101,7 +101,7 @@ npm run dev
 |---|---|
 | `npm run db:migrate` | Development only: create a new migration after editing `prisma/schema.prisma` and apply it |
 | `npm run db:deploy` | Apply pending migrations (safe for production; never drops data) |
-| `npm run db:seed` | Idempotent seed: roles, DEMO projects/events, launch-status note |
+| `npm run db:seed` | Idempotent seed: roles; DEMO projects/events and launch-status note created once per database (never overwrites edits) |
 | `npm run db:generate` | Regenerate the Prisma client (runs automatically on `npm install`) |
 
 Migrations live in `prisma/migrations/` and are committed. Prisma CLI configuration is in
@@ -185,22 +185,39 @@ only. Sales should be added only after incorporation, approval, permits and insu
 
 ## Production deployment (Vercel)
 
-1. Create a PostgreSQL database (e.g. Neon, Supabase or Vercel Postgres) in an EU region.
-2. Import the repository into Vercel (framework preset: Next.js). The `vercel-build` script runs
-   `prisma generate && prisma migrate deploy && next build`, so migrations are applied on deploy.
-3. Set environment variables for Production (and Preview, using a separate database):
-   `DATABASE_URL` (pooled), `DIRECT_URL` (direct, for migrations), `NEXT_PUBLIC_SITE_URL`
-   (e.g. `https://www.example.org`), `RATE_LIMIT_SALT`, and optionally the email, analytics and
-   Stripe variables. Never enable the mock payment provider in production (it is refused anyway).
-4. Deploy, then seed once from a trusted machine and create the first admin:
-   ```bash
-   DATABASE_URL="<production direct url>" npm run db:seed
-   DATABASE_URL="<production direct url>" npm run admin:create -- --email you@example.org
-   ```
-5. Verify `https://YOUR_DOMAIN/api/health`, `/sitemap.xml` and `/robots.txt`, and sign in at `/admin`.
-6. Add your domain in Vercel; HSTS and security headers are set in `next.config.ts`.
+Deployment is automated: once the project is connected, **every push to `main` deploys itself**.
+Each deploy runs `vercel-build`, which applies database migrations, adds the starting DEMO content
+once (never overwriting admin edits), creates the first admin if requested, and builds the site.
 
-Self-hosting elsewhere works too: `npm ci && npm run build && npm run db:deploy && npm start`
+**One-time setup (about 10 minutes, no settings to type except the admin login):**
+
+1. Merge this work into `main` on GitHub.
+2. Sign in at [vercel.com](https://vercel.com) with GitHub → **Add New… → Project** → import
+   `andreadisegni14-sketch/app` → **Deploy** (framework is detected automatically). The first deploy
+   fails because no database is connected yet; that is expected.
+3. In the Vercel project: **Storage → Create Database → Neon (Postgres)** → choose an EU region →
+   connect it to the project. Vercel injects the connection variables automatically.
+4. **Settings → Environment Variables** → add `SEED_ADMIN_EMAIL` and `SEED_ADMIN_PASSWORD`
+   (at least 12 characters, letters and a number) for the Production environment.
+5. **Deployments → ⋯ → Redeploy.** When it finishes, open the site and sign in at `/admin`.
+   You can then delete `SEED_ADMIN_PASSWORD` from Vercel; the account stays.
+
+What configures itself:
+
+| Setting | Automatic value |
+|---|---|
+| Database connection | `DATABASE_URL` / `DATABASE_URL_UNPOOLED` injected by the Neon integration (`POSTGRES_*` names also work) |
+| Site address (canonical links, sitemap, emails) | the Vercel production domain, until you set `NEXT_PUBLIC_SITE_URL` (do this when you add your own domain) |
+| Rate-limit secret | derived from the database credentials, until you set `RATE_LIMIT_SALT` |
+| Migrations, demo content, first admin | run on every deploy by `vercel-build`; all are idempotent |
+
+Optional later: email notifications (`RESEND_API_KEY`, `EMAIL_FROM`, `NOTIFICATION_EMAIL`),
+analytics (`NEXT_PUBLIC_PLAUSIBLE_DOMAIN`), your own domain (Vercel → Settings → Domains), and —
+only after the legal checklist — Stripe donations. See `.env.example`.
+
+After deploying, check `https://YOUR_DOMAIN/api/health`, `/sitemap.xml` and `/robots.txt`.
+
+Self-hosting elsewhere works too: `npm ci && npm run build && npm run db:deploy && npm run db:seed && npm start`
 (set `PRODUCTION_DEPLOYMENT=true`).
 
 ## Project structure

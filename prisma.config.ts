@@ -1,8 +1,9 @@
 import 'dotenv/config'
 import { defineConfig } from 'prisma/config'
+import { directDatabaseUrl } from './src/lib/runtime-config'
 
 // Prisma CLI configuration (migrations, seed, studio).
-// DIRECT_URL is preferred for migrations when DATABASE_URL points at a connection pooler.
+// A direct (non-pooled) connection is preferred for migrations; see src/lib/runtime-config.ts.
 export default defineConfig({
   schema: 'prisma/schema.prisma',
   migrations: {
@@ -10,6 +11,6 @@ export default defineConfig({
     seed: 'tsx prisma/seed.ts',
   },
   datasource: {
-    url: process.env.DIRECT_URL || process.env.DATABASE_URL || '',
+    url: directDatabaseUrl() ?? '',
   },
 })
