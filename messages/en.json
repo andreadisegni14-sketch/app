@@ -439,6 +439,28 @@
         }
       ]
     },
+    "youngguns": {
+      "eyebrow": "Partnership · Windsurfing",
+      "title": "Blue Legacy × YoungGuns",
+      "lead": "YoungGuns is a windsurfing project owned by one of the founders of The Blue Legacy Foundation. Together we want to bring the same idea from sailing to windsurfing: the community that lives on the water supports schools in Africa.",
+      "status": "Partnership being defined: activities will be confirmed after the foundation is incorporated.",
+      "items": [
+        {
+          "title": "Charity windsurf events",
+          "body": "Sessions, races and beach days organised with YoungGuns, with part of the proceeds going to school projects."
+        },
+        {
+          "title": "A younger community",
+          "body": "Windsurfing brings in a new generation of riders, enthusiasts and brands who can become supporters of the foundation."
+        },
+        {
+          "title": "Shared sponsors",
+          "body": "Windsurf and water-sports companies will be able to support YoungGuns and the school projects together, with recognition agreed in writing."
+        }
+      ],
+      "disclosure": "Transparency: because YoungGuns is connected to a founder, every agreement will be in writing and on market terms, approved by the board without that person’s vote, and published on the Transparency page.",
+      "cta": "Contact us about the windsurf partnership"
+    },
     "events": {
       "eyebrow": "Charity regattas",
       "title": "Proposed events",

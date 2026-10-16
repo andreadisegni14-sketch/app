@@ -26,6 +26,7 @@ export default async function SailingPage({ params }: Props) {
   const openEvent = events.find((e) => e.interestOpen && (e.status === 'PROPOSED' || e.status === 'CONFIRMED'))
 
   const programme = t.raw('sailing.programme.items') as { title: string; body: string }[]
+  const youngguns = t.raw('sailing.youngguns.items') as { title: string; body: string }[]
   const partnerships = t.raw('sailing.partnerships.items') as { title: string; body: string }[]
 
   return (
@@ -45,6 +46,23 @@ export default async function SailingPage({ params }: Props) {
             </li>
           ))}
         </ul>
+      </Section>
+
+      <Section tone="navy" labelledBy="youngguns">
+        <SectionHeader eyebrow={t('sailing.youngguns.eyebrow')} title={t('sailing.youngguns.title')} lead={t('sailing.youngguns.lead')} id="youngguns" />
+        <p className="mb-10 inline-block rounded-full border border-gold/60 px-4 py-1.5 text-sm text-gold">{t('sailing.youngguns.status')}</p>
+        <ul className="grid gap-px overflow-hidden rounded-xl bg-ivory/15 md:grid-cols-3">
+          {youngguns.map((item) => (
+            <li key={item.title} className="bg-navy p-8">
+              <h3 className="text-2xl">{item.title}</h3>
+              <p className="mt-3 leading-relaxed text-ivory/80">{item.body}</p>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-ivory/70">{t('sailing.youngguns.disclosure')}</p>
+        <Link href="/contact" className={`${buttonStyles.gold} mt-8`}>
+          {t('sailing.youngguns.cta')}
+        </Link>
       </Section>
 
       <Section tone="deep" labelledBy="events">
