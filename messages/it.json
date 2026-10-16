@@ -1,12 +1,12 @@
 {
   "meta": {
     "siteName": "The Blue Legacy Foundation",
-    "tagline": "Una proposta di fondazione italiana per la costa mediterranea",
-    "description": "The Blue Legacy Foundation è un'iniziativa filantropica italiana in fase di proposta — non ancora costituita — per l'educazione costiera, il rinnovamento delle scuole e l'accesso alla vela per i giovani.",
+    "tagline": "Una proposta di fondazione italiana per le scuole in Africa",
+    "description": "The Blue Legacy Foundation è un’iniziativa filantropica italiana in fase di proposta, non ancora costituita, per riqualificare e attrezzare scuole in Africa, sostenuta da una comunità di velisti e sostenitori.",
     "pages": {
       "home": {
-        "title": "Aprire il mare alla prossima generazione",
-        "description": "Una proposta di fondazione italiana per l'educazione costiera, il rinnovamento delle scuole e l'accesso alla vela per i giovani. Non ancora costituita."
+        "title": "Dal campo di regata all’aula",
+        "description": "Una proposta di fondazione italiana per riqualificare scuole in Africa, a partire da paesi come il Marocco e il Kenya, finanziata attraverso regate ed eventi. Non ancora costituita."
       },
       "mission": {
         "title": "Missione",
@@ -18,7 +18,7 @@
       },
       "sailing": {
         "title": "Vela",
-        "description": "Regate benefiche proposte e opportunità di partnership nel mondo della nautica."
+        "description": "Regate benefiche ed eventi velici che riuniscono sostenitori e sponsor per finanziare le scuole in Africa."
       },
       "gala": {
         "title": "Il Gala Blue Legacy",
@@ -105,7 +105,7 @@
     "illustrativeHelp": "Scenario indicativo a fini di pianificazione — non è un risultato finanziario né un impegno."
   },
   "footer": {
-    "about": "The Blue Legacy Foundation è un'iniziativa filantropica in fase di proposta. Non è ancora costituita, non è un ETS iscritto né una ONLUS e non può rilasciare ricevute fiscalmente deducibili.",
+    "about": "The Blue Legacy Foundation è un’iniziativa filantropica in fase di proposta per le scuole in Africa. Non è ancora costituita, non è un ETS iscritto né una ONLUS e non può rilasciare ricevute fiscalmente deducibili.",
     "explore": "Esplora",
     "legal": "Note legali",
     "notLegalAdvice": "Nessun contenuto di questo sito costituisce consulenza legale, fiscale o finanziaria.",
@@ -134,28 +134,28 @@
   },
   "pillars": {
     "SAILING_FOR_IMPACT": {
-      "numeral": "I",
-      "title": "Vela per l'Impatto",
-      "short": "Portare in mare ragazze e ragazzi che altrimenti non ne avrebbero l'occasione, con istruttori qualificati presso circoli affermati.",
-      "body": "La vela insegna responsabilità, lavoro di squadra e rispetto per l'ambiente. Intendiamo finanziare posti in corsi tenuti da istruttori qualificati presso circoli affermati, coprendo quote, attrezzatura e trasporti, perché il costo non sia mai il motivo per cui un giovane resta a terra."
+      "numeral": "III",
+      "title": "Regate per l’Impatto",
+      "short": "Regate benefiche ed eventi velici che riuniscono velisti, aziende e sostenitori per finanziare le scuole.",
+      "body": "Le regate sono il luogo in cui incontriamo le persone che possono rendere possibile questo lavoro. Intendiamo collaborare con circoli affermati per aggiungere una dimensione benefica a regate esistenti, coinvolgere sponsor e sostenitori e, un giorno, organizzare una regata nostra che porti il nome della fondazione."
     },
     "COASTAL_SCHOOL_RENEWAL": {
-      "numeral": "II",
-      "title": "Rinnovamento delle Scuole Costiere",
-      "short": "Riqualificare scuole esistenti nelle comunità costiere: luoghi di apprendimento più sicuri, sani e attrezzati.",
-      "body": "Non costruiamo nuove scuole. Intendiamo lavorare con scuole esistenti e con gli enti pubblici che ne sono responsabili per finanziare interventi ben definiti — aule, laboratori, accessibilità, spazi per la didattica all'aperto — realizzati con le autorizzazioni necessarie."
+      "numeral": "I",
+      "title": "Scuole in Africa",
+      "short": "Riqualificare e attrezzare scuole esistenti in comunità africane, a partire da paesi come il Marocco e il Kenya.",
+      "body": "Non creiamo strutture parallele. Intendiamo lavorare con scuole esistenti, le loro comunità, le autorità locali e organizzazioni partner locali affermate per finanziare interventi ben definiti: aule sicure, acqua pulita e servizi igienici, energia solare, arredi, libri e materiali didattici. I lavori sono realizzati con le autorizzazioni locali necessarie e verificati a conclusione."
     },
     "BLUE_HORIZONS_SCHOLARSHIPS": {
-      "numeral": "III",
+      "numeral": "II",
       "title": "Borse Blue Horizons",
-      "short": "Un sostegno contenuto, basato sul bisogno, per attrezzatura, certificazioni e studi legati al mare.",
-      "body": "Piccoli contributi, gestiti con cura, per attrezzatura, certificazioni di sicurezza e percorsi di studio legati alle professioni del mare e alle scienze marine, assegnati secondo criteri trasparenti e con una valutazione indipendente."
+      "short": "Un sostegno contenuto, basato sul bisogno, perché gli studenti delle scuole partner possano continuare a studiare.",
+      "body": "Piccoli contributi per tasse scolastiche, uniformi, libri e il passaggio alla scuola secondaria o alla formazione professionale, per gli studenti delle nostre scuole partner. Sono assegnati con criteri trasparenti, insieme ai partner locali e con una valutazione indipendente, e versati direttamente a scuole o fornitori ove possibile."
     },
     "ANNUAL_GALA": {
       "numeral": "IV",
       "title": "Gala Annuale Blue Legacy",
-      "short": "Una piccola, elegante serata in riva al mare che riunisce i sostenitori e finanzia i programmi.",
-      "body": "Una serata di eleganza sobria, in concomitanza con la stagione delle regate, in cui i sostenitori incontrano chi porta avanti il lavoro. Pubblicheremo separatamente i risultati lordi e netti, perché tutti possano vedere quanto la serata contribuisce davvero."
+      "short": "Una piccola, elegante serata in riva al mare che riunisce i sostenitori e finanzia le scuole.",
+      "body": "Una serata di eleganza sobria, in concomitanza con la stagione delle regate, in cui i sostenitori ascoltano direttamente il racconto delle scuole che aiutano a finanziare. Pubblicheremo separatamente i risultati lordi e netti, perché tutti possano vedere quanto la serata contribuisce davvero."
     }
   },
   "projectStatus": {
@@ -183,15 +183,15 @@
   "home": {
     "hero": {
       "eyebrow": "Una proposta di fondazione italiana",
-      "title": "Aprire il mare alla prossima generazione.",
-      "lead": "The Blue Legacy Foundation nasce per rinnovare le scuole costiere, portare in mare giovani provenienti da contesti svantaggiati e riunire i sostenitori attorno alla tradizione velica del Mediterraneo.",
+      "title": "Dal campo di regata all’aula.",
+      "lead": "The Blue Legacy Foundation nasce per riqualificare e attrezzare scuole esistenti in Africa, a partire da paesi come il Marocco e il Kenya, e per riunire velisti, aziende e sostenitori attorno a regate ed eventi che finanziano questo lavoro.",
       "primary": "Leggi la nostra missione",
       "secondary": "Registra il tuo interesse"
     },
     "mission": {
       "eyebrow": "Il nostro scopo",
-      "title": "Il mare come aula, aperta a ogni ragazzo della costa.",
-      "body": "Molti giovani crescono con il Mediterraneo davanti agli occhi senza mai navigarlo, e alcuni studiano in edifici scolastici che non sono più all'altezza delle loro esigenze. Vogliamo cambiare questa realtà, con pazienza e nel modo giusto: una scuola, un gruppo di giovani velisti, un evento ben organizzato alla volta — pubblicando esattamente come usiamo ogni euro."
+      "title": "Ogni bambino merita un’aula che funzioni.",
+      "body": "In molte comunità africane i bambini studiano in aule sovraffollate, senza acqua pulita, luce o libri a sufficienza. Vogliamo contribuire a cambiare questa realtà, con cura e nel modo giusto: una scuola alla volta, con partner locali che conoscono la comunità, grazie ai sostenitori che incontriamo in mare e ai nostri eventi, e rendicontando esattamente come usiamo ogni euro."
     },
     "pillars": {
       "eyebrow": "Quattro pilastri",
@@ -206,12 +206,12 @@
       "eyebrow": "Primo anno, volutamente misurato",
       "title": "Il progetto pilota proposto per il primo anno",
       "items": [
-        "Riqualificazione di una scuola costiera esistente",
-        "Un piccolo programma di borse di vela per giovani",
-        "Una partnership con una regata benefica",
+        "Riqualificazione di una scuola esistente in Marocco o in Kenya, con un partner locale verificato",
+        "Un piccolo fondo di borse di studio per gli studenti della scuola partner",
+        "Una partnership con una regata benefica per incontrare sostenitori e sponsor",
         "Un piccolo gala di raccolta fondi"
       ],
-      "note": "Ambiti, sedi e partner sono ancora da individuare. I budget sono scenari indicativi."
+      "note": "Paesi, scuole, partner locali e regate sono ancora da individuare. I budget sono scenari indicativi."
     },
     "participate": {
       "eyebrow": "Partecipa",
@@ -225,8 +225,8 @@
           "href": "/donate"
         },
         {
-          "title": "Aziende e circoli",
-          "body": "Scopri i pacchetti di partnership proposti e le collaborazioni nel mondo della nautica.",
+          "title": "Velisti, circoli e aziende",
+          "body": "Porta una regata, un equipaggio o una sponsorizzazione alla causa. Scopri i pacchetti di partnership proposti.",
           "cta": "Prospetto partnership",
           "href": "/partners"
         },
@@ -237,8 +237,8 @@
           "href": "/gala"
         },
         {
-          "title": "Scuole ed educatori",
-          "body": "Conosci una scuola costiera o un programma di vela da cui dovremmo imparare? Scrivici.",
+          "title": "Partner in Africa",
+          "body": "Lavori con scuole o organizzazioni educative in Marocco, in Kenya o altrove in Africa? Ci piacerebbe imparare da te.",
           "cta": "Contatta il gruppo",
           "href": "/contact"
         }
@@ -280,10 +280,10 @@
   "mission": {
     "hero": {
       "eyebrow": "Missione",
-      "title": "Una filantropia paziente e responsabile per la costa mediterranea.",
-      "lead": "Intendiamo unire la generosità di chi ama il mare ai bisogni dei giovani che vi vivono accanto — con la disciplina di un'istituzione ben gestita fin dal primo giorno."
+      "title": "Una filantropia paziente e responsabile per l’istruzione in Africa.",
+      "lead": "Intendiamo unire la generosità della comunità velica e dei suoi sostenitori ai bisogni dei bambini nelle scuole africane, con la disciplina di un’istituzione ben gestita fin dal primo giorno."
     },
-    "statement": "La missione che proponiamo è ampliare l'accesso all'istruzione e al mare per i giovani delle comunità costiere italiane, rinnovando le scuole che frequentano, aprendo loro lo sport della vela e sostenendo i loro passi successivi — con un finanziamento trasparente da parte di una comunità di sostenitori.",
+    "statement": "La missione che proponiamo è migliorare l’accesso a un’istruzione di qualità per i bambini in Africa, a partire da paesi come il Marocco e il Kenya, riqualificando e attrezzando scuole esistenti insieme a partner locali e sostenendo i passi successivi degli studenti, con un finanziamento trasparente da parte di una comunità di sostenitori riunita attorno alla vela e al mare.",
     "values": {
       "eyebrow": "Valori",
       "title": "I principi a cui ci impegniamo",
@@ -298,19 +298,19 @@
         },
         {
           "title": "Dignità",
-          "body": "I beneficiari sono partner, non comparse. Non usiamo mai immagini o storie di giovani senza un consenso adeguato."
+          "body": "Bambini e comunità sono partner, non comparse. Non usiamo mai immagini o storie di giovani senza un consenso adeguato."
         },
         {
-          "title": "Sicurezza prima di tutto",
-          "body": "In mare e a scuola, la tutela dei minori e gli standard di sicurezza vengono prima della rapidità o della visibilità."
+          "title": "Titolarità locale",
+          "body": "Sono le scuole e le comunità a decidere di cosa hanno bisogno. Finanziamo le loro priorità attraverso partner locali, non le nostre supposizioni."
         },
         {
           "title": "Sobrietà",
-          "body": "Eleganza senza eccessi. Eventi e amministrazione restano proporzionati alla missione."
+          "body": "Eleganza senza eccessi. Regate, eventi e amministrazione restano proporzionati alla missione."
         },
         {
-          "title": "Collaborazione",
-          "body": "Lavoriamo attraverso scuole, circoli ed enti pubblici esistenti, senza creare strutture parallele."
+          "title": "Sicurezza prima di tutto",
+          "body": "La tutela dei minori e la sicurezza degli edifici vengono prima della rapidità o della visibilità."
         }
       ]
     },
@@ -321,35 +321,35 @@
       "steps": [
         {
           "title": "Risorse",
-          "body": "Contributi di famiglie fondatrici, aziende, ospiti del gala e singoli sostenitori, oltre a competenze offerte da volontari."
+          "body": "Contributi di famiglie fondatrici, aziende, sostenitori delle regate e del gala e singoli donatori, oltre a competenze offerte da volontari."
         },
         {
           "title": "Attività",
-          "body": "Finanziare interventi nelle scuole con gli enti responsabili; finanziare posti in corsi di vela con circoli qualificati; assegnare borse contenute."
+          "body": "Finanziare riqualificazioni e attrezzature scolastiche con partner locali verificati e con le autorità; assegnare borse contenute; organizzare regate ed eventi per raccogliere fondi."
         },
         {
           "title": "Risultati diretti",
-          "body": "Spazi di apprendimento migliorati, consegnati nel rispetto del budget; giovani che completano i corsi in sicurezza; borse assegnate con equità."
+          "body": "Aule più sicure, acqua, servizi igienici, luce e materiali didattici consegnati nel rispetto del budget; borse assegnate con equità; sostenitori coinvolti."
         },
         {
           "title": "Esiti",
-          "body": "Migliori condizioni di studio quotidiane; fiducia, spirito di squadra e competenze in acqua; percorsi più chiari verso studi e lavori legati al mare."
+          "body": "Migliori condizioni di studio quotidiane, frequenza più regolare e più studenti che proseguono gli studi."
         },
         {
           "title": "Impatto di lungo periodo",
-          "body": "Comunità costiere in cui le opportunità non dipendono dal reddito familiare e in cui il mare è un patrimonio condiviso."
+          "body": "Comunità in cui l’istruzione di un bambino non dipende dal luogo in cui è nato, con una rete duratura di sostenitori al suo fianco."
         }
       ],
-      "assumptions": "Ipotesi chiave da verificare: che le scuole partner e gli enti proprietari possano autorizzare i lavori entro un anno; che i circoli possano accogliere in sicurezza nuovi giovani velisti; e che una piccola fondazione ben governata possa mantenere la fiducia dei donatori grazie alla piena trasparenza."
+      "assumptions": "Ipotesi chiave da verificare: che in ogni paese si possano trovare e verificare organizzazioni partner locali affidabili; che i lavori possano essere autorizzati e realizzati entro un anno; che i fondi possano essere trasferiti e rendicontati in modo trasparente tra paesi; e che regate ed eventi raccolgano nettamente più di quanto costano."
     },
     "methodology": {
       "eyebrow": "Metodologia d'impatto",
       "title": "Come misureremo — e cosa non faremo",
       "items": [
-        "Rilevare una situazione di partenza prima dell'avvio di ogni progetto, concordata con la scuola o il circolo partner.",
+        "Rilevare una situazione di partenza prima dell’avvio di ogni progetto, concordata con la scuola, la comunità e il partner locale.",
         "Scegliere pochi indicatori per progetto, definiti in anticipo e pubblicati insieme al progetto.",
-        "Raccogliere solo i dati necessari. I dati relativi ai giovani sono aggregati e anonimizzati.",
-        "Cercare verifiche indipendenti per i lavori (collaudo tecnico) e per i bilanci.",
+        "Raccogliere solo i dati necessari. I dati relativi ai bambini sono aggregati e anonimizzati.",
+        "Erogare i fondi in tranche a fronte di tappe verificate, con foto, collaudo tecnico locale e visite in loco.",
         "Pubblicare i risultati, compresi ritardi, sforamenti e ciò che non ha funzionato.",
         "Non dichiarare mai risultati non raggiunti, né contare due volte gli stessi beneficiari."
       ]
@@ -362,9 +362,10 @@
         "Un consiglio che includa membri indipendenti, non solo le famiglie fondatrici.",
         "Una policy scritta sui conflitti di interesse, con dichiarazioni registrate ogni anno.",
         "Decisioni di erogazione prese sulla base di criteri pubblicati, documentate e verbalizzate.",
+        "Partner locali verificati prima di ogni erogazione, con accordi scritti e fondi versati in tranche.",
         "Doppia autorizzazione dei pagamenti e separazione delle funzioni finanziarie.",
         "Bilancio annuale verificato da un professionista qualificato e relazione pubblica annuale.",
-        "Un referente per la tutela dei minori e una policy dedicata prima di qualsiasi attività con minori.",
+        "Un referente per la tutela dei minori e una policy dedicata prima di qualsiasi attività che coinvolga bambini.",
         "Sponsor e donatori non hanno voce nella selezione dei singoli beneficiari."
       ]
     }
@@ -373,7 +374,7 @@
     "hero": {
       "eyebrow": "Progetti",
       "title": "Proposte, con etichette oneste.",
-      "lead": "Ogni progetto mostra il suo stato reale. Oggi sono tutte proposte iniziali: nessuna è finanziata e nessun beneficiario o sito è stato confermato."
+      "lead": "Ogni progetto mostra il suo stato reale. Oggi sono tutte proposte iniziali: nessuna è finanziata e nessuna scuola, partner locale o regata è stata confermata."
     },
     "filters": {
       "title": "Filtra i progetti",
@@ -413,28 +414,28 @@
   "sailing": {
     "hero": {
       "eyebrow": "Vela",
-      "title": "La stagione delle regate, con uno scopo.",
-      "lead": "Molti di noi hanno capito il mare per la prima volta andando a vela. Vogliamo condividere questa esperienza con giovani che non ne hanno mai avuto l'occasione — accanto ai circoli e agli eventi che già rendono straordinaria la vela italiana."
+      "title": "Regate che costruiscono scuole.",
+      "lead": "La vela è la nostra comunità e il nostro luogo d’incontro. Usiamo regate ed eventi velici per riunire i sostenitori, le aziende e i velisti che finanziano l’istruzione in Africa, e un giorno speriamo di correre una regata tutta nostra."
     },
     "programme": {
-      "eyebrow": "Vela per l'Impatto",
-      "title": "Come funzionerebbe il programma giovani",
+      "eyebrow": "Regate per l’Impatto",
+      "title": "Come le regate finanziano le scuole",
       "items": [
         {
-          "title": "Attraverso circoli affermati",
-          "body": "Corsi tenuti da istruttori qualificati presso circoli con comprovati standard di sicurezza — noi finanziamo i posti, non gestiamo barche."
+          "title": "Partner benefico di regate esistenti",
+          "body": "Intendiamo collaborare con circoli affermati per aggiungere una dimensione benefica a regate che già organizzano: una raccolta, una premiazione, una serata per i sostenitori."
         },
         {
-          "title": "Tutto coperto",
-          "body": "Quote dei corsi, giubbotti e attrezzatura, assicurazione e trasporti, perché il costo non sia mai un ostacolo."
+          "title": "Incontrare i finanziatori in mare",
+          "body": "Le regate riuniscono armatori, equipaggi, sponsor e imprese. Ospitalità e posti per gli ospiti ci permettono di presentare i progetti scolastici a chi può sostenerli."
         },
         {
-          "title": "Segnalati dalle scuole",
-          "body": "I partecipanti sono segnalati dalle scuole partner e da realtà del territorio secondo criteri trasparenti basati sul bisogno."
+          "title": "Sponsor con uno scopo",
+          "body": "Le aziende possono sponsorizzare una regata, un trofeo o un equipaggio, con riconoscimenti concordati per iscritto e i proventi destinati ai progetti scolastici."
         },
         {
-          "title": "Tutela dei minori integrata",
-          "body": "Adulti verificati, consenso dei genitori, rapporti di supervisione e segnalazione degli incidenti concordati per iscritto con ogni circolo."
+          "title": "Un giorno, la nostra regata",
+          "body": "Il nostro obiettivo di lungo periodo è una Regata Blue Legacy: un evento annuale con il nome della fondazione. È un’aspirazione, non ancora un piano. Servirebbero prima un circolo partner, permessi, assicurazioni e una storia di risultati comprovati."
         }
       ]
     },
@@ -452,26 +453,26 @@
       "title": "Opportunità per il mondo della vela",
       "items": [
         {
-          "title": "Circoli velici e scuole di vela",
-          "body": "Accogliere posti finanziati per giovani velisti, o aggiungere una dimensione benefica a una regata del circolo."
+          "title": "Circoli velici",
+          "body": "Ospitare una regata benefica, o aggiungere una raccolta o una serata per i sostenitori a una regata esistente, alle condizioni che approverete."
         },
         {
           "title": "Organizzatori di regate",
-          "body": "Un partner benefico per una regata, una raccolta durante la premiazione o una parata velica dei giovani — alle condizioni che approverete."
+          "body": "Un partner benefico per il vostro evento, con una rendicontazione trasparente su ciò che i proventi finanziano."
         },
         {
           "title": "Marina, cantieri e shipchandler",
-          "body": "Sostegno in natura: posti barca per le imbarcazioni scuola, manutenzione, dotazioni di sicurezza o attrezzatura per i borsisti."
+          "body": "Sostegno in natura per gli eventi: posti barca, ospitalità, gommoni di sicurezza o premi."
         },
         {
-          "title": "Aziende del settore nautico",
-          "body": "Giornate di formazione, tirocini e mentoring collegati alle borse Blue Horizons."
+          "title": "Aziende del settore nautico e non solo",
+          "body": "Sponsorizzare una regata, un trofeo o un equipaggio, con i proventi destinati alle scuole in Africa."
         }
       ],
       "cta": "Parliamo di una partnership"
     },
-    "interestTitle": "Registra il tuo interesse per una regata proposta",
-    "interestLead": "Lasciaci i tuoi dati e ti scriveremo quando i piani saranno confermati. Non si tratta di una prenotazione."
+    "interestTitle": "Registra il tuo interesse per le nostre regate",
+    "interestLead": "Velisti, armatori, circoli e sponsor: lasciateci i vostri dati e vi scriveremo quando i piani saranno confermati. Non si tratta di una prenotazione."
   },
   "gala": {
     "hero": {
@@ -488,11 +489,11 @@
           "body": "Una cena placée per circa 100–120 ospiti (indicativi) in una location costiera da individuare."
         },
         {
-          "title": "Il lavoro, non lo spettacolo",
-          "body": "Un breve programma che presenta progetti, budget e avanzamenti — con racconti basati esclusivamente sul consenso."
+          "title": "Le scuole, non lo spettacolo",
+          "body": "Un breve programma che presenta i progetti scolastici, i budget e gli avanzamenti, con racconti basati esclusivamente sul consenso."
         },
         {
-          "title": "Un'asta ponderata",
+          "title": "Un’asta ponderata",
           "body": "Solo lotti donati per iscritto dai loro proprietari, descritti con precisione, senza endorsement impliciti."
         },
         {
@@ -561,18 +562,18 @@
           "key": "REGATTA_PARTNER",
           "name": "Partner Regata",
           "amount": "5.000 €",
-          "body": "Associato alla partnership con la regata benefica e al programma di vela per giovani.",
+          "body": "Associato alla partnership con la regata benefica e, in futuro, alla Regata Blue Legacy.",
           "benefits": [
-            "Riconoscimento legato alla regata benefica, previa approvazione dell'organizzatore",
-            "Relazione sui posti di vela finanziati per i giovani",
-            "Invito alla parata velica dei giovani, ove organizzata"
+            "Riconoscimento legato alla regata benefica, previa approvazione dell’organizzatore",
+            "Relazione sui progetti scolastici finanziati dal vostro contributo",
+            "Ospitalità alla regata benefica, ove prevista"
           ]
         },
         {
           "key": "COMMUNITY_PARTNER",
           "name": "Partner del Territorio",
           "amount": "2.500 €",
-          "body": "Per le imprese locali delle comunità costiere che speriamo di servire.",
+          "body": "Per le imprese delle comunità veliche in cui organizziamo i nostri eventi.",
           "benefits": [
             "Riconoscimento sul sito e nella relazione annuale, con il vostro consenso",
             "Aggiornamento annuale sui programmi"
@@ -582,7 +583,7 @@
           "key": "IN_KIND",
           "name": "Partner in natura",
           "amount": "Beni o servizi",
-          "body": "Imbarcazioni, dotazioni di sicurezza, servizi tecnici, location o competenze professionali.",
+          "body": "Servizi per eventi, ospitalità, location, attrezzature scolastiche o competenze professionali.",
           "benefits": [
             "Riconoscimento proporzionato al valore fornito, concordato per iscritto",
             "Valorizzazione e attestazione secondo indicazioni professionali"
@@ -708,7 +709,7 @@
       "expenses": "Uscite indicative",
       "total": "Totale",
       "balance": "Saldo",
-      "programmeShare": "Programmi (scuola, vela, borse): {share}% delle uscite",
+      "programmeShare": "Programmi scolastici (riqualificazione, attrezzature, borse): {share}% delle uscite",
       "galaNote": "La voce del gala tra le entrate è al lordo. I suoi costi diretti figurano tra le uscite, quindi il contributo netto in questo scenario è di {net}.",
       "chartLabel": "Quota delle uscite indicative"
     },
@@ -862,9 +863,9 @@
       "individualDonations": "Donazioni individuali"
     },
     "expenses": {
-      "schoolRenovation": "Riqualificazione della scuola",
-      "youthSailing": "Vela per i giovani",
-      "equipmentScholarships": "Attrezzatura e borse",
+      "schoolRenovation": "Riqualificazione della scuola (lavori)",
+      "schoolEquipment": "Attrezzature, acqua, luce e materiali didattici",
+      "scholarships": "Borse di studio e sostegno agli studenti",
       "gala": "Costi del gala",
       "administration": "Amministrazione",
       "reserve": "Riserva"

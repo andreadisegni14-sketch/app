@@ -1,12 +1,12 @@
 {
   "meta": {
     "siteName": "The Blue Legacy Foundation",
-    "tagline": "A proposed Italian foundation for the Mediterranean coast",
-    "description": "The Blue Legacy Foundation is a proposed Italian philanthropic initiative — not yet incorporated — for coastal education, school renewal and access to sailing for young people.",
+    "tagline": "A proposed Italian foundation for schools in Africa",
+    "description": "The Blue Legacy Foundation is a proposed Italian philanthropic initiative, not yet incorporated, to renovate and equip schools in Africa, funded by a community of sailors and supporters.",
     "pages": {
       "home": {
-        "title": "Opening the sea to the next generation",
-        "description": "A proposed Italian foundation for coastal education, school renewal and access to sailing for young people. Not yet incorporated."
+        "title": "From the regatta course to the classroom",
+        "description": "A proposed Italian foundation to renovate schools in Africa, starting with countries such as Morocco and Kenya, funded through regattas and events. Not yet incorporated."
       },
       "mission": {
         "title": "Mission",
@@ -18,7 +18,7 @@
       },
       "sailing": {
         "title": "Sailing",
-        "description": "Proposed charity regattas and maritime partnership opportunities."
+        "description": "Charity regattas and sailing events that bring supporters and sponsors together to fund schools in Africa."
       },
       "gala": {
         "title": "The Blue Legacy Gala",
@@ -105,7 +105,7 @@
     "illustrativeHelp": "Illustrative scenario for planning — not an actual financial result or commitment."
   },
   "footer": {
-    "about": "The Blue Legacy Foundation is a proposed philanthropic initiative. It is not yet incorporated, is not a registered ETS or ONLUS, and cannot issue tax-deductible receipts.",
+    "about": "The Blue Legacy Foundation is a proposed philanthropic initiative for schools in Africa. It is not yet incorporated, is not a registered ETS or ONLUS, and cannot issue tax-deductible receipts.",
     "explore": "Explore",
     "legal": "Legal",
     "notLegalAdvice": "Nothing on this website is legal, tax or financial advice.",
@@ -134,28 +134,28 @@
   },
   "pillars": {
     "SAILING_FOR_IMPACT": {
-      "numeral": "I",
-      "title": "Sailing for Impact",
-      "short": "Bringing young people who would not otherwise have the chance onto the water, with qualified instructors at established clubs.",
-      "body": "Sailing teaches responsibility, teamwork and respect for the environment. We intend to fund places on courses run by qualified instructors at established clubs, covering fees, kit and transport, so that cost is never the reason a young person stays ashore."
+      "numeral": "III",
+      "title": "Regattas for Impact",
+      "short": "Charity regattas and sailing events that bring sailors, companies and supporters together to fund the schools.",
+      "body": "Regattas are where we meet the people who can make this work possible. We intend to partner with established clubs to add a charity dimension to existing races, invite sponsors and supporters on board, and one day organise a regatta of our own that carries the foundation’s name."
     },
     "COASTAL_SCHOOL_RENEWAL": {
-      "numeral": "II",
-      "title": "Coastal School Renewal",
-      "short": "Upgrading existing schools in coastal communities — safer, healthier, better-equipped places to learn.",
-      "body": "We do not build new schools. We intend to work with existing schools and the public bodies responsible for them to fund well-scoped improvements — classrooms, laboratories, accessibility, outdoor learning spaces — delivered with the required authorisations."
+      "numeral": "I",
+      "title": "Schools in Africa",
+      "short": "Renovating and equipping existing schools in African communities, starting with countries such as Morocco and Kenya.",
+      "body": "We do not build parallel structures. We intend to work with existing schools, their communities, local authorities and established local partner organisations to fund well-scoped improvements: safe classrooms, clean water and sanitation, solar power, furniture, books and learning materials. Work is delivered with the required local authorisations and verified on completion."
     },
     "BLUE_HORIZONS_SCHOLARSHIPS": {
-      "numeral": "III",
+      "numeral": "II",
       "title": "Blue Horizons Scholarships",
-      "short": "Modest, needs-based support for equipment, certification and study linked to the sea.",
-      "body": "Small, carefully administered awards for equipment, safety certification and study connected to maritime careers and marine science, awarded through transparent criteria and independent review."
+      "short": "Modest, needs-based support so that students of our partner schools can keep learning.",
+      "body": "Small awards for school fees, uniforms, books and the step to secondary or vocational education, for students of our partner schools. Awards are made through transparent criteria, with local partners and independent review, and paid directly to schools or suppliers wherever possible."
     },
     "ANNUAL_GALA": {
       "numeral": "IV",
       "title": "Annual Blue Legacy Gala",
-      "short": "A small, elegant evening by the sea that gathers supporters and funds the programmes.",
-      "body": "An evening of restrained elegance, timed around the regatta season, where supporters meet the people behind the work. We will report gross and net results separately, so everyone can see what the evening truly contributes."
+      "short": "A small, elegant evening by the sea that gathers supporters and funds the schools.",
+      "body": "An evening of restrained elegance, timed around the regatta season, where supporters hear directly about the schools they help to fund. We will report gross and net results separately, so everyone can see what the evening truly contributes."
     }
   },
   "projectStatus": {
@@ -183,15 +183,15 @@
   "home": {
     "hero": {
       "eyebrow": "A proposed Italian foundation",
-      "title": "Opening the sea to the next generation.",
-      "lead": "The Blue Legacy Foundation is being established to renew coastal schools, bring young people from disadvantaged backgrounds onto the water, and gather supporters around the Mediterranean's sailing tradition.",
+      "title": "From the regatta course to the classroom.",
+      "lead": "The Blue Legacy Foundation is being established to renovate and equip existing schools in Africa, starting with countries such as Morocco and Kenya, and to bring sailors, companies and supporters together around regattas and events that fund this work.",
       "primary": "Read our mission",
       "secondary": "Register your interest"
     },
     "mission": {
       "eyebrow": "Our purpose",
-      "title": "The sea as a classroom, open to every child on the coast.",
-      "body": "Many young people grow up within sight of the Mediterranean yet never sail on it, and some study in school buildings that have not kept pace with their needs. We want to change that, slowly and properly: one school, one group of young sailors, one well-run event at a time — and to publish exactly what we do with every euro."
+      "title": "Every child deserves a classroom that works.",
+      "body": "In many communities in Africa, children learn in crowded classrooms without clean water, light or enough books. We want to help change that, carefully and properly: one school at a time, with local partners who know the community, funded by supporters we meet on the water and at our events, and reporting exactly what we do with every euro."
     },
     "pillars": {
       "eyebrow": "Four pillars",
@@ -206,12 +206,12 @@
       "eyebrow": "Year one, deliberately modest",
       "title": "The proposed first-year pilot",
       "items": [
-        "Renovation of one existing coastal school",
-        "A modest youth sailing scholarship programme",
-        "One charity regatta partnership",
+        "Renovation of one existing school in Morocco or Kenya, with a vetted local partner",
+        "A small scholarship fund for students of the partner school",
+        "One charity regatta partnership to meet supporters and sponsors",
         "One small fundraising gala"
       ],
-      "note": "Scope, sites and partners are still to be selected. Budgets are illustrative scenarios."
+      "note": "Countries, schools, local partners and regattas are still to be selected. Budgets are illustrative scenarios."
     },
     "participate": {
       "eyebrow": "Participate",
@@ -225,8 +225,8 @@
           "href": "/donate"
         },
         {
-          "title": "Companies & clubs",
-          "body": "Explore proposed partnership packages and maritime collaborations.",
+          "title": "Sailors, clubs & companies",
+          "body": "Bring a regatta, a crew or a sponsorship to the cause. See the proposed partnership packages.",
           "cta": "Partnership prospectus",
           "href": "/partners"
         },
@@ -237,8 +237,8 @@
           "href": "/gala"
         },
         {
-          "title": "Schools & educators",
-          "body": "Know a coastal school or a sailing programme we should learn from? Write to us.",
+          "title": "Partners in Africa",
+          "body": "Do you work with schools or education organisations in Morocco, Kenya or elsewhere in Africa? We would like to learn from you.",
           "cta": "Contact the team",
           "href": "/contact"
         }
@@ -280,10 +280,10 @@
   "mission": {
     "hero": {
       "eyebrow": "Mission",
-      "title": "Patient, accountable philanthropy for the Mediterranean coast.",
-      "lead": "We intend to connect the generosity of people who love the sea with the needs of the young people who live beside it — and to do so with the discipline of a well-run institution from the very first day."
+      "title": "Patient, accountable philanthropy for education in Africa.",
+      "lead": "We intend to connect the generosity of the sailing community and its supporters with the needs of children in African schools, with the discipline of a well-run institution from the very first day."
     },
-    "statement": "Our proposed mission is to widen access to education and to the sea for young people in Italian coastal communities, by renewing the schools they attend, opening the sport of sailing to them, and supporting their next steps — funded transparently by a community of supporters.",
+    "statement": "Our proposed mission is to improve access to good education for children in Africa, starting with countries such as Morocco and Kenya, by renovating and equipping existing schools with local partners and supporting students’ next steps, funded transparently by a community of supporters gathered around sailing and the sea.",
     "values": {
       "eyebrow": "Values",
       "title": "What we hold ourselves to",
@@ -298,19 +298,19 @@
         },
         {
           "title": "Dignity",
-          "body": "Beneficiaries are partners, not props. We never use images or stories of young people without proper consent."
+          "body": "Children and communities are partners, not props. We never use images or stories of young people without proper consent."
         },
         {
-          "title": "Safety first",
-          "body": "On the water and in schools, safeguarding and safety standards come before speed or visibility."
+          "title": "Local ownership",
+          "body": "Schools and communities decide what they need. We fund their priorities through local partners, not our own assumptions."
         },
         {
           "title": "Restraint",
-          "body": "Elegance without excess. Our events and our administration stay proportionate to our mission."
+          "body": "Elegance without excess. Our regattas, events and administration stay proportionate to our mission."
         },
         {
-          "title": "Partnership",
-          "body": "We work through existing schools, clubs and public bodies rather than building parallel structures."
+          "title": "Safety first",
+          "body": "Safeguarding of children and safe building standards come before speed or visibility."
         }
       ]
     },
@@ -321,35 +321,35 @@
       "steps": [
         {
           "title": "Resources",
-          "body": "Contributions from founding families, companies, gala guests and individual supporters, plus volunteer expertise."
+          "body": "Contributions from founding families, companies, regatta and gala supporters and individual donors, plus volunteer expertise."
         },
         {
           "title": "Activities",
-          "body": "Fund school improvements with the responsible authorities; fund sailing places with qualified clubs; award modest scholarships."
+          "body": "Fund school renovations and equipment with vetted local partners and authorities; award modest scholarships; hold regattas and events to raise funds."
         },
         {
           "title": "Outputs",
-          "body": "Improved learning spaces delivered on budget; young people completing courses safely; scholarships awarded fairly."
+          "body": "Safer classrooms, water, sanitation, light and learning materials delivered on budget; scholarships awarded fairly; supporters engaged."
         },
         {
           "title": "Outcomes",
-          "body": "Better daily learning conditions; confidence, teamwork and water skills; clearer pathways into maritime study and work."
+          "body": "Better daily learning conditions, more regular attendance and more students continuing their education."
         },
         {
           "title": "Long-term impact",
-          "body": "Coastal communities where opportunity does not depend on family income, and where the sea is a shared heritage."
+          "body": "Communities where a child’s education does not depend on where they were born, with a lasting network of supporters behind them."
         }
       ],
-      "assumptions": "Key assumptions we must verify: that partner schools and public owners can authorise works within a year; that clubs can host additional young sailors safely; and that a small, well-governed foundation can sustain donor trust through full transparency."
+      "assumptions": "Key assumptions we must verify: that reliable local partner organisations can be found and vetted in each country; that works can be authorised and delivered within a year; that funds can be transferred and accounted for transparently across borders; and that regattas and events raise clearly more than they cost."
     },
     "methodology": {
       "eyebrow": "Impact methodology",
       "title": "How we will measure — and what we will not do",
       "items": [
-        "Record a baseline before any project starts, agreed with the partner school or club.",
+        "Record a baseline before any project starts, agreed with the school, the community and the local partner.",
         "Choose a small number of indicators per project, defined in advance and published with the project.",
-        "Collect only the data we need. Data about young people is aggregated and anonymised.",
-        "Seek independent verification for works (technical sign-off) and for financial statements.",
+        "Collect only the data we need. Data about children is aggregated and anonymised.",
+        "Release funds in instalments against verified milestones, with photos, local technical sign-off and site visits.",
         "Publish results, including delays, overruns and things that did not work.",
         "Never report outputs we have not delivered, nor count beneficiaries more than once."
       ]
@@ -362,9 +362,10 @@
         "A board that includes independent members, not only founding families.",
         "A written conflicts-of-interest policy, with declarations recorded annually.",
         "Grant decisions taken against published criteria, documented and minuted.",
+        "Local partners vetted before any grant, with written agreements and funds released in instalments.",
         "Dual authorisation for payments and segregation of financial duties.",
         "Annual accounts reviewed by a qualified professional, and an annual public report.",
-        "A designated safeguarding lead and a child-safeguarding policy before any activity with minors.",
+        "A designated safeguarding lead and a child-safeguarding policy before any activity involving children.",
         "Sponsors and donors have no say over the selection of individual beneficiaries."
       ]
     }
@@ -373,7 +374,7 @@
     "hero": {
       "eyebrow": "Projects",
       "title": "Proposals, honestly labelled.",
-      "lead": "Every project shows its real status. Today all of them are early proposals: none is funded, and no beneficiary or site has been confirmed."
+      "lead": "Every project shows its real status. Today all of them are early proposals: none is funded, and no school, country partner or regatta has been confirmed."
     },
     "filters": {
       "title": "Filter projects",
@@ -413,28 +414,28 @@
   "sailing": {
     "hero": {
       "eyebrow": "Sailing",
-      "title": "The regatta season, with a purpose.",
-      "lead": "Sailing is how many of us first understood the sea. We intend to share that with young people who have never had the chance — working alongside the clubs and events that already make Italian sailing remarkable."
+      "title": "Regattas that build schools.",
+      "lead": "Sailing is our community and our meeting place. We use regattas and sailing events to bring together the supporters, companies and sailors who fund education in Africa, and one day we hope to sail a regatta of our own."
     },
     "programme": {
-      "eyebrow": "Sailing for Impact",
-      "title": "How the youth programme would work",
+      "eyebrow": "Regattas for Impact",
+      "title": "How regattas fund the schools",
       "items": [
         {
-          "title": "Through established clubs",
-          "body": "Courses run by qualified instructors at clubs with proven safety records — we fund places, we do not run boats."
+          "title": "Charity partner at existing regattas",
+          "body": "We intend to partner with established clubs to add a charity dimension to races they already run: a collection, a prize-giving, a supporters’ evening."
         },
         {
-          "title": "Everything covered",
-          "body": "Course fees, buoyancy aids and kit, insurance and transport, so cost never stands in the way."
+          "title": "Meeting funders on the water",
+          "body": "Regattas gather owners, crews, sponsors and businesses. Hospitality and guest places let us introduce our school projects to the people who can support them."
         },
         {
-          "title": "Referred by schools",
-          "body": "Participants are referred by partner schools and community organisations using transparent, needs-based criteria."
+          "title": "Sponsors with a purpose",
+          "body": "Companies can sponsor a race, a trophy or a crew, with recognition agreed in writing and the proceeds going to school projects."
         },
         {
-          "title": "Safeguarding built in",
-          "body": "Vetted adults, parental consent, supervision ratios and incident reporting agreed in writing with every club."
+          "title": "One day, our own regatta",
+          "body": "Our long-term ambition is a Blue Legacy Regatta: an annual event carrying the foundation’s name. It is an aspiration, not yet a plan. It would need a partner club, permits, insurance and a proven track record first."
         }
       ]
     },
@@ -452,26 +453,26 @@
       "title": "Opportunities for the sailing community",
       "items": [
         {
-          "title": "Yacht clubs and sailing schools",
-          "body": "Host funded places for young sailors, or add a charity dimension to an existing club regatta."
+          "title": "Yacht clubs",
+          "body": "Host a charity race, or add a collection or supporters’ evening to an existing regatta, on terms you approve."
         },
         {
           "title": "Regatta organisers",
-          "body": "A charity partner for a race, a prize-giving collection or a youth sail-past — on terms you approve."
+          "body": "A charity partner for your event, with transparent reporting on what the proceeds fund."
         },
         {
           "title": "Marinas, boatyards and chandlers",
-          "body": "In-kind support: berths for training boats, maintenance, safety equipment or kit for scholars."
+          "body": "In-kind support for events: berths, hospitality, safety boats or prizes."
         },
         {
-          "title": "Marine businesses",
-          "body": "Skills days, internships and mentoring connected to Blue Horizons scholarships."
+          "title": "Marine and other businesses",
+          "body": "Sponsor a race, a trophy or a crew, with the proceeds going to schools in Africa."
         }
       ],
       "cta": "Discuss a partnership"
     },
-    "interestTitle": "Register interest in a proposed regatta",
-    "interestLead": "Leave your details and we will write when plans are confirmed. This is not a booking."
+    "interestTitle": "Register interest in our regattas",
+    "interestLead": "Sailors, owners, clubs and sponsors: leave your details and we will write when plans are confirmed. This is not a booking."
   },
   "gala": {
     "hero": {
@@ -488,8 +489,8 @@
           "body": "A seated dinner for an indicative 100–120 guests at a coastal venue, to be selected."
         },
         {
-          "title": "The work, not the spectacle",
-          "body": "A short programme presenting projects, budgets and progress — with consent-based storytelling only."
+          "title": "The schools, not the spectacle",
+          "body": "A short programme presenting the school projects, budgets and progress, with consent-based storytelling only."
         },
         {
           "title": "A considered auction",
@@ -561,18 +562,18 @@
           "key": "REGATTA_PARTNER",
           "name": "Regatta Partner",
           "amount": "€5,000",
-          "body": "Associated with the charity regatta partnership and the youth sailing programme.",
+          "body": "Associated with our charity regatta partnership and, in future, the Blue Legacy Regatta.",
           "benefits": [
-            "Recognition connected to the charity regatta, subject to the organiser's approval",
-            "Programme report on the youth sailing places funded",
-            "Invitation to the youth sail-past, where one is held"
+            "Recognition connected to the charity regatta, subject to the organiser’s approval",
+            "Report on the school projects your contribution funds",
+            "Hospitality at the charity regatta, where offered"
           ]
         },
         {
           "key": "COMMUNITY_PARTNER",
           "name": "Community Partner",
           "amount": "€2,500",
-          "body": "For local businesses in the coastal communities we hope to serve.",
+          "body": "For businesses in the sailing communities where we hold our events.",
           "benefits": [
             "Recognition on the website and in the annual report, with your consent",
             "Annual programme update"
@@ -582,7 +583,7 @@
           "key": "IN_KIND",
           "name": "In-kind partner",
           "amount": "Goods or services",
-          "body": "Boats, safety equipment, technical services, venues or professional expertise.",
+          "body": "Event services, hospitality, venues, school equipment or professional expertise.",
           "benefits": [
             "Recognition proportionate to the value provided, agreed in writing",
             "Valuation and acknowledgement in line with professional advice"
@@ -708,7 +709,7 @@
       "expenses": "Illustrative expenses",
       "total": "Total",
       "balance": "Balance",
-      "programmeShare": "Programmes (school, sailing, scholarships): {share}% of expenses",
+      "programmeShare": "School programmes (renovation, equipment, scholarships): {share}% of expenses",
       "galaNote": "The gala line in revenue is gross. Its direct costs appear in expenses, so its net contribution in this scenario is {net}.",
       "chartLabel": "Share of illustrative expenses"
     },
@@ -862,9 +863,9 @@
       "individualDonations": "Individual donations"
     },
     "expenses": {
-      "schoolRenovation": "School renovation",
-      "youthSailing": "Youth sailing",
-      "equipmentScholarships": "Equipment and scholarships",
+      "schoolRenovation": "School renovation (works)",
+      "schoolEquipment": "Equipment, water, light and learning materials",
+      "scholarships": "Scholarships and student support",
       "gala": "Gala costs",
       "administration": "Administration",
       "reserve": "Reserve"

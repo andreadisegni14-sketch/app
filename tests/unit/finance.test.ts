@@ -29,8 +29,8 @@ describe('illustrative first-year budget', () => {
     })
     expect(Object.fromEntries(ILLUSTRATIVE_EXPENSES.map((l) => [l.key, l.amountCents / 100]))).toEqual({
       schoolRenovation: 35_000,
-      youthSailing: 15_000,
-      equipmentScholarships: 10_000,
+      schoolEquipment: 15_000,
+      scholarships: 10_000,
       gala: 15_000,
       administration: 12_000,
       reserve: 8_000,

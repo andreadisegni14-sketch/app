@@ -20,15 +20,15 @@ export const ILLUSTRATIVE_REVENUE: readonly IllustrativeLine[] = [
 
 export const ILLUSTRATIVE_EXPENSES: readonly IllustrativeLine[] = [
   { key: 'schoolRenovation', amountCents: 3_500_000 },
-  { key: 'youthSailing', amountCents: 1_500_000 },
-  { key: 'equipmentScholarships', amountCents: 1_000_000 },
+  { key: 'schoolEquipment', amountCents: 1_500_000 },
+  { key: 'scholarships', amountCents: 1_000_000 },
   { key: 'gala', amountCents: 1_500_000 },
   { key: 'administration', amountCents: 1_200_000 },
   { key: 'reserve', amountCents: 800_000 },
 ]
 
 /** Expense lines that fund programmes directly (as opposed to fundraising, admin or reserve). */
-export const PROGRAMME_EXPENSE_KEYS = ['schoolRenovation', 'youthSailing', 'equipmentScholarships'] as const
+export const PROGRAMME_EXPENSE_KEYS = ['schoolRenovation', 'schoolEquipment', 'scholarships'] as const
 
 export const CORPORATE_SPONSOR_SCENARIO = { count: 3, amountCentsEach: 1_000_000 } as const
 

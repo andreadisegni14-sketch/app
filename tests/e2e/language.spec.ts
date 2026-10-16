@@ -25,7 +25,7 @@ test('language switch preserves project filters', async ({ page, isMobile }) => 
   await page.getByTestId('language-switch').first().click()
   await expect(page).toHaveURL(/\/it\/projects\?pillar=SAILING_FOR_IMPACT/)
   await expect(page.getByTestId('project-card')).toHaveCount(1)
-  await expect(page.getByTestId('project-card')).toContainText('Borse di vela')
+  await expect(page.getByTestId('project-card')).toContainText('Verso una Regata Blue Legacy')
 })
 
 test('language switch works without JavaScript', async ({ browser }) => {

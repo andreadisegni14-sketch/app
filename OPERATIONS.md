@@ -79,21 +79,25 @@ Record each organisation in **Admin → Beneficiaries** (internal only; publish 
 written consent — tick "Written consent to be named publicly").
 
 Checklist (keep evidence in the document archive, not in free-text notes):
-1. **Identity and legal status** — official name, tax code, legal form, statute; for schools, the
-   competent public owner (Comune/Provincia) and the school leadership (Dirigente scolastico).
+1. **Identity and legal status** — official name, registration in its own country, legal form,
+   statute; for schools, the public body that owns or runs the school and the school leadership.
+   Local partner organisations in Morocco, Kenya or elsewhere are checked against their country's
+   registers, with references from other funders.
 2. **Authority** — who can sign agreements; board/council resolution where required.
 3. **Need and fit** — baseline assessment, alignment with the mission, absence of duplicate funding.
 4. **Authorisations (school works)** — building ownership, permits (e.g. CILA/SCIA as applicable),
    safety and accessibility requirements, procurement rules applicable to public bodies.
 5. **Safeguarding** — the partner's own child-protection policy; vetting of adults (e.g. certificato
    del casellario giudiziario where required); supervision ratios; incident procedures.
-6. **Sailing partners** — affiliation and instructor qualifications, safety boat procedures,
-   insurance, equipment standards.
-7. **Integrity checks** — sanctions/adverse media screening; conflicts of interest with board
+6. **Regatta partners** — the organising club's permits and insurance, clear written terms on
+   how proceeds are collected and reported, and no implied endorsements.
+7. **Cross-border payments** — funds sent only to verified bank accounts in the partner's own
+   name, in instalments against verified milestones, with sanctions screening.
+8. **Integrity checks** — sanctions/adverse media screening; conflicts of interest with board
    members, donors or sponsors.
-8. **Financial controls** — bank details verified by call-back; payments preferably direct to
+9. **Financial controls** — bank details verified by call-back; payments preferably direct to
    suppliers against invoices.
-9. **Data protection** — data-sharing terms; aggregate reporting only for minors.
+10. **Data protection** — data-sharing terms; aggregate reporting only for minors.
 
 Set the due-diligence status to `APPROVED` only when every item is satisfied and documented.
 

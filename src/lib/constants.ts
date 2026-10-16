@@ -15,7 +15,13 @@ export const LOCALES = ['en', 'it'] as const
 export type Locale = (typeof LOCALES)[number]
 
 export const PROJECT_STATUSES = Object.values(ProjectStatus)
-export const PILLARS = Object.values(Pillar)
+/** Display order: the school programmes first, then the fundraising pillars that pay for them. */
+export const PILLARS: Pillar[] = [
+  Pillar.COASTAL_SCHOOL_RENEWAL,
+  Pillar.BLUE_HORIZONS_SCHOLARSHIPS,
+  Pillar.SAILING_FOR_IMPACT,
+  Pillar.ANNUAL_GALA,
+]
 export const CONTACT_TOPICS = Object.values(ContactTopic).filter((t) => t !== 'SUPPORT_INTEREST')
 export const SUPPORT_TYPES = Object.values(SupportType)
 export const SPONSOR_PACKAGES = Object.values(SponsorPackage)
