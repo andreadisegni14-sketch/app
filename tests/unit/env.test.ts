@@ -4,7 +4,7 @@ import { getDonationsMode } from '@/lib/env'
 afterEach(() => vi.unstubAllEnvs())
 
 function stub(env: Record<string, string>) {
-  for (const key of ['FEATURE_DONATIONS_ENABLED', 'DONATIONS_COMPLIANCE_CONFIRMED', 'PAYMENTS_MODE', 'ALLOW_MOCK_PAYMENTS', 'STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET', 'VERCEL_ENV', 'PRODUCTION_DEPLOYMENT']) {
+  for (const key of ['FEATURE_DONATIONS_ENABLED', 'DONATIONS_COMPLIANCE_CONFIRMED', 'PAYMENTS_MODE', 'ALLOW_MOCK_PAYMENTS', 'STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET', 'VERCEL_ENV', 'RENDER', 'PRODUCTION_DEPLOYMENT']) {
     vi.stubEnv(key, env[key] ?? '')
   }
 }
@@ -36,6 +36,8 @@ describe('donation feature flags', () => {
     stub({ FEATURE_DONATIONS_ENABLED: 'true', DONATIONS_COMPLIANCE_CONFIRMED: 'true', PAYMENTS_MODE: 'mock', ALLOW_MOCK_PAYMENTS: 'true' })
     expect(getDonationsMode()).toEqual({ enabled: true, provider: 'mock' })
     stub({ FEATURE_DONATIONS_ENABLED: 'true', DONATIONS_COMPLIANCE_CONFIRMED: 'true', PAYMENTS_MODE: 'mock', ALLOW_MOCK_PAYMENTS: 'true', VERCEL_ENV: 'production' })
+    expect(getDonationsMode().enabled).toBe(false)
+    stub({ FEATURE_DONATIONS_ENABLED: 'true', DONATIONS_COMPLIANCE_CONFIRMED: 'true', PAYMENTS_MODE: 'mock', ALLOW_MOCK_PAYMENTS: 'true', RENDER: 'true' })
     expect(getDonationsMode().enabled).toBe(false)
   })
 })

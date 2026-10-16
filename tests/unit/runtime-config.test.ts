@@ -4,7 +4,7 @@ import { databaseUrl, directDatabaseUrl, siteUrl } from '@/lib/runtime-config'
 
 const KEYS = [
   'DATABASE_URL', 'POSTGRES_PRISMA_URL', 'POSTGRES_URL', 'DIRECT_URL', 'DATABASE_URL_UNPOOLED', 'POSTGRES_URL_NON_POOLING',
-  'NEXT_PUBLIC_SITE_URL', 'VERCEL_PROJECT_PRODUCTION_URL', 'VERCEL_URL', 'RATE_LIMIT_SALT',
+  'NEXT_PUBLIC_SITE_URL', 'RENDER_EXTERNAL_URL', 'VERCEL_PROJECT_PRODUCTION_URL', 'VERCEL_URL', 'RATE_LIMIT_SALT',
 ]
 
 function stub(env: Record<string, string>) {
@@ -40,6 +40,11 @@ describe('site URL resolution', () => {
   it('uses the explicit URL without a trailing slash', () => {
     stub({ NEXT_PUBLIC_SITE_URL: 'https://www.example.org/', VERCEL_PROJECT_PRODUCTION_URL: 'x.vercel.app' })
     expect(siteUrl()).toBe('https://www.example.org')
+  })
+
+  it('uses the address Render provides', () => {
+    stub({ RENDER_EXTERNAL_URL: 'https://blue-legacy.onrender.com' })
+    expect(siteUrl()).toBe('https://blue-legacy.onrender.com')
   })
 
   it('falls back to the Vercel production domain, then localhost', () => {

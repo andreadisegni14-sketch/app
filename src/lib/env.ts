@@ -25,7 +25,7 @@ export type DonationsMode =
   | { enabled: true; provider: PaymentsMode }
 
 export function isProductionDeployment(): boolean {
-  return process.env.VERCEL_ENV === 'production' || bool(process.env.PRODUCTION_DEPLOYMENT)
+  return process.env.VERCEL_ENV === 'production' || bool(process.env.RENDER) || bool(process.env.PRODUCTION_DEPLOYMENT)
 }
 
 export function getPaymentsMode(): PaymentsMode | null {

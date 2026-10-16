@@ -3,7 +3,8 @@
  *
  * Explicit variables always win. The fallbacks let a Vercel deployment work with zero manual
  * configuration once a Postgres database (e.g. Neon) is connected from Vercel's Storage tab,
- * which injects DATABASE_URL / DATABASE_URL_UNPOOLED (or the POSTGRES_* equivalents).
+ * which injects DATABASE_URL / DATABASE_URL_UNPOOLED (or the POSTGRES_* equivalents). On Render the
+ * site address comes from RENDER_EXTERNAL_URL.
  */
 
 function first(...values: (string | undefined)[]): string | undefined {
@@ -29,9 +30,9 @@ export function directDatabaseUrl(): string | undefined {
   )
 }
 
-/** Public base URL: explicit setting, else the Vercel production domain, else localhost. */
+/** Public base URL: explicit setting, else the hosting platform's own address, else localhost. */
 export function siteUrl(): string {
-  const explicit = first(process.env.NEXT_PUBLIC_SITE_URL)
+  const explicit = first(process.env.NEXT_PUBLIC_SITE_URL, process.env.RENDER_EXTERNAL_URL)
   if (explicit) return explicit.replace(/\/+$/, '')
   const vercelHost = first(process.env.VERCEL_PROJECT_PRODUCTION_URL, process.env.VERCEL_URL)
   if (vercelHost) return `https://${vercelHost.replace(/^https?:\/\//, '').replace(/\/+$/, '')}`
