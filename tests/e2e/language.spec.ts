@@ -27,3 +27,11 @@ test('language switch preserves project filters', async ({ page, isMobile }) => 
   await expect(page.getByTestId('project-card')).toHaveCount(1)
   await expect(page.getByTestId('project-card')).toContainText('Borse di vela')
 })
+
+test('language switch works without JavaScript', async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, reducedMotion: 'reduce' })
+  const page = await context.newPage()
+  await page.goto('/gala')
+  await expect(page.getByTestId('language-switch').first()).toHaveAttribute('href', '/it/gala')
+  await context.close()
+})

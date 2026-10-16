@@ -1,4 +1,3 @@
-import { Suspense } from 'react'
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { buttonStyles } from '@/components/ui/styles'
@@ -11,11 +10,7 @@ import { PRIMARY_NAV } from './nav-items'
 export async function SiteHeader() {
   const t = await getTranslations()
   const items = PRIMARY_NAV.map((item) => ({ href: item.href, label: t(`nav.${item.key}`) }))
-  const switcher = (
-    <Suspense fallback={null}>
-      <LanguageSwitcher label={t('nav.switchLanguage')} ariaLabel={t('nav.switchLanguageLabel')} />
-    </Suspense>
-  )
+  const switcher = <LanguageSwitcher label={t('nav.switchLanguage')} ariaLabel={t('nav.switchLanguageLabel')} />
 
   return (
     <header className="on-dark sticky top-0 z-40 border-b border-ivory/10 bg-navy-deep/95 text-ivory backdrop-blur supports-[backdrop-filter]:bg-navy-deep/85">
