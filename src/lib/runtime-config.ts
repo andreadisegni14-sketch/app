@@ -38,3 +38,9 @@ export function siteUrl(): string {
   if (vercelHost) return `https://${vercelHost.replace(/^https?:\/\//, '').replace(/\/+$/, '')}`
   return 'http://localhost:3000'
 }
+
+/** When SITE_OFFLINE is "true", public pages are replaced by a holding page and search engines are told to stay away. */
+export function isSiteOffline(): boolean {
+  const value = process.env.SITE_OFFLINE?.trim()
+  return value === 'true' || value === '1'
+}
