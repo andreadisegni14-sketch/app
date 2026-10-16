@@ -17,6 +17,10 @@ describe('bilingual content', () => {
     expect(keys(it_).sort()).toEqual(keys(en).sort())
   })
 
+  it('has no apostrophe before ICU syntax (it would silently disable a placeholder or link)', () => {
+    for (const messages of [en, it_]) expect(JSON.stringify(messages)).not.toMatch(/'[{<]/)
+  })
+
   it('contains no placeholder text', () => {
     expect(corpus).not.toMatch(/lorem ipsum|\bTODO\b|\bFIXME\b/)
   })

@@ -9,6 +9,9 @@ test('switching language keeps the page and translates content', async ({ page, 
   await expect(page.locator('html')).toHaveAttribute('lang', 'it')
   await expect(page.getByRole('heading', { level: 1 })).toContainText('filantropia paziente')
   await expect(page.getByTestId('status-banner')).toContainText('non ancora costituita')
+  await page.goto('/it/contact')
+  await expect(page.getByTestId('contact-form').getByRole('link', { name: 'informativa privacy' })).toHaveAttribute('href', '/it/privacy')
+  await page.goto('/it/mission')
 
   if (isMobile) await page.getByRole('button', { name: 'Apri il menu' }).click()
   await page.getByTestId('language-switch').filter({ visible: true }).first().click()

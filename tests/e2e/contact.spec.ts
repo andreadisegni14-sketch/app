@@ -4,6 +4,8 @@ test.describe('contact form', () => {
   test('shows validation errors, then succeeds', async ({ page }) => {
     await page.goto('/contact')
     const form = page.getByTestId('contact-form')
+    // The consent sentence must link to the privacy notice.
+    await expect(form.getByRole('link', { name: 'privacy notice' })).toHaveAttribute('href', '/privacy')
     await form.getByRole('button', { name: 'Send' }).click()
     await expect(page.getByTestId('form-status')).toContainText('Please correct the highlighted fields.')
     await expect(page.getByLabel(/Full name/)).toHaveAttribute('aria-invalid', 'true')

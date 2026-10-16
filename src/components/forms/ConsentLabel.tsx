@@ -8,9 +8,9 @@ export function ConsentLabel() {
   return (
     <>
       {t.rich('consent', {
-        privacy: () => (
+        privacy: (chunks) => (
           <Link href="/privacy" className="link-underline font-medium text-navy" target="_blank">
-            {t('privacyLink')}
+            {chunks}
           </Link>
         ),
       })}

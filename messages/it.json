@@ -773,8 +773,7 @@
     "submit": "Invia",
     "sending": "Invio in corso…",
     "honeypot": "Lascia vuoto questo campo",
-    "consent": "Ho letto l'{privacy} e acconsento all'uso dei miei dati per rispondere a questa richiesta.",
-    "privacyLink": "informativa privacy",
+    "consent": "Ho letto l’<privacy>informativa privacy</privacy> e acconsento all’uso dei miei dati per rispondere a questa richiesta.",
     "labels": {
       "name": "Nome e cognome",
       "email": "Indirizzo email",

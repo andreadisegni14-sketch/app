@@ -773,8 +773,7 @@
     "submit": "Send",
     "sending": "Sending…",
     "honeypot": "Leave this field empty",
-    "consent": "I have read the {privacy} and agree that my details are used to answer this request.",
-    "privacyLink": "privacy notice",
+    "consent": "I have read the <privacy>privacy notice</privacy> and agree that my details are used to answer this request.",
     "labels": {
       "name": "Full name",
       "email": "Email address",
