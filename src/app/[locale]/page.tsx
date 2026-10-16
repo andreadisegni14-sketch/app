@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { Seascape } from '@/components/art/Seascape'
+import { HowWeBuild } from '@/components/site/HowWeBuild'
 import { ProjectCard } from '@/components/site/ProjectCard'
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { buttonStyles } from '@/components/ui/styles'
@@ -96,6 +97,8 @@ export default async function HomePage({ params }: Props) {
           ))}
         </ol>
       </Section>
+
+      <HowWeBuild />
 
       {/* Featured project + pilot */}
       <Section labelledBy="home-featured">
