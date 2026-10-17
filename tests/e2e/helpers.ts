@@ -9,6 +9,8 @@ export const PUBLIC_PATHS = [
   '/projects/school-renewal-pilot-africa',
   '/sailing',
   '/gala',
+  '/events/charity-regatta-partnership',
+  '/events/blue-legacy-gala-2027',
   '/partners',
   '/donate',
   '/transparency',

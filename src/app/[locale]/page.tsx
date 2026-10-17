@@ -7,7 +7,7 @@ import { ProjectCard } from '@/components/site/ProjectCard'
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { buttonStyles } from '@/components/ui/styles'
 import { PILLARS } from '@/lib/constants'
-import { getFeaturedProject, getSetting, pick } from '@/lib/server/public-data'
+import { getFeaturedProject, getNextPublishedEvent, getSetting, pick } from '@/lib/server/public-data'
 import { pageMetadata } from '@/lib/seo'
 
 export const dynamic = 'force-dynamic'
@@ -25,7 +25,11 @@ export default async function HomePage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations()
-  const [featured, launchNote] = await Promise.all([getFeaturedProject(), getSetting<LaunchNote>('launchStatusNote')])
+  const [featured, launchNote, nextEvent] = await Promise.all([
+    getFeaturedProject(),
+    getSetting<LaunchNote>('launchStatusNote'),
+    getNextPublishedEvent('OTHER'),
+  ])
   const note = launchNote?.[locale === 'it' ? 'it' : 'en']
 
   const participate = t.raw('home.participate.items') as { title: string; body: string; cta: string; href: string }[]
@@ -57,6 +61,33 @@ export default async function HomePage({ params }: Props) {
           {t('a11y.artworkCaption')}
         </p>
       </section>
+
+      {/* Next event */}
+      {nextEvent && (
+        <section aria-labelledby="home-next-event" className="border-b border-line bg-ivory-deep py-10 md:py-12" data-testid="next-event">
+          <div className="container-page flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-10">
+            <div className="min-w-0">
+              <p className="eyebrow mb-3">{t('events.teaser.eyebrow')}</p>
+              <h2 id="home-next-event" className="text-2xl leading-snug md:text-3xl">
+                {pick(nextEvent, 'title', locale)}
+              </h2>
+              <dl className="mt-4 flex flex-col gap-2 text-sm sm:flex-row sm:flex-wrap sm:gap-x-8">
+                <div className="flex gap-2">
+                  <dt className="text-muted">{t('sailing.events.date')}</dt>
+                  <dd className="font-medium">{pick(nextEvent, 'dateLabel', locale)}</dd>
+                </div>
+                <div className="flex gap-2">
+                  <dt className="text-muted">{t('sailing.events.location')}</dt>
+                  <dd className="font-medium">{pick(nextEvent, 'location', locale)}</dd>
+                </div>
+              </dl>
+            </div>
+            <Link href={`/events/${nextEvent.slug}`} className={`${buttonStyles.primary} shrink-0 self-start md:self-center`}>
+              {t('events.teaser.cta')} <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* Mission statement */}
       <Section labelledBy="home-mission">

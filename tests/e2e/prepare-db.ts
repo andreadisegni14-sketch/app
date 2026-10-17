@@ -24,6 +24,22 @@ async function accounts() {
     const roleRow = await db.role.findUniqueOrThrow({ where: { name: role } })
     await db.user.create({ data: { email: account.email, name, roleId: roleRow.id, passwordHash: await bcrypt.hash(account.password, 10) } })
   }
+  // A test-only evening event (type OTHER) so the home page "Next event" teaser renders.
+  await db.event.create({
+    data: {
+      slug: 'e2e-inauguration-evening',
+      type: 'OTHER',
+      sortOrder: 3,
+      titleEn: 'E2E inauguration evening (proposed)',
+      titleIt: 'Serata inaugurale E2E (proposta)',
+      summaryEn: 'A test-only proposed evening used by the end-to-end tests.',
+      summaryIt: 'Una serata proposta usata solo dai test end-to-end.',
+      locationEn: 'Venue to be confirmed',
+      locationIt: 'Luogo da confermare',
+      dateLabelEn: 'Proposed for 2027',
+      dateLabelIt: 'Proposta per il 2027',
+    },
+  })
   // An enquiry whose notification email failed: the admin must still see it.
   await db.contactInquiry.create({
     data: {

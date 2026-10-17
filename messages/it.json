@@ -586,6 +586,21 @@
     "interestTitle": "Iscriviti alla lista di interesse del gala",
     "interestLead": "Ti scriveremo quando data e location saranno confermate."
   },
+  "events": {
+    "detail": {
+      "detailsTitle": "Dettagli dell’evento",
+      "noteTitle": "Registrare l’interesse non è una prenotazione",
+      "proposal": "Questo evento è una proposta: data, luogo e programma non sono ancora stati concordati e la fondazione non è ancora costituita.",
+      "noteBody": "Registrare il tuo interesse non è una prenotazione né un biglietto, e non viene richiesto alcun pagamento. Useremo i tuoi dati solo per informarti se e quando l’evento avrà luogo.",
+      "interestTitle": "Registra il tuo interesse",
+      "interestLead": "Lasciaci i tuoi recapiti: ti scriveremo quando ci saranno novità su questo evento.",
+      "closed": "Le registrazioni di interesse per questo evento sono chiuse."
+    },
+    "teaser": {
+      "eyebrow": "Prossimo evento",
+      "cta": "Scopri l’evento"
+    }
+  },
   "partners": {
     "hero": {
       "eyebrow": "Partner",
