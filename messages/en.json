@@ -586,6 +586,21 @@
     "interestTitle": "Join the gala interest list",
     "interestLead": "We will write to you once a date and venue are confirmed."
   },
+  "events": {
+    "detail": {
+      "detailsTitle": "Event details",
+      "noteTitle": "Registering interest is not a booking",
+      "proposal": "This event is a proposal: the date, venue and programme have not yet been agreed, and the foundation is not yet incorporated.",
+      "noteBody": "Registering your interest is not a booking or a ticket, and no payment is taken. We will only use your details to tell you whether and when the event goes ahead.",
+      "interestTitle": "Register your interest",
+      "interestLead": "Leave your details and we will write to you when there is news about this event.",
+      "closed": "Registrations of interest for this event are closed."
+    },
+    "teaser": {
+      "eyebrow": "Next event",
+      "cta": "View the event"
+    }
+  },
   "partners": {
     "hero": {
       "eyebrow": "Partners",

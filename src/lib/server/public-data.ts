@@ -81,6 +81,23 @@ export async function listPublishedEvents(type?: 'REGATTA' | 'GALA' | 'PARTNERSH
   })
 }
 
+export async function getPublishedEvent(slug: string) {
+  return db.event.findFirst({ where: { slug, isPublished: true } })
+}
+
+/** The first upcoming (proposed or confirmed) published event of a type, by sort order. */
+export async function getNextPublishedEvent(type: 'REGATTA' | 'GALA' | 'PARTNERSHIP' | 'OTHER') {
+  return db.event.findFirst({
+    where: { isPublished: true, type, status: { in: ['PROPOSED', 'CONFIRMED'] } },
+    orderBy: [{ sortOrder: 'asc' }, { createdAt: 'asc' }],
+  })
+}
+
+/** Whether visitors may still register interest in an event. */
+export function isEventInterestOpen(event: { interestOpen: boolean; status: string }): boolean {
+  return event.interestOpen && (event.status === 'PROPOSED' || event.status === 'CONFIRMED')
+}
+
 export async function getSetting<T>(key: string): Promise<T | null> {
   const row = await db.siteSetting.findUnique({ where: { key } })
   return (row?.value as T) ?? null
