@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import { db } from '@/lib/db'
+import { siteUrl } from '@/lib/runtime-config'
 import { hashToken } from '@/lib/newsletter/tokens'
 import {
   adminUnsubscribe,
@@ -208,7 +209,7 @@ describe('sending an issue', () => {
     const itSub = await db.newsletterSubscriber.findUniqueOrThrow({ where: { email: 'it1@example.org' } })
     expect(it_.html).toContain(`/it/newsletter/unsubscribe?token=${itSub.unsubscribeToken}`)
     expect(it_.headers).toEqual({
-      'List-Unsubscribe': `<http://localhost:3000/api/newsletter/unsubscribe?token=${itSub.unsubscribeToken}>`,
+      'List-Unsubscribe': `<${siteUrl()}/api/newsletter/unsubscribe?token=${itSub.unsubscribeToken}>`,
       'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
     })
 
