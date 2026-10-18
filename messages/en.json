@@ -63,6 +63,18 @@
       "accessibility": {
         "title": "Accessibility statement",
         "description": "Our accessibility commitments and how to report a barrier."
+      },
+      "newsletter": {
+        "title": "Newsletter",
+        "description": "Foundation news, project updates and events from The Blue Legacy Foundation — about 4–6 emails a year, with double opt-in."
+      },
+      "newsletterConfirm": {
+        "title": "Confirm your subscription",
+        "description": "Confirm your subscription to the newsletter of The Blue Legacy Foundation."
+      },
+      "newsletterUnsubscribe": {
+        "title": "Unsubscribe",
+        "description": "Stop receiving the newsletter of The Blue Legacy Foundation."
       }
     }
   },
@@ -92,7 +104,8 @@
     "terms": "Terms",
     "accessibility": "Accessibility",
     "switchLanguage": "Italiano",
-    "switchLanguageLabel": "Leggi questa pagina in italiano"
+    "switchLanguageLabel": "Leggi questa pagina in italiano",
+    "newsletter": "Newsletter"
   },
   "status": {
     "banner": "Proposed foundation · not yet incorporated · donations not open",
@@ -846,6 +859,71 @@
     },
     "formTitle": "Send a message"
   },
+  "newsletter": {
+    "hero": {
+      "eyebrow": "Newsletter",
+      "title": "News from the foundation, a few times a year",
+      "lead": "Foundation news, updates on the school projects we are preparing and invitations to our events — about 4–6 emails a year, in English or Italian."
+    },
+    "what": {
+      "title": "What you will receive",
+      "items": [
+        "Foundation news: the steps towards incorporation and how the founding team works.",
+        "Project updates: progress on the school projects we are preparing with partner charities.",
+        "Events: regattas, the gala and other occasions to meet us."
+      ]
+    },
+    "frequency": "About 4–6 emails a year. No advertising, no tracking pixels, no click tracking, and we never sell or share your address.",
+    "optIn": {
+      "title": "Double opt-in",
+      "body": "After you subscribe we email you a confirmation link, valid for 7 days. You are added to the list only after you click it, so nobody can subscribe you without your agreement."
+    },
+    "leave": {
+      "title": "Unsubscribe at any time",
+      "body": "Every email contains an unsubscribe link that works with a single click. You can also write to us through the contact form."
+    },
+    "privacy": "Read the <privacy>privacy notice</privacy> to learn how we handle your address.",
+    "formTitle": "Subscribe",
+    "confirm": {
+      "title": "Confirm your subscription",
+      "prompt": "Click the button below to confirm that you want to receive the newsletter of The Blue Legacy Foundation.",
+      "button": "Confirm my subscription",
+      "doneTitle": "Thank you — you are subscribed",
+      "doneBody": "Your subscription is confirmed. You will receive about 4–6 emails a year, and every one of them contains a link to unsubscribe.",
+      "invalidTitle": "This link is not valid",
+      "invalidBody": "The confirmation link may have expired (links are valid for 7 days), may already have been used, or may be incomplete. You can simply subscribe again.",
+      "subscribeAgain": "Subscribe again",
+      "home": "Back to the home page"
+    },
+    "unsubscribe": {
+      "title": "Unsubscribe from the newsletter",
+      "prompt": "Click the button to stop receiving the newsletter of The Blue Legacy Foundation at {email}.",
+      "button": "Unsubscribe",
+      "doneTitle": "You have been unsubscribed",
+      "doneBody": "You will not receive any more newsletters from us. We keep your address only as needed to respect this choice; you can ask us to erase it through the contact form.",
+      "invalidTitle": "This link is not valid",
+      "invalidBody": "We could not find a subscription for this link; it may be incomplete. If you keep receiving emails you did not ask for, please write to us through the contact form.",
+      "resubscribe": "Changed your mind? Subscribe again",
+      "contact": "Contact us"
+    },
+    "email": {
+      "confirmSubject": "Please confirm your subscription to our newsletter",
+      "confirmPreheader": "One click to confirm — the link is valid for 7 days.",
+      "confirmTitle": "Confirm your subscription",
+      "confirmBody": "Thank you for your interest in The Blue Legacy Foundation. Please confirm that you would like to receive our newsletter: foundation news, project updates and events, about 4–6 emails a year.",
+      "confirmButton": "Confirm my subscription",
+      "confirmLinkHelp": "If the button does not work, copy this link into your browser:",
+      "confirmExpiry": "The link is valid for 7 days.",
+      "confirmIgnore": "If you did not ask to subscribe, simply ignore this email: you will not be added to the list.",
+      "confirmWhy": "You are receiving this one-off email because this address was entered in the newsletter form on our website.",
+      "issueWhy": "You are receiving this email because you subscribed to the newsletter of The Blue Legacy Foundation and confirmed your subscription.",
+      "unsubscribe": "Unsubscribe",
+      "unsubscribeText": "Unsubscribe with one click: {url}",
+      "senderFallback": "The Blue Legacy Foundation founding team — contact us through our website.",
+      "visitSite": "Visit our website",
+      "testBanner": "Test send — this copy was sent only to you."
+    }
+  },
   "forms": {
     "required": "required",
     "optional": "optional",
@@ -922,7 +1000,16 @@
       "eventClosed": "Interest registration for this event is closed.",
       "donationsDisabled": "Donations are not currently open.",
       "duplicateSubmission": "This form was already submitted. Please reload the page to start again.",
-      "paymentUnavailable": "Our payment provider is temporarily unavailable. No payment was taken. Please try again later."
+      "paymentUnavailable": "Our payment provider is temporarily unavailable. No payment was taken. Please try again later.",
+      "newsletterCheckInbox": "Almost done — please check your inbox. If this address can be subscribed, we have sent it a link to confirm your subscription (valid for 7 days)."
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "lead": "Foundation news, project updates and events — about 4–6 emails a year. We will ask you to confirm by email.",
+      "emailLabel": "Your email for the newsletter",
+      "consent": "Send me the newsletter (about 4–6 emails a year), as described in the <privacy>privacy notice</privacy>. I can unsubscribe at any time.",
+      "submit": "Subscribe",
+      "more": "About the newsletter"
     }
   },
   "consent": {
@@ -969,6 +1056,7 @@
             "Contact and enquiry forms: your name, email address, message and, for partnership enquiries, your organisation and optionally a phone number and website.",
             "Event interest: your name, email address, optional organisation, indicative number of guests and message.",
             "Donations (only once enabled): the amount, currency and the email address you give our payment provider. Card details are entered on Stripe's hosted page and never reach our servers.",
+            "Newsletter (only if you subscribe): your email address, your language, where on the website you signed up, the consent wording you accepted and the dates of your request, confirmation and any unsubscription.",
             "Security data: a keyed, irreversible hash of your IP address is used for a short time to prevent abuse. We do not store your IP address in clear."
           ]
         },
@@ -978,6 +1066,7 @@
             "To answer your request and manage the relationship you ask for (Art. 6(1)(b) GDPR, steps at your request).",
             "To keep the website secure and prevent spam (Art. 6(1)(f), legitimate interest).",
             "To keep donation records required by law, once donations are enabled (Art. 6(1)(c), legal obligation).",
+            "To send the newsletter you asked for, with your consent given through a double opt-in (Art. 6(1)(a) GDPR). You can withdraw it at any time by unsubscribing.",
             "Optional statistics, only with your consent (Art. 6(1)(a))."
           ]
         },
@@ -994,9 +1083,20 @@
           ]
         },
         {
+          "heading": "Newsletter",
+          "body": [
+            "Purpose: to send you foundation news, project updates and event information, about 4–6 emails a year. Our newsletter contains no tracking pixels and no click tracking.",
+            "Legal basis: your consent (Art. 6(1)(a) GDPR). We use a double opt-in: you are subscribed only after clicking the confirmation link we email you. As proof of consent we keep the consent wording you accepted, the time of your request and the time you confirmed.",
+            "Retention: we keep your address while you are subscribed. After you unsubscribe we keep only what is needed to honour your opt-out (the address marked as unsubscribed and the relevant dates), and we erase it entirely on request. Unconfirmed sign-ups never receive newsletters.",
+            "Processor: newsletter and confirmation emails are sent through Resend, acting on our instructions. Resend may process data outside the European Union; the appropriate safeguards for this transfer are to be confirmed in the data-processing agreement.",
+            "Unsubscribing: every newsletter contains an unsubscribe link that works with a single click. You can also ask us through the contact form."
+          ]
+        },
+        {
           "heading": "How long we keep it",
           "body": [
             "Enquiries: up to 24 months after the last contact, unless a continuing relationship requires longer.",
+            "Newsletter: until you unsubscribe; afterwards only as needed to honour your opt-out, or erased on request.",
             "Donation records: for the period required by Italian law (normally 10 years).",
             "Abuse-prevention hashes: up to a few hours."
           ]

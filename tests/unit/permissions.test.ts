@@ -26,6 +26,16 @@ describe('role permissions', () => {
     expect(can('EDITOR', 'projects:delete')).toBe(false)
   })
 
+  it('lets viewers read the newsletter, editors manage it, and only admins send or erase', () => {
+    expect(can('VIEWER', 'newsletter:view')).toBe(true)
+    expect(can('VIEWER', 'newsletter:manage')).toBe(false)
+    expect(can('EDITOR', 'newsletter:manage')).toBe(true)
+    expect(can('EDITOR', 'newsletter:send')).toBe(false)
+    expect(can('EDITOR', 'newsletter:erase')).toBe(false)
+    expect(can('ADMIN', 'newsletter:send')).toBe(true)
+    expect(can('ADMIN', 'newsletter:erase')).toBe(true)
+  })
+
   it('denies anonymous users', () => {
     expect(can(null, 'dashboard:view')).toBe(false)
   })

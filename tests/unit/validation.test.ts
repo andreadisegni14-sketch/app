@@ -125,3 +125,28 @@ describe('formDataToObject', () => {
     expect(formDataToObject(fd, ['consent', 'other'])).toEqual({ name: 'Test', consent: true, other: false })
   })
 })
+
+describe('newsletter subscription schema', () => {
+  it('normalises the address and requires consent', async () => {
+    const { newsletterSubscribeSchema } = await import('@/lib/validation')
+    const ok = newsletterSubscribeSchema.parse({ email: '  Giulia@Example.IT ', consent: true, locale: 'it', source: 'footer' })
+    expect(ok).toEqual({ email: 'giulia@example.it', consent: true, locale: 'it', source: 'footer' })
+    const bad = newsletterSubscribeSchema.safeParse({ email: 'nope', consent: false })
+    expect(bad.success).toBe(false)
+    expect(bad.error?.issues.map((i) => [i.path[0], i.message])).toEqual([['email', 'email'], ['consent', 'consentRequired']])
+  })
+
+  it('falls back to safe defaults for unknown locale and source', async () => {
+    const { newsletterSubscribeSchema } = await import('@/lib/validation')
+    expect(newsletterSubscribeSchema.parse({ email: 'a@example.org', consent: true, locale: 'fr', source: '<script>' })).toMatchObject({ locale: 'en', source: 'footer' })
+  })
+})
+
+describe('newsletter issue schema', () => {
+  it('requires both languages', async () => {
+    const { newsletterIssueSchema } = await import('@/lib/admin-validation')
+    const result = newsletterIssueSchema.safeParse({ subjectEn: 'News', subjectIt: '', bodyEn: 'Body', bodyIt: ' ' })
+    expect(result.success).toBe(false)
+    expect(result.error?.issues.map((i) => i.message)).toEqual(['Italian subject is required.', 'Italian text is required.'])
+  })
+})

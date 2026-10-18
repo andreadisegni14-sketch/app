@@ -1,3 +1,21 @@
+/**
+ * Paths that keep working while SITE_OFFLINE is on: people must always be able to confirm or,
+ * above all, leave the newsletter. Matched exactly (no prefixes), in both languages.
+ */
+export const OFFLINE_EXEMPT_PATHS: ReadonlySet<string> = new Set([
+  '/newsletter/confirm',
+  '/newsletter/unsubscribe',
+  '/en/newsletter/confirm',
+  '/en/newsletter/unsubscribe',
+  '/it/newsletter/confirm',
+  '/it/newsletter/unsubscribe',
+  '/api/newsletter/unsubscribe',
+])
+
+export function isOfflineExempt(pathname: string): boolean {
+  return OFFLINE_EXEMPT_PATHS.has(pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname)
+}
+
 /** Self-contained holding page served by the proxy while SITE_OFFLINE is on. */
 export const OFFLINE_PAGE = `<!doctype html>
 <html lang="it">

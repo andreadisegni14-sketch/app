@@ -12,6 +12,7 @@ const NAV: { href: string; label: string; permission: Permission }[] = [
   { href: '/admin/inquiries', label: 'Enquiries', permission: 'inquiries:view' },
   { href: '/admin/projects', label: 'Projects', permission: 'projects:view' },
   { href: '/admin/events', label: 'Events', permission: 'events:view' },
+  { href: '/admin/newsletter', label: 'Newsletter', permission: 'newsletter:view' },
   { href: '/admin/media', label: 'Media', permission: 'media:view' },
   { href: '/admin/beneficiaries', label: 'Beneficiaries', permission: 'beneficiaries:view' },
   { href: '/admin/donations', label: 'Donations', permission: 'donations:view' },
@@ -63,7 +64,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
           </Link>
         </div>
       </aside>
-      <div className="flex-1">
+      <div className="min-w-0 flex-1">
         <div className="border-b border-gold/40 bg-gold/10 px-6 py-2 text-xs text-gold-ink">
           Pre-incorporation mode · Donations {donations.enabled ? `ENABLED (${donations.provider})` : 'disabled'} · Do not publish personal data about minors.
         </div>

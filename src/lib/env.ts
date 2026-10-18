@@ -70,6 +70,16 @@ export function getEmailConfig() {
   }
 }
 
+export function isEmailConfigured(): boolean {
+  const config = getEmailConfig()
+  return Boolean(config.apiKey && config.from)
+}
+
+/** Postal/contact line shown in every newsletter footer (NEWSLETTER_SENDER_ADDRESS). */
+export function getNewsletterSenderAddress(): string | undefined {
+  return nonEmpty(process.env.NEWSLETTER_SENDER_ADDRESS)
+}
+
 export function getStripeConfig() {
   return {
     secretKey: nonEmpty(process.env.STRIPE_SECRET_KEY),

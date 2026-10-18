@@ -15,6 +15,7 @@ export const PUBLIC_PATHS = [
   '/donate',
   '/transparency',
   '/contact',
+  '/newsletter',
   '/privacy',
   '/cookies',
   '/terms',

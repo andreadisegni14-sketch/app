@@ -129,6 +129,18 @@ export const donationCheckoutSchema = z.object({
 })
 export type DonationCheckoutInput = z.infer<typeof donationCheckoutSchema>
 
+/** Where a newsletter sign-up came from (stored on the subscriber for the admin's information). */
+export const NEWSLETTER_SOURCES = ['footer', 'newsletter-page', 'event-form'] as const
+export type NewsletterSource = (typeof NEWSLETTER_SOURCES)[number]
+
+export const newsletterSubscribeSchema = z.object({
+  email,
+  consent,
+  locale,
+  source: z.enum(NEWSLETTER_SOURCES).catch('footer'),
+})
+export type NewsletterSubscribeInput = z.infer<typeof newsletterSubscribeSchema>
+
 export const loginSchema = z.object({
   email,
   password: z.string('required').min(1, 'required').max(200, 'tooLong'),
