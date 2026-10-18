@@ -63,6 +63,18 @@
       "accessibility": {
         "title": "Dichiarazione di accessibilità",
         "description": "I nostri impegni di accessibilità e come segnalare una barriera."
+      },
+      "newsletter": {
+        "title": "Newsletter",
+        "description": "Notizie dalla fondazione, aggiornamenti sui progetti ed eventi di The Blue Legacy Foundation — circa 4–6 email all’anno, con doppia conferma."
+      },
+      "newsletterConfirm": {
+        "title": "Conferma l’iscrizione",
+        "description": "Conferma l’iscrizione alla newsletter di The Blue Legacy Foundation."
+      },
+      "newsletterUnsubscribe": {
+        "title": "Disiscrizione",
+        "description": "Smetti di ricevere la newsletter di The Blue Legacy Foundation."
       }
     }
   },
@@ -92,7 +104,8 @@
     "terms": "Condizioni",
     "accessibility": "Accessibilità",
     "switchLanguage": "English",
-    "switchLanguageLabel": "Read this page in English"
+    "switchLanguageLabel": "Read this page in English",
+    "newsletter": "Newsletter"
   },
   "status": {
     "banner": "Fondazione in fase di proposta · non ancora costituita · donazioni non aperte",
@@ -846,6 +859,71 @@
     },
     "formTitle": "Invia un messaggio"
   },
+  "newsletter": {
+    "hero": {
+      "eyebrow": "Newsletter",
+      "title": "Notizie dalla fondazione, qualche volta l’anno",
+      "lead": "Notizie dalla fondazione, aggiornamenti sui progetti per le scuole che stiamo preparando e inviti ai nostri eventi — circa 4–6 email all’anno, in italiano o in inglese."
+    },
+    "what": {
+      "title": "Cosa riceverai",
+      "items": [
+        "Notizie dalla fondazione: i passi verso la costituzione e come lavora il gruppo promotore.",
+        "Aggiornamenti sui progetti: l’avanzamento dei progetti per le scuole che stiamo preparando con enti benefici partner.",
+        "Eventi: regate, il gala e altre occasioni per incontrarci."
+      ]
+    },
+    "frequency": "Circa 4–6 email all’anno. Niente pubblicità, niente pixel di tracciamento né tracciamento dei clic, e non vendiamo né cediamo mai il tuo indirizzo.",
+    "optIn": {
+      "title": "Doppia conferma (double opt-in)",
+      "body": "Dopo l’iscrizione ti inviamo via email un link di conferma, valido 7 giorni. Vieni aggiunto alla lista solo dopo averlo cliccato, così nessuno può iscriverti senza il tuo consenso."
+    },
+    "leave": {
+      "title": "Disiscriviti quando vuoi",
+      "body": "Ogni email contiene un link di disiscrizione che funziona con un solo clic. Puoi anche scriverci tramite il modulo di contatto."
+    },
+    "privacy": "Leggi l’<privacy>informativa privacy</privacy> per sapere come trattiamo il tuo indirizzo.",
+    "formTitle": "Iscriviti",
+    "confirm": {
+      "title": "Conferma l’iscrizione",
+      "prompt": "Clicca il pulsante qui sotto per confermare che desideri ricevere la newsletter di The Blue Legacy Foundation.",
+      "button": "Conferma l’iscrizione",
+      "doneTitle": "Grazie — l’iscrizione è attiva",
+      "doneBody": "La tua iscrizione è confermata. Riceverai circa 4–6 email all’anno, e ognuna contiene un link per disiscriverti.",
+      "invalidTitle": "Questo link non è valido",
+      "invalidBody": "Il link di conferma potrebbe essere scaduto (i link sono validi 7 giorni), essere già stato usato o essere incompleto. Puoi semplicemente iscriverti di nuovo.",
+      "subscribeAgain": "Iscriviti di nuovo",
+      "home": "Torna alla home page"
+    },
+    "unsubscribe": {
+      "title": "Disiscriviti dalla newsletter",
+      "prompt": "Clicca il pulsante per non ricevere più la newsletter di The Blue Legacy Foundation all’indirizzo {email}.",
+      "button": "Disiscriviti",
+      "doneTitle": "Disiscrizione completata",
+      "doneBody": "Non riceverai più newsletter da parte nostra. Conserviamo il tuo indirizzo solo per quanto necessario a rispettare questa scelta; puoi chiederne la cancellazione tramite il modulo di contatto.",
+      "invalidTitle": "Questo link non è valido",
+      "invalidBody": "Non abbiamo trovato un’iscrizione per questo link, che potrebbe essere incompleto. Se continui a ricevere email che non hai richiesto, scrivici tramite il modulo di contatto.",
+      "resubscribe": "Hai cambiato idea? Iscriviti di nuovo",
+      "contact": "Contattaci"
+    },
+    "email": {
+      "confirmSubject": "Conferma la tua iscrizione alla nostra newsletter",
+      "confirmPreheader": "Un clic per confermare — il link è valido 7 giorni.",
+      "confirmTitle": "Conferma l’iscrizione",
+      "confirmBody": "Grazie per l’interesse verso The Blue Legacy Foundation. Conferma che desideri ricevere la nostra newsletter: notizie dalla fondazione, aggiornamenti sui progetti ed eventi, circa 4–6 email all’anno.",
+      "confirmButton": "Conferma l’iscrizione",
+      "confirmLinkHelp": "Se il pulsante non funziona, copia questo link nel browser:",
+      "confirmExpiry": "Il link è valido 7 giorni.",
+      "confirmIgnore": "Se non hai chiesto di iscriverti, ignora semplicemente questa email: non verrai aggiunto alla lista.",
+      "confirmWhy": "Ricevi questa email una tantum perché questo indirizzo è stato inserito nel modulo della newsletter sul nostro sito.",
+      "issueWhy": "Ricevi questa email perché ti sei iscritto alla newsletter di The Blue Legacy Foundation e hai confermato l’iscrizione.",
+      "unsubscribe": "Disiscriviti",
+      "unsubscribeText": "Disiscriviti con un clic: {url}",
+      "senderFallback": "Il gruppo promotore di The Blue Legacy Foundation — contattaci tramite il nostro sito.",
+      "visitSite": "Visita il nostro sito",
+      "testBanner": "Invio di prova — questa copia è stata inviata solo a te."
+    }
+  },
   "forms": {
     "required": "obbligatorio",
     "optional": "facoltativo",
@@ -922,7 +1000,16 @@
       "eventClosed": "La registrazione di interesse per questo evento è chiusa.",
       "donationsDisabled": "Le donazioni al momento non sono aperte.",
       "duplicateSubmission": "Questo modulo è già stato inviato. Ricarica la pagina per ricominciare.",
-      "paymentUnavailable": "Il fornitore di pagamenti è temporaneamente non disponibile. Nessun pagamento è stato effettuato. Riprova più tardi."
+      "paymentUnavailable": "Il fornitore di pagamenti è temporaneamente non disponibile. Nessun pagamento è stato effettuato. Riprova più tardi.",
+      "newsletterCheckInbox": "Quasi fatto — controlla la tua casella di posta. Se questo indirizzo può essere iscritto, gli abbiamo inviato un link per confermare l’iscrizione (valido 7 giorni)."
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "lead": "Notizie dalla fondazione, aggiornamenti sui progetti ed eventi — circa 4–6 email all’anno. Ti chiederemo di confermare via email.",
+      "emailLabel": "La tua email per la newsletter",
+      "consent": "Desidero ricevere la newsletter (circa 4–6 email all’anno), come descritto nell’<privacy>informativa privacy</privacy>. Posso disiscrivermi in qualsiasi momento.",
+      "submit": "Iscriviti",
+      "more": "Informazioni sulla newsletter"
     }
   },
   "consent": {
@@ -969,6 +1056,7 @@
             "Moduli di contatto e richieste: nome, indirizzo email, messaggio e, per le richieste di partnership, l'organizzazione ed eventualmente telefono e sito web.",
             "Interesse per eventi: nome, indirizzo email, eventuale organizzazione, numero indicativo di ospiti e messaggio.",
             "Donazioni (solo quando attivate): importo, valuta e l'indirizzo email che fornisci al nostro fornitore di pagamenti. I dati della carta sono inseriti nella pagina ospitata da Stripe e non raggiungono mai i nostri server.",
+            "Newsletter (solo se ti iscrivi): indirizzo email, lingua, punto del sito in cui ti sei iscritto, il testo del consenso che hai accettato e le date della richiesta, della conferma e dell’eventuale disiscrizione.",
             "Dati di sicurezza: per un breve periodo usiamo un hash irreversibile e con chiave del tuo indirizzo IP per prevenire abusi. Non conserviamo il tuo indirizzo IP in chiaro."
           ]
         },
@@ -978,6 +1066,7 @@
             "Per rispondere alla tua richiesta e gestire il rapporto che ci chiedi (art. 6.1.b GDPR, misure su tua richiesta).",
             "Per mantenere sicuro il sito e prevenire lo spam (art. 6.1.f, legittimo interesse).",
             "Per conservare le registrazioni delle donazioni richieste dalla legge, una volta attivate (art. 6.1.c, obbligo legale).",
+            "Per inviarti la newsletter che hai richiesto, con il tuo consenso espresso tramite doppia conferma (art. 6.1.a GDPR). Puoi revocarlo in qualsiasi momento disiscrivendoti.",
             "Statistiche facoltative, solo con il tuo consenso (art. 6.1.a)."
           ]
         },
@@ -994,9 +1083,20 @@
           ]
         },
         {
+          "heading": "Newsletter",
+          "body": [
+            "Finalità: inviarti notizie dalla fondazione, aggiornamenti sui progetti e informazioni sugli eventi, circa 4–6 email all’anno. La newsletter non contiene pixel di tracciamento né tracciamento dei clic.",
+            "Base giuridica: il tuo consenso (art. 6.1.a GDPR). Usiamo la doppia conferma (double opt-in): l’iscrizione è attiva solo dopo che hai cliccato il link di conferma che ti inviamo via email. Come prova del consenso conserviamo il testo che hai accettato, il momento della richiesta e quello della conferma.",
+            "Conservazione: conserviamo il tuo indirizzo finché sei iscritto. Dopo la disiscrizione conserviamo solo quanto necessario a rispettare la tua scelta (l’indirizzo contrassegnato come disiscritto e le relative date) e lo cancelliamo del tutto su richiesta. Le iscrizioni non confermate non ricevono mai newsletter.",
+            "Responsabile del trattamento: le email della newsletter e di conferma sono inviate tramite Resend, che agisce su nostra istruzione. Resend può trattare dati al di fuori dell’Unione europea; le garanzie adeguate per questo trasferimento sono da confermare nell’accordo sul trattamento dei dati.",
+            "Disiscrizione: ogni newsletter contiene un link di disiscrizione che funziona con un solo clic. Puoi anche chiedercelo tramite il modulo di contatto."
+          ]
+        },
+        {
           "heading": "Per quanto tempo li conserviamo",
           "body": [
             "Richieste: fino a 24 mesi dall'ultimo contatto, salvo che un rapporto in corso richieda un periodo più lungo.",
+            "Newsletter: fino alla disiscrizione; in seguito solo per quanto necessario a rispettare la tua scelta, oppure cancellazione su richiesta.",
             "Registrazioni delle donazioni: per il periodo previsto dalla legge italiana (di norma 10 anni).",
             "Hash per la prevenzione degli abusi: fino a qualche ora."
           ]

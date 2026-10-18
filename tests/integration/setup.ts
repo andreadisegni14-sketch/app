@@ -10,6 +10,7 @@ delete process.env.RESEND_API_KEY
 const { db } = await import('@/lib/db')
 
 const TABLES = [
+  'NewsletterDelivery', 'NewsletterIssue', 'NewsletterSubscriber',
   'DonationEvent', 'Donation', 'EventInterest', 'Event', 'SponsorInquiry', 'ContactInquiry', 'ProjectUpdate',
   'ProjectMilestone', 'MediaAsset', 'Project', 'BeneficiaryOrganization', 'AuditLog', 'Session', 'User', 'Role',
   'RateLimit', 'SiteSetting',

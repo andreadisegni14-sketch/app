@@ -10,3 +10,9 @@ export const E2E_VIEWER = {
   email: 'e2e-viewer@example.test',
   password: process.env.E2E_VIEWER_PASSWORD ?? 'E2e-viewer-only-test-db-2026',
 }
+
+/** Unsubscribe tokens of the seeded newsletter subscribers, keyed by Playwright project. */
+export const E2E_UNSUBSCRIBE_TOKENS = {
+  desktop: 'e2eUnsubscribeTokenForTheDesktopProject0001',
+  mobile: 'e2eUnsubscribeTokenForTheMobileProject00001',
+} as const

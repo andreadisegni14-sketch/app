@@ -5,7 +5,7 @@ import { localizedPath } from '@/lib/seo'
 
 export const dynamic = 'force-dynamic'
 
-const STATIC_PATHS = ['/', '/mission', '/projects', '/sailing', '/gala', '/partners', '/donate', '/transparency', '/contact', '/privacy', '/cookies', '/terms', '/accessibility']
+const STATIC_PATHS = ['/', '/mission', '/projects', '/sailing', '/gala', '/partners', '/donate', '/transparency', '/contact', '/newsletter', '/privacy', '/cookies', '/terms', '/accessibility']
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (isSiteOffline()) return []

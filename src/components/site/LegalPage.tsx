@@ -1,6 +1,6 @@
 import { getFormatter, getTranslations } from 'next-intl/server'
 
-export const LEGAL_LAST_UPDATED = new Date('2026-10-15T00:00:00Z')
+export const LEGAL_LAST_UPDATED = new Date('2026-10-18T00:00:00Z')
 
 export async function LegalShell({ title, intro, children }: { title: string; intro: string; children: React.ReactNode }) {
   const t = await getTranslations('legal')

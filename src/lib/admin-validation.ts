@@ -212,3 +212,12 @@ export function adminErrors(error: z.ZodError): string[] {
     return issue.message.includes(' ') ? issue.message : `${field}: ${issue.message}`
   })
 }
+
+/** Newsletter issues: subject and body in both languages. Bodies use the small markdown subset. */
+export const newsletterIssueSchema = z.object({
+  subjectEn: req('English subject', 150),
+  subjectIt: req('Italian subject', 150),
+  bodyEn: req('English text', 20_000),
+  bodyIt: req('Italian text', 20_000),
+})
+export type NewsletterIssueInput = z.infer<typeof newsletterIssueSchema>

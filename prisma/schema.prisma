@@ -140,6 +140,27 @@ enum DueDiligenceStatus {
   REJECTED
 }
 
+enum NewsletterStatus {
+  PENDING
+  CONFIRMED
+  UNSUBSCRIBED
+}
+
+enum NewsletterIssueStatus {
+  DRAFT
+  SENDING
+  SENT
+  FAILED
+}
+
+enum NewsletterDeliveryStatus {
+  PENDING
+  SENT
+  FAILED
+  /// The subscriber was no longer confirmed when their turn came, so nothing was sent.
+  SKIPPED
+}
+
 // ---------------------------------------------------------------------------
 // Identity & access
 // ---------------------------------------------------------------------------
@@ -154,21 +175,23 @@ model Role {
 }
 
 model User {
-  id               String     @id @default(cuid())
-  email            String     @unique
-  name             String
-  passwordHash     String
-  roleId           String
-  role             Role       @relation(fields: [roleId], references: [id])
-  isActive         Boolean    @default(true)
-  failedLoginCount Int        @default(0)
-  lockedUntil      DateTime?
-  lastLoginAt      DateTime?
-  sessions         Session[]
-  auditLogs        AuditLog[]
-  mediaUploads     MediaAsset[]
-  createdAt        DateTime   @default(now())
-  updatedAt        DateTime   @updatedAt
+  id                      String            @id @default(cuid())
+  email                   String            @unique
+  name                    String
+  passwordHash            String
+  roleId                  String
+  role                    Role              @relation(fields: [roleId], references: [id])
+  isActive                Boolean           @default(true)
+  failedLoginCount        Int               @default(0)
+  lockedUntil             DateTime?
+  lastLoginAt             DateTime?
+  sessions                Session[]
+  auditLogs               AuditLog[]
+  mediaUploads            MediaAsset[]
+  newsletterIssuesCreated NewsletterIssue[] @relation("NewsletterIssueCreatedBy")
+  newsletterIssuesSent    NewsletterIssue[] @relation("NewsletterIssueSentBy")
+  createdAt               DateTime          @default(now())
+  updatedAt               DateTime          @updatedAt
 
   @@index([roleId])
 }
@@ -342,26 +365,26 @@ model BeneficiaryOrganization {
 // ---------------------------------------------------------------------------
 
 model Event {
-  id            String          @id @default(cuid())
-  slug          String          @unique
-  type          EventType
-  status        EventStatus     @default(PROPOSED)
-  isDemo        Boolean         @default(false)
-  isPublished   Boolean         @default(true)
-  interestOpen  Boolean         @default(true)
-  titleEn       String
-  titleIt       String
-  summaryEn     String          @db.Text
-  summaryIt     String          @db.Text
-  locationEn    String
-  locationIt    String
-  dateLabelEn   String
-  dateLabelIt   String
-  startsAt      DateTime?
-  sortOrder     Int             @default(0)
-  interests     EventInterest[]
-  createdAt     DateTime        @default(now())
-  updatedAt     DateTime        @updatedAt
+  id           String          @id @default(cuid())
+  slug         String          @unique
+  type         EventType
+  status       EventStatus     @default(PROPOSED)
+  isDemo       Boolean         @default(false)
+  isPublished  Boolean         @default(true)
+  interestOpen Boolean         @default(true)
+  titleEn      String
+  titleIt      String
+  summaryEn    String          @db.Text
+  summaryIt    String          @db.Text
+  locationEn   String
+  locationIt   String
+  dateLabelEn  String
+  dateLabelIt  String
+  startsAt     DateTime?
+  sortOrder    Int             @default(0)
+  interests    EventInterest[]
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
 
   @@index([type, status])
   @@index([isPublished, sortOrder])
@@ -488,6 +511,84 @@ model DonationEvent {
 
   @@index([donationId])
   @@index([type, createdAt])
+}
+
+// ---------------------------------------------------------------------------
+// Newsletter (double opt-in)
+// ---------------------------------------------------------------------------
+
+/// One row per email address. Consent is proven by `consentText` + `consentAt` (what the visitor
+/// agreed to, in their language) and `confirmedAt` (when they clicked the confirmation link).
+model NewsletterSubscriber {
+  id                    String               @id @default(cuid())
+  /// Always stored lower-cased.
+  email                 String               @unique
+  locale                String               @default("en")
+  status                NewsletterStatus     @default(PENDING)
+  /// SHA-256 of the confirmation token; the raw token only ever exists in the email.
+  confirmTokenHash      String?              @unique
+  confirmTokenExpiresAt DateTime?
+  /// Random token included in every email so the subscriber can always opt out.
+  unsubscribeToken      String               @unique
+  consentText           String               @db.Text
+  consentAt             DateTime
+  privacyVersion        String
+  confirmedAt           DateTime?
+  unsubscribedAt        DateTime?
+  /// Where the sign-up happened: 'footer' | 'newsletter-page' | 'event-form'.
+  source                String
+  /// Outcome of the most recent confirmation email.
+  confirmEmailStatus    EmailStatus          @default(PENDING)
+  confirmEmailError     String?
+  confirmEmailSentAt    DateTime?
+  deliveries            NewsletterDelivery[]
+  createdAt             DateTime             @default(now())
+  updatedAt             DateTime             @updatedAt
+
+  @@index([status, createdAt])
+}
+
+model NewsletterIssue {
+  id             String                @id @default(cuid())
+  subjectEn      String
+  subjectIt      String
+  /// Plain text with a small, escaped markdown subset (see src/lib/newsletter/markdown.ts).
+  bodyEn         String                @db.Text
+  bodyIt         String                @db.Text
+  status         NewsletterIssueStatus @default(DRAFT)
+  recipientCount Int                   @default(0)
+  sentCount      Int                   @default(0)
+  failedCount    Int                   @default(0)
+  sentAt         DateTime?
+  createdById    String?
+  createdBy      User?                 @relation("NewsletterIssueCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  sentById       String?
+  sentBy         User?                 @relation("NewsletterIssueSentBy", fields: [sentById], references: [id], onDelete: SetNull)
+  deliveries     NewsletterDelivery[]
+  createdAt      DateTime              @default(now())
+  updatedAt      DateTime              @updatedAt
+
+  @@index([status, createdAt])
+}
+
+/// One row per (issue, subscriber): makes sending resumable without ever sending twice.
+model NewsletterDelivery {
+  id           String                   @id @default(cuid())
+  issueId      String
+  issue        NewsletterIssue          @relation(fields: [issueId], references: [id], onDelete: Cascade)
+  subscriberId String
+  subscriber   NewsletterSubscriber     @relation(fields: [subscriberId], references: [id], onDelete: Cascade)
+  locale       String
+  status       NewsletterDeliveryStatus @default(PENDING)
+  error        String?
+  providerId   String?
+  sentAt       DateTime?
+  createdAt    DateTime                 @default(now())
+  updatedAt    DateTime                 @updatedAt
+
+  @@unique([issueId, subscriberId])
+  @@index([issueId, status])
+  @@index([subscriberId])
 }
 
 // ---------------------------------------------------------------------------

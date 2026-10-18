@@ -8,6 +8,9 @@ export const RATE_LIMITS = {
   sponsor: { action: 'sponsor', limit: 5, windowSeconds: 600 },
   eventInterest: { action: 'event-interest', limit: 5, windowSeconds: 600 },
   supportInterest: { action: 'support-interest', limit: 5, windowSeconds: 600 },
+  newsletter: { action: 'newsletter', limit: 5, windowSeconds: 600 },
+  /** Per address (hashed): limits confirmation emails one person can trigger to someone's inbox. */
+  newsletterAddress: { action: 'newsletter-address', limit: 3, windowSeconds: 3600 },
   donationCheckout: { action: 'donation-checkout', limit: 10, windowSeconds: 600 },
   loginIp: { action: 'login-ip', limit: 20, windowSeconds: 900 },
   loginAccount: { action: 'login-account', limit: 8, windowSeconds: 900 },

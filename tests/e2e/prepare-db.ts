@@ -2,7 +2,7 @@
 import bcrypt from 'bcryptjs'
 import { PrismaPg } from '@prisma/adapter-pg'
 import { PrismaClient } from '../../src/generated/prisma/client'
-import { E2E_ADMIN, E2E_VIEWER } from './credentials'
+import { E2E_ADMIN, E2E_VIEWER, E2E_UNSUBSCRIBE_TOKENS } from './credentials'
 
 const url = process.env.DATABASE_URL ?? ''
 if (!/test/i.test(new URL(url).pathname)) throw new Error('Refusing to touch a database whose name does not contain "test".')
@@ -40,6 +40,23 @@ async function accounts() {
       dateLabelIt: 'Proposta per il 2027',
     },
   })
+  // Confirmed newsletter subscribers with known unsubscribe tokens (one per Playwright project).
+  for (const [project, token] of Object.entries(E2E_UNSUBSCRIBE_TOKENS)) {
+    await db.newsletterSubscriber.create({
+      data: {
+        email: `e2e-subscriber-${project}@example.test`,
+        locale: project === 'mobile' ? 'it' : 'en',
+        status: 'CONFIRMED',
+        unsubscribeToken: token,
+        consentText: 'E2E seeded consent',
+        consentAt: new Date(),
+        confirmedAt: new Date(),
+        privacyVersion: 'e2e',
+        source: 'newsletter-page',
+        confirmEmailStatus: 'SENT',
+      },
+    })
+  }
   // An enquiry whose notification email failed: the admin must still see it.
   await db.contactInquiry.create({
     data: {

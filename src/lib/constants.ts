@@ -9,7 +9,7 @@ import {
 } from '@/generated/prisma/enums'
 
 /** Bump whenever the privacy notice changes materially; stored alongside each consent. */
-export const PRIVACY_NOTICE_VERSION = '2026-10-draft-1'
+export const PRIVACY_NOTICE_VERSION = '2026-10-draft-2'
 
 export const LOCALES = ['en', 'it'] as const
 export type Locale = (typeof LOCALES)[number]

@@ -121,6 +121,11 @@ const STATUS_TONES: Record<string, string> = {
   UNRECONCILED: 'bg-gold/15 text-gold-ink',
   RECONCILED: 'bg-success/10 text-success',
   DISCREPANCY: 'bg-error/10 text-error',
+  CONFIRMED: 'bg-success/10 text-success',
+  UNSUBSCRIBED: 'bg-ivory-deep text-muted',
+  DRAFT: 'bg-ivory-deep text-ink',
+  SENDING: 'bg-navy/10 text-navy',
+  SKIPPED: 'bg-ivory-deep text-muted',
 }
 
 export function Pill({ value, label }: { value: string; label?: string }) {

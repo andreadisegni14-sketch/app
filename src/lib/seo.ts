@@ -17,6 +17,9 @@ export type PageKey =
   | 'cookies'
   | 'terms'
   | 'accessibility'
+  | 'newsletter'
+  | 'newsletterConfirm'
+  | 'newsletterUnsubscribe'
 
 /** Locale-aware public path: English at the root, Italian under /it. */
 export function localizedPath(locale: string, path: string): string {

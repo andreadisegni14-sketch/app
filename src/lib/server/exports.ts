@@ -41,6 +41,18 @@ export const EXPORT_DATASETS: Record<string, Dataset> = {
       )
     },
   },
+  'newsletter-subscribers': {
+    label: 'Newsletter subscribers',
+    description: 'Email addresses with consent records (personal data). Tokens are never exported.',
+    personalData: true,
+    build: async () => {
+      const rows = await db.newsletterSubscriber.findMany({ orderBy: { createdAt: 'asc' } })
+      return toCsv(
+        ['id', 'createdAt', 'email', 'locale', 'status', 'source', 'consentAt', 'consentText', 'privacyVersion', 'confirmedAt', 'unsubscribedAt', 'confirmEmailStatus'],
+        rows.map((r) => [r.id, r.createdAt, r.email, r.locale, r.status, r.source, r.consentAt, r.consentText, r.privacyVersion, r.confirmedAt, r.unsubscribedAt, r.confirmEmailStatus]),
+      )
+    },
+  },
   donations: {
     label: 'Donation ledger',
     description: 'For reconciliation with Stripe payouts and the bank statement. Includes donor emails.',

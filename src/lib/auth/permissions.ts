@@ -32,6 +32,12 @@ export const PERMISSIONS = {
   'users:manage': ADMIN_ONLY,
   'settings:edit': ADMIN_ONLY,
   'audit:view': ADMIN_ONLY,
+  // Newsletter: viewers see figures and issues (subscriber addresses are masked for them);
+  // staff handle subscribers and drafts; only administrators send to the list or erase records.
+  'newsletter:view': ALL,
+  'newsletter:manage': STAFF,
+  'newsletter:send': ADMIN_ONLY,
+  'newsletter:erase': ADMIN_ONLY,
 } as const satisfies Record<string, readonly RoleName[]>
 
 export type Permission = keyof typeof PERMISSIONS
